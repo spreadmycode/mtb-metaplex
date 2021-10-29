@@ -30,7 +30,6 @@ import crypto from 'crypto';
 import { getAssetCostToStore } from '../utils/assets';
 import { AR_SOL_HOLDER_ID } from '../utils/ids';
 import BN from 'bn.js';
-import { OWNERS } from '../constants';
 const RESERVED_TXN_MANIFEST = 'manifest.json';
 
 interface IArweaveResult {
@@ -344,20 +343,6 @@ export const prepPayForFilesTxn = async (
         lamports: await getAssetCostToStore(files),
       }),
     );
-
-    // Pay for mint price 1 SOL(+fee)
-    // const minterPublicKey = wallet.publicKey;
-    // const minterAddress = minterPublicKey.toBase58();
-    // OWNERS.forEach((owner: Creator) => {
-    //   if (owner.address != minterAddress) {
-    //     insertPayTransaction(
-    //       instructions, 
-    //       minterPublicKey, 
-    //       new PublicKey(owner.address), 
-    //       LAMPORTS_PER_SOL * (owner.share / 100),
-    //     );
-    //   }
-    // });
   }
   
   for (let i = 0; i < files.length; i++) {
