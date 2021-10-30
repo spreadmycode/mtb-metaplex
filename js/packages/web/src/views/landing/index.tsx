@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import { Menu, Dropdown, Button, Layout, BackTop } from 'antd';
 import React, { useCallback } from 'react';
-import { ConnectButton, useWalletModal, shortenAddress } from '@oyster/common';
+import { ConnectButton, useWalletModal, shortenAddress, CurrentUserBadge } from '@oyster/common';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { OWNER_WALLET } from '../../constants';
 import { Link } from 'react-router-dom';
-import Linkage from 'next/link'
+import Linkage from 'next/link';
 import {
     UnorderedListOutlined,
     FileImageOutlined,
@@ -28,17 +28,17 @@ export const LandingView = () => {
     <Menu theme="dark">
       <Menu.Item>
         <Linkage href="/#roadmap">
-            <Button type="link" size="small">Roadmap</Button>
+            <Button type="text" size="small">Roadmap</Button>
         </Linkage>
       </Menu.Item>
       <Menu.Item>
         <Linkage href="/#origins">
-            <Button type="link" size="small">Origins</Button>
+            <Button type="text" size="small">Origins</Button>
         </Linkage>
       </Menu.Item>
       <Menu.Item>
         <Linkage href="/#team">
-            <Button type="link" size="small">Team</Button>
+            <Button type="text" size="small">Team</Button>
         </Linkage>
       </Menu.Item>
 
@@ -46,12 +46,12 @@ export const LandingView = () => {
 
       <Menu.Item>
         <Link to="/gallery">
-            <Button type="link" icon={<FileImageOutlined />}>Gallery</Button>
+            <Button type="text" icon={<FileImageOutlined />}>Gallery</Button>
         </Link>
       </Menu.Item>
       <Menu.Item>
         <Link to="/mine">
-            <Button type="link" icon={<WalletOutlined />}>My COTDs</Button>
+            <Button type="text" icon={<WalletOutlined />}>My COTDs</Button>
         </Link>
       </Menu.Item>
     </Menu>
@@ -61,32 +61,32 @@ export const LandingView = () => {
     <Menu theme="dark">
       <Menu.Item>
         <Linkage href="/#artwork">
-            <Button type="link" size="small">Artwork</Button>
+            <Button type="text" size="small">Artwork</Button>
         </Linkage>
       </Menu.Item>
       <Menu.Item>
         <Linkage href="/#factions">
-            <Button type="link" size="small">Factions</Button>
+            <Button type="text" size="small">Factions</Button>
         </Linkage>
       </Menu.Item>
       <Menu.Item>
         <Linkage href="/#rarity">
-            <Button type="link" size="small">Rarity</Button>
+            <Button type="text" size="small">Rarity</Button>
         </Linkage>
       </Menu.Item>
       <Menu.Item>
         <Linkage href="/#roadmap">
-            <Button type="link" size="small">Roadmap</Button>
+            <Button type="text" size="small">Roadmap</Button>
         </Linkage>
       </Menu.Item>
       <Menu.Item>
         <Linkage href="/#origins">
-            <Button type="link" size="small">Origins</Button>
+            <Button type="text" size="small">Origins</Button>
         </Linkage>
       </Menu.Item>
       <Menu.Item>
         <Linkage href="/#team">
-            <Button type="link" size="small">Team</Button>
+            <Button type="text" size="small">Team</Button>
         </Linkage>
       </Menu.Item>
 
@@ -94,25 +94,19 @@ export const LandingView = () => {
 
       <Menu.Item>
         <Link to="/gallery">
-            <Button type="link" size="small" icon={<FileImageOutlined />}>Gallery</Button>
+            <Button type="text" size="small" icon={<FileImageOutlined />}>Gallery</Button>
         </Link>
       </Menu.Item>
       <Menu.Item>
         <Link to="/mine">
-            <Button type="link" size="small" icon={<WalletOutlined />}>My COTD</Button>
+            <Button type="text" size="small" icon={<WalletOutlined />}>My COTD</Button>
         </Link>
       </Menu.Item>
     </Menu>
   );
 
   return (
-    <Layout>
-        <Head>
-            <title>Child of the Dice</title>
-            <meta name="description" content="You can purchase COD." />
-            <link rel="icon" href="/dice.png" />
-        </Head>
-    
+    <Layout>   
         <header className="wow fadeInDown">
             <div className="pc">
                 <div className="d-flex justify-content-between container align-items-baseline py-2 mb-0">
@@ -123,16 +117,16 @@ export const LandingView = () => {
                     </a>
                     
                     <Linkage href="/#artwork">
-                        <Button className="font-calibri font-weight-bold" type="link" size="large">Artwork</Button>
+                        <Button className="font-calibri font-weight-bold" type="text" size="large">Artwork</Button>
                     </Linkage>
                     <Linkage href="/#factions">
-                        <Button className="font-calibri font-weight-bold" type="link" size="large">Factions</Button>
+                        <Button className="font-calibri font-weight-bold" type="text" size="large">Factions</Button>
                     </Linkage>
                     <Linkage href="/#rarity">
-                        <Button className="font-calibri font-weight-bold" type="link" size="small">Rarity</Button>
+                        <Button className="font-calibri font-weight-bold" type="text" size="large">Rarity</Button>
                     </Linkage>
                     <Dropdown overlay={pc_menu} arrow>
-                        <Button className="font-calibri font-weight-bold" size="large" type="link">Others <DownOutlined /></Button>
+                        <Button className="font-calibri font-weight-bold" type="text" size="large" >Others <DownOutlined /></Button>
                     </Dropdown>
 
                     <Button type="default" size="middle" shape="round" onClick={handleChangeWallet}>{ connected ? shortenAddress(publicKey?.toBase58() || '', 4) : "Connect"}</Button>
@@ -152,7 +146,7 @@ export const LandingView = () => {
             </div>
 
             <div className="sp">
-                <div className="top-bar">
+                <div className="top-bar d-flex align-items-center">
                     <div className="d-flex align-items-center">
                         <a href="/" className="d-flex align-items-center mr-5">
                             <h3 className="text-white mr-3 font-weight-bold font-chiller mb-0">Child Of The</h3>
@@ -160,7 +154,7 @@ export const LandingView = () => {
                         </a>
                         <Dropdown overlay={sp_menu} arrow>
                             <Button size="large" type="link">
-                                <Button className="font-calibri font-weight-bold" size="large" type="link">Others <DownOutlined /></Button>
+                                <Button className="font-calibri font-weight-bold" size="large" type="text">Others <DownOutlined /></Button>
                             </Button>
                         </Dropdown>
                     </div>
@@ -295,12 +289,19 @@ export const LandingView = () => {
                 <>
                     <h4 className="text-white text-center font-calibri mt-5">Explore the gallery of COTDs with their own story.</h4>
                     <div className="row align-items-center justify-content-center mt-3">
+                        <CurrentUserBadge
+                            showBalance={true}
+                            showAddress={true}
+                            iconSize={18}
+                        />
+                    </div>
+                    <div className="row align-items-center justify-content-center mt-3">
                         <Link to="/gallery">
-                            <Button type="default" className="m-2">View Gallery</Button>
+                            <Button type="default" shape="round" size="large" className="m-2">View Gallery</Button>
                         </Link>
                         {publicKey?.toBase58() == OWNER_WALLET &&
                             <Link to="/art/create">
-                            <Button type="default" className="m-2">Create a new COTD</Button>
+                            <Button type="default" shape="round" size="large" className="m-2">Create a new COTD</Button>
                         </Link>}
                     </div>
                 </>}

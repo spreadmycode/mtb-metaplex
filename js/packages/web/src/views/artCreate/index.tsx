@@ -14,6 +14,7 @@ import {
   Form,
   Typography,
   Space,
+  Layout,
 } from 'antd';
 import { ArtCard } from './../../components/ArtCard';
 import { UserSearch, UserValue } from './../../components/UserSearch';
@@ -46,6 +47,11 @@ import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
 const { Step } = Steps;
 const { Dragger } = Upload;
 const { Text } = Typography;
+
+const paddingForLayout = (width: number) => {
+  if (width <= 768) return '5px 10px';
+  if (width > 768) return '10px 30px';
+};
 
 export const ArtCreateView = () => {
   const connection = useConnection();
@@ -126,7 +132,11 @@ export const ArtCreateView = () => {
   };
 
   return (
-    <>
+    <Layout
+      style={{
+          padding: paddingForLayout(width),
+          maxWidth: 1000,
+      }}>
       <Row style={{ paddingTop: 50 }}>
         {stepsVisible && (
           <Col span={24} md={4}>
@@ -214,7 +224,7 @@ export const ArtCreateView = () => {
       <MetaplexOverlay visible={step === 6}>
         <Congrats nft={nft} />
       </MetaplexOverlay>
-    </>
+    </Layout>
   );
 };
 
@@ -225,10 +235,10 @@ const CategoryStep = (props: {
   return (
     <>
       <Row className="call-to-action">
-        <h2>Create a new item</h2>
+        <h4>Create a new COTD</h4>
         <p>
-          First time creating on Metaplex?{' '}
-          <a href="#">Read our creators’ guide.</a>
+          You are a admin of this store.{' '}
+          <a href="#">Go Back to Home.</a>
         </p>
       </Row>
       <Row justify={width < 768 ? 'center' : 'start'}>
@@ -362,7 +372,7 @@ const UploadStep = (props: {
   return (
     <>
       <Row className="call-to-action">
-        <h2>Now, let's upload your creation</h2>
+        <h4>Now, let's upload your creation</h4>
         <p style={{ fontSize: '1.2rem' }}>
           Your file will be uploaded to the decentralized web via Arweave.
           Depending on file type, can take up to 1 minute. Arweave is a new type
@@ -570,6 +580,14 @@ const InfoStep = (props: {
   );
   const [form] = Form.useForm();
 
+  const rawFields = [
+    {key:'background', display:'Background'},
+    {key:'faction', display:'Faction'},
+    {key:'type', display:'Type'},
+    {key:'sequence', display:'Sequence'},
+    {key:'generation', display:'Generation'}
+  ];
+
   useEffect(() => {
     setRoyalties(
       creators.map(creator => ({
@@ -581,7 +599,7 @@ const InfoStep = (props: {
   return (
     <>
       <Row className="call-to-action">
-        <h2>Describe your item</h2>
+        <h4>Describe your item</h4>
         <p>
           Provide detailed description of your creative process to engage with
           your audience.
@@ -617,7 +635,7 @@ const InfoStep = (props: {
               }
             />
           </label>
-          {/* <label className="action-field">
+          <label className="action-field">
             <span className="field-title">Symbol</span>
             <Input
               className="input"
@@ -631,7 +649,7 @@ const InfoStep = (props: {
                 })
               }
             />
-          </label> */}
+          </label>
 
           <label className="action-field">
             <span className="field-title">Description</span>
@@ -671,14 +689,16 @@ const InfoStep = (props: {
             <Form.List name="attributes">
               {(fields, { add, remove }) => (
                 <>
-                  {fields.map(({ key, name, fieldKey }) => (
+                  {fields.map(({ key, name, fieldKey }, index) => {
+                    if (index < rawFields.length)
+                    return (
                     <Space key={key} align="baseline">
                       <Form.Item
                         name={[name, 'trait_type']}
                         fieldKey={[fieldKey, 'trait_type']}
                         hasFeedback
                       >
-                        <Input placeholder="trait_type (Optional)" />
+                        <Input placeholder={rawFields[index].key} disabled value={rawFields[index].key} />
                       </Form.Item>
                       <Form.Item
                         name={[name, 'value']}
@@ -693,21 +713,21 @@ const InfoStep = (props: {
                         fieldKey={[fieldKey, 'display_type']}
                         hasFeedback
                       >
-                        <Input placeholder="display_type (Optional)" />
+                        <Input placeholder={rawFields[index].display} disabled value={rawFields[index].display} />
                       </Form.Item>
-                      <MinusCircleOutlined onClick={() => remove(name)} />
+                      {/* <MinusCircleOutlined onClick={() => remove(name)} /> */}
                     </Space>
-                  ))}
-                  <Form.Item>
+                    )
+                  })}
+                  {(fields.length < rawFields.length) &&<Form.Item>
                     <Button
                       type="dashed"
                       onClick={() => add()}
                       block
-                      icon={<PlusOutlined />}
                     >
                       Add attribute
                     </Button>
-                  </Form.Item>
+                  </Form.Item>}
                 </>
               )}
             </Form.List>
@@ -866,7 +886,7 @@ const RoyaltiesStep = (props: {
   return (
     <>
       <Row className="call-to-action" style={{ marginBottom: 20 }}>
-        <h2>Set royalties and creator splits</h2>
+        <h4>Set royalties and creator splits</h4>
         <p>
           Royalties ensure that you continue to get compensated for your work
           after its initial sale.
@@ -1053,7 +1073,7 @@ const LaunchStep = (props: {
   return (
     <>
       <Row className="call-to-action">
-        <h2>Launch your creation</h2>
+        <h4>Launch your creation</h4>
         <p>
           Provide detailed description of your creative process to engage with
           your audience.
@@ -1163,29 +1183,29 @@ const Congrats = (props: {
 
   return (
     <>
-      <div className="waiting-title">Congratulations, you created an NFT!</div>
+      <div className="waiting-title">You created COTD!</div>
       <div className="congrats-button-container">
-        <Button
+        {/* <Button
           className="metaplex-button"
           onClick={_ => window.open(newTweetURL(), '_blank')}
         >
           <span>Share it on Twitter</span>
           <span>&gt;</span>
-        </Button>
+        </Button> */}
         <Button
           className="metaplex-button"
           onClick={_ =>
-            history.push(`/art/${props.nft?.metadataAccount.toString()}`)
+            history.push('/art/create')
           }
         >
-          <span>See it in your collection</span>
+          <span>Create an another COTD</span>
           <span>&gt;</span>
         </Button>
         <Button
           className="metaplex-button"
-          onClick={_ => history.push('/auction/create')}
+          onClick={_ => history.push('/')}
         >
-          <span>Sell it via auction</span>
+          <span>Go back to Home</span>
           <span>&gt;</span>
         </Button>
       </div>

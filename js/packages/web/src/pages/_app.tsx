@@ -8,9 +8,9 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Metaplex NFT Marketplace</title>
+        <title>Child of the Dice</title>
       </Head>
-      <div id="root">
+      <div id="root" style={{backgroundColor: '#121312'}}>
         <Component {...pageProps} />
       </div>
     </>

@@ -174,10 +174,6 @@ a:hover {
     animation:glide 5s linear alternate infinite;
  }
 
-.imageAnimationSection {
-    /* max-height: 500px; */
-}
-
 .toppadding {
     padding-top: 8em !important;
 }
@@ -230,56 +226,6 @@ a:hover {
     color: white;
 }
 
-
-/* text underline animation */
-
-
-/* button animation */
-
-.button {
-    display: inline-block;
-    text-transform: uppercase;
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.button:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    z-index: -2;
-}
-
-.button:before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background-color: greenyellow;
-    transition: all 0.3s;
-    z-index: -1;
-}
-
-.button:hover {
-    color: #fff;
-}
-
-.button:hover:before {
-    width: 100%;
-}
-
-
-/* button animation */
-
-
 /* banner */
 
 .minting-inner {
@@ -310,26 +256,6 @@ a:hover {
 
 
 /* banner */
-
-
-/* button styles */
-
-.button-inner-01 {
-    background: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    padding: 5px 50px;
-    margin: 0 1vw;
-}
-
-.button-inner-01 img {
-    width: 2.5vw;
-}
-
-/* button styles */
-
 
 /* background style */
 
@@ -557,8 +483,9 @@ footer {
     }
     .top-bar {
         position: relative;
+        height: 60px;
         z-index: 2;
-        background-color: #2A2A3D;
+        background-color: black;
         display: flex;
         align-items: center;
         justify-content: space-around;
