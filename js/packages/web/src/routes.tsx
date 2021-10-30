@@ -1,5 +1,4 @@
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import { Home } from './Home';
 import { Providers } from './providers';
 import {
   AnalyticsView,
@@ -14,6 +13,9 @@ import {
 } from './views';
 import { AdminView } from './views/admin';
 import { BillingView } from './views/auction/billing';
+import { GalleryView } from './views/gallery';
+import { LandingView } from './views/landing';
+import { MineView } from './views/mine';
 
 export function Routes() {
   return (
@@ -55,7 +57,13 @@ export function Routes() {
               path="/auction/:id/billing"
               component={() => <BillingView />}
             />
-            <Route path="/" component={() => <Home />} />
+            
+            <Route exact path="/" component={() => <LandingView />} />
+
+            <Route exact path="/gallery" component={() => <GalleryView />} />
+
+            <Route exact path="/mine" component={() => <MineView />} />
+
           </Switch>
         </Providers>
       </HashRouter>
