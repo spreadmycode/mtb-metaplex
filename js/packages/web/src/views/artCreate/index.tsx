@@ -15,7 +15,9 @@ import {
   Typography,
   Space,
   Layout,
+  Select,
 } from 'antd';
+const { Option } = Select;
 import { ArtCard } from './../../components/ArtCard';
 import { UserSearch, UserValue } from './../../components/UserSearch';
 import { Confetti } from './../../components/Confetti';
@@ -581,11 +583,11 @@ const InfoStep = (props: {
   const [form] = Form.useForm();
 
   const rawFields = [
-    {key:'background', display:'Background'},
-    {key:'faction', display:'Faction'},
-    {key:'type', display:'Type'},
-    {key:'sequence', display:'Sequence'},
-    {key:'generation', display:'Generation'}
+    {key:'Background', display:'Background'},
+    {key:'Faction', display:'Faction'},
+    {key:'Type', display:'Type'},
+    {key:'Sequence', display:'Sequence'},
+    {key:'Generation', display:'Generation'}
   ];
 
   useEffect(() => {
@@ -635,7 +637,7 @@ const InfoStep = (props: {
               }
             />
           </label>
-          <label className="action-field">
+          {/* <label className="action-field">
             <span className="field-title">Symbol</span>
             <Input
               className="input"
@@ -649,7 +651,7 @@ const InfoStep = (props: {
                 })
               }
             />
-          </label>
+          </label> */}
 
           <label className="action-field">
             <span className="field-title">Description</span>
@@ -687,25 +689,28 @@ const InfoStep = (props: {
           </label>
           <Form name="dynamic_attributes" form={form} autoComplete="off">
             <Form.List name="attributes">
-              {(fields, { add, remove }) => (
+            {(fields, { add, remove }) => (
                 <>
-                  {fields.map(({ key, name, fieldKey }, index) => {
-                    if (index < rawFields.length)
-                    return (
+                  {fields.map(({ key, name, fieldKey }) => (
                     <Space key={key} align="baseline">
                       <Form.Item
                         name={[name, 'trait_type']}
                         fieldKey={[fieldKey, 'trait_type']}
-                        hasFeedback
-                      >
-                        <Input placeholder={rawFields[index].key} disabled value={rawFields[index].key} />
+                        rules={[{ required: true, message: 'Missing value' }]}
+                        hasFeedback>
+                        <Select placeholder="Select Trait Type">
+                          <Option value="Background">Background</Option>
+                          <Option value="Faction">Faction</Option>
+                          <Option value="Type">Type</Option>
+                          <Option value="Sequence">Sequence</Option>
+                          <Option value="Generation">Generation</Option>
+                        </Select>
                       </Form.Item>
                       <Form.Item
                         name={[name, 'value']}
                         fieldKey={[fieldKey, 'value']}
                         rules={[{ required: true, message: 'Missing value' }]}
-                        hasFeedback
-                      >
+                        hasFeedback>
                         <Input placeholder="value" />
                       </Form.Item>
                       <Form.Item
@@ -713,21 +718,19 @@ const InfoStep = (props: {
                         fieldKey={[fieldKey, 'display_type']}
                         hasFeedback
                       >
-                        <Input placeholder={rawFields[index].display} disabled value={rawFields[index].display} />
+                        <Input placeholder="display_type (Optional)" />
                       </Form.Item>
-                      {/* <MinusCircleOutlined onClick={() => remove(name)} /> */}
+                      <MinusCircleOutlined onClick={() => remove(name)} />
                     </Space>
-                    )
-                  })}
-                  {(fields.length < rawFields.length) &&<Form.Item>
+                  ))}
+                  <Form.Item>
                     <Button
                       type="dashed"
                       onClick={() => add()}
-                      block
-                    >
+                      block>
                       Add attribute
                     </Button>
-                  </Form.Item>}
+                  </Form.Item>
                 </>
               )}
             </Form.List>
