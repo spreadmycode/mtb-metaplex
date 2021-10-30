@@ -69,12 +69,7 @@ export const WalletModal: FC = () => {
         M
       </div>
 
-      <h2>{selected ? 'Change provider' : 'Welcome to Metaplex'}</h2>
-      <p>
-        {selected
-          ? 'Feel free to switch wallet provider'
-          : 'You must be signed in to place a bid'}
-      </p>
+      <h5>{selected ? 'Change provider' : 'Welcome to COTD'}</h5>
 
       <br />
       {selected || showWallets ? (
