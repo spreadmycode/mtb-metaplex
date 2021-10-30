@@ -27,12 +27,12 @@ module.exports = withPlugins(plugins, {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.resolve.fallback.fs = false;
-    }
-    return config;
-  },
+  // webpack: (config, { isServer }) => {
+  //   if (!isServer) {
+  //     config.resolve.fallback.fs = false;
+  //   }
+  //   return config;
+  // },
   env: {
     NEXT_PUBLIC_STORE_OWNER_ADDRESS:
       process.env.STORE_OWNER_ADDRESS ||
@@ -40,11 +40,11 @@ module.exports = withPlugins(plugins, {
     NEXT_PUBLIC_STORE_ADDRESS: process.env.STORE_ADDRESS,
     NEXT_PUBLIC_BIG_STORE: process.env.REACT_APP_BIG_STORE,
     NEXT_PUBLIC_CLIENT_ID: process.env.REACT_APP_CLIENT_ID,
-    MYSQL_HOST: '127.0.0.1',
-    MYSQL_PORT: '3306',
-    MYSQL_DATABASE: 'branden_db',
-    MYSQL_USER: 'root',
-    MYSQL_PASSWORD: '',
+    // MYSQL_HOST: '127.0.0.1',
+    // MYSQL_PORT: '3306',
+    // MYSQL_DATABASE: 'branden_db',
+    // MYSQL_USER: 'root',
+    // MYSQL_PASSWORD: '',
   },
   async rewrites() {
     return [

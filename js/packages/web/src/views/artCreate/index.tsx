@@ -382,7 +382,7 @@ const UploadStep = (props: {
         </p>
       </Row>
       <Row className="content-action">
-        <h3>Upload a cover image (PNG, JPG, GIF, SVG)</h3>
+        <h5>Upload a cover image (PNG, JPG, GIF, SVG)</h5>
         <Dragger
           accept=".png,.jpg,.gif,.mp4,.svg"
           style={{ padding: 20 }}
@@ -398,9 +398,9 @@ const UploadStep = (props: {
           }}
         >
           <div className="ant-upload-drag-icon">
-            <h3 style={{ fontWeight: 700 }}>
+            <h5 style={{ fontWeight: 700 }}>
               Upload your cover image (PNG, JPG, GIF, SVG)
-            </h3>
+            </h5>
           </div>
           <p className="ant-upload-text">Drag and drop, or click to browse</p>
         </Dragger>
@@ -410,7 +410,7 @@ const UploadStep = (props: {
           className="content-action"
           style={{ marginBottom: 5, marginTop: 30 }}
         >
-          <h3>{uploadMsg(props.attributes.properties?.category)}</h3>
+          <h5>{uploadMsg(props.attributes.properties?.category)}</h5>
           <Dragger
             accept={acceptableFiles(props.attributes.properties?.category)}
             style={{ padding: 20, background: 'rgba(255, 255, 255, 0.08)' }}
@@ -434,7 +434,7 @@ const UploadStep = (props: {
             }}
           >
             <div className="ant-upload-drag-icon">
-              <h3 style={{ fontWeight: 700 }}>Upload your creation</h3>
+              <h5 style={{ fontWeight: 700 }}>Upload your creation</h5>
             </div>
             <p className="ant-upload-text">Drag and drop, or click to browse</p>
           </Dragger>
@@ -447,7 +447,7 @@ const UploadStep = (props: {
           paddingTop: 30,
           marginBottom: 4,
         }}
-        label={<h3>OR use absolute URL to content</h3>}
+        label={<h5>OR use absolute URL to content</h5>}
         labelAlign="left"
         colon={false}
         validateStatus={customURLErr ? 'error' : 'success'}

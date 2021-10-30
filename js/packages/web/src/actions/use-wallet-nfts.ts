@@ -1,18 +1,20 @@
 import { useWallet } from '@solana/wallet-adapter-react';
 import { useEffect, useState } from 'react';
-import * as anchor from '@project-serum/anchor';
 import { TOKEN_PROGRAM_ID } from '@solana/spl-token';
 import axios from 'axios';
 import { Metadata } from '../libs/metaplex/index.esm';
-import { OWNER_WALLET, RPC_HOST } from '../constants';
+import { OWNER_WALLET } from '../constants';
+import { toPublicKey, useConnection } from '@oyster/common';
+import { Connection, PublicKey } from '@solana/web3.js';
 
-const connection = new anchor.web3.Connection(RPC_HOST);
-
-const TOKEN_METADATA_PROGRAM_ID = new anchor.web3.PublicKey(
+const TOKEN_METADATA_PROGRAM_ID = toPublicKey(
   'metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s',
 );
 
-export async function getNftsForOwner(ownerAddress: anchor.web3.PublicKey) {
+export async function getNftsForOwner(
+  connection: Connection,
+  ownerAddress: PublicKey,
+) {
   const allTokens: any = [];
   const tokenAccounts = await connection.getParsedTokenAccountsByOwner(
     ownerAddress,
@@ -26,13 +28,11 @@ export async function getNftsForOwner(ownerAddress: anchor.web3.PublicKey) {
     const tokenAmount = tokenAccount.account.data.parsed.info.tokenAmount;
 
     if (tokenAmount.amount == '1' && tokenAmount.decimals == '0') {
-      const [pda] = await anchor.web3.PublicKey.findProgramAddress(
+      const [pda] = await PublicKey.findProgramAddress(
         [
           Buffer.from('metadata'),
           TOKEN_METADATA_PROGRAM_ID.toBuffer(),
-          new anchor.web3.PublicKey(
-            tokenAccount.account.data.parsed.info.mint,
-          ).toBuffer(),
+          new PublicKey(tokenAccount.account.data.parsed.info.mint).toBuffer(),
         ],
         TOKEN_METADATA_PROGRAM_ID,
       );
@@ -68,6 +68,7 @@ export async function getNftsForOwner(ownerAddress: anchor.web3.PublicKey) {
 const useWalletNfts = () => {
   const wallet = useWallet();
   const [isLoading, setIsLoading] = useState(false);
+  const connection = useConnection();
 
   const [nfts, setNfts] = useState<Array<any>>([]);
 
@@ -84,8 +85,8 @@ const useWalletNfts = () => {
 
       setIsLoading(true);
 
-      const ownerWalletPubKey = new anchor.web3.PublicKey(OWNER_WALLET);
-      const nftsForOwner = await getNftsForOwner(ownerWalletPubKey);
+      const ownerWalletPubKey = new PublicKey(OWNER_WALLET);
+      const nftsForOwner = await getNftsForOwner(connection, ownerWalletPubKey);
 
       setNfts(nftsForOwner as any);
 
