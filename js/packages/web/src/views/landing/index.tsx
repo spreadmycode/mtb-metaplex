@@ -163,7 +163,20 @@ export const LandingView = () => {
         </header>
 
         <main>
-            <BackTop />
+            <BackTop>
+                <div style={{
+                        height: 40,
+                        width: 40,
+                        lineHeight: '40px',
+                        borderRadius: 4,
+                        backgroundColor: '#333331',
+                        color: '#fff',
+                        textAlign: 'center',
+                        fontSize: 14,
+                    }}>
+                    UP
+                </div>
+            </BackTop>
             <section className="banner c-container toppadding" id="cotds">
                 <div className="row align-items-center banner-image__inner wow fadeInLeft imageAnimationSection">
                     <img className="w-100 imageAnimation" src="/images/image-01.png" alt=""/>
