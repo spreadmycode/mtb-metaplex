@@ -1,7 +1,7 @@
 import { 
     insertMetadata,
     getAll
-} from '../lib/metadata';
+} from '../libs/metadata';
 
 export const resolvers = {
     Query: {
