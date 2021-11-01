@@ -21,11 +21,13 @@ import { sendSignMetadata } from '../../actions/sendSignMetadata';
 import { ViewOn } from '../../components/ViewOn';
 import { ArtType } from '../../types';
 import { ArtMinting } from '../../components/ArtMinting';
+import { useHistory } from 'react-router-dom';
 
 const { Content } = Layout;
 
 export const ArtView = () => {
   const { id } = useParams<{ id: string }>();
+  const history = useHistory();
   const wallet = useWallet();
   const [remountArtMinting, setRemountArtMinting] = useState(0);
 
@@ -74,7 +76,14 @@ export const ArtView = () => {
   );
 
   return (
-    <Content>
+    <Content style={{marginLeft: 15, marginRight: 15}}>
+      <Button
+          className="metaplex-button"
+          onClick={_ => history.goBack()}
+          >
+          <span>&lt;</span>
+          <span>Go back</span>
+      </Button>
       <Col>
         <Row ref={ref}>
           <Col xs={{ span: 24 }} md={{ span: 12 }} style={{ padding: '30px' }}>
@@ -221,7 +230,7 @@ export const ArtView = () => {
                 <Divider />
                 <br />
                 <div className="info-header">Attributes</div>
-                <List size="large" grid={{ column: 4 }}>
+                <List size="small" grid={{ column: 4 }}>
                   {attributes.map(attribute => (
                     <List.Item>
                       <Card title={attribute.trait_type}>

@@ -1,11 +1,12 @@
 import React from 'react';
-import { Card, CardProps, Button, Badge } from 'antd';
+import { Card, CardProps, Button, Badge, Row, Col } from 'antd';
 import { MetadataCategory, StringPublicKey } from '@oyster/common';
 import { ArtContent } from './../ArtContent';
 import { useArt } from '../../hooks';
 import { Artist, ArtType } from '../../types';
 import { MetaAvatar } from '../MetaAvatar';
 import { Link } from 'react-router-dom';
+import { InfoCircleOutlined } from '@ant-design/icons';
 
 const { Meta } = Card;
 
@@ -54,7 +55,7 @@ export const NftCard = (props: NftCardProps) => {
   if (art.type === ArtType.NFT) {
     badge = 'Unique';
   } else if (art.type === ArtType.Master) {
-    badge = 'COTD';
+    badge = 'NFT 0';
   } else if (art.type === ArtType.Print) {
     badge = `${art.edition} of ${art.supply}`;
   }
@@ -94,13 +95,17 @@ export const NftCard = (props: NftCardProps) => {
       <Meta
         title={`${name}`}
         description={
-          <>
-            <MetaAvatar creators={creators} size={32} />
-            <div className="edition-badge">{badge}</div>
-            <Link to={`/art/${pubkey}`}>
-              <Button type="ghost" shape="round" size="small" className="m-2">...</Button>
-            </Link>
-          </>
+          <Row justify="center" align="middle">
+            <Col flex={12}>
+              <MetaAvatar creators={creators} size={32} />
+              <div className="edition-badge">{badge}</div>
+            </Col>
+            <Col flex="auto">
+              <Link to={`/art/${pubkey}`}>
+                <Button type="text" shape="round" size="middle" className="m-2" icon={<InfoCircleOutlined />}></Button>
+              </Link>
+            </Col>
+          </Row>
         }
       />
     </Card>

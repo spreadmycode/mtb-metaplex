@@ -582,12 +582,12 @@ const InfoStep = (props: {
   );
   const [form] = Form.useForm();
 
-  const rawFields = [
-    {key:'Background', display:'Background'},
-    {key:'Faction', display:'Faction'},
-    {key:'Type', display:'Type'},
-    {key:'Sequence', display:'Sequence'},
-    {key:'Generation', display:'Generation'}
+  const options = [
+    {label:'Background', value:'Background'},
+    {label:'Faction', value:'Faction'},
+    {label:'Type', value:'Type'},
+    {label:'Sequence', value:'Sequence'},
+    {label:'Generation', value:'Generation'}
   ];
 
   useEffect(() => {
@@ -698,13 +698,7 @@ const InfoStep = (props: {
                         fieldKey={[fieldKey, 'trait_type']}
                         rules={[{ required: true, message: 'Missing value' }]}
                         hasFeedback>
-                        <Select placeholder="Select Trait Type">
-                          <Option value="Background">Background</Option>
-                          <Option value="Faction">Faction</Option>
-                          <Option value="Type">Type</Option>
-                          <Option value="Sequence">Sequence</Option>
-                          <Option value="Generation">Generation</Option>
-                        </Select>
+                        <Select placeholder="Select Trait Type" options={options} />
                       </Form.Item>
                       <Form.Item
                         name={[name, 'value']}
