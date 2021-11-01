@@ -1,9 +1,14 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { ApolloProvider } from '@apollo/client'
+import { useApollo } from '../apollo/client'
 
 import '../styles/index.less';
 
 export default function App({ Component, pageProps }: AppProps) {
+
+  const apolloClient = useApollo(pageProps.initialApolloState);
+  
   return (
     <>
       <Head>
@@ -11,7 +16,9 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>Child of the Dice</title>
       </Head>
       <div id="root" style={{backgroundColor: '#121312'}}>
-        <Component {...pageProps} />
+        <ApolloProvider client={apolloClient}>
+          <Component {...pageProps} />
+        </ApolloProvider>
       </div>
     </>
   );

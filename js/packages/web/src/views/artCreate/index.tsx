@@ -45,10 +45,23 @@ import { cleanName, getLast } from '../../utils/utils';
 import { AmountLabel } from '../../components/AmountLabel';
 import useWindowDimensions from '../../utils/layout';
 import { MinusCircleOutlined, PlusOutlined } from '@ant-design/icons';
+import { useMutation, gql } from '@apollo/client';
 
 const { Step } = Steps;
 const { Dragger } = Upload;
 const { Text } = Typography;
+
+const InsertMetadataMutation = gql`
+  mutation insertMetadataMutation($pubKey: String!, $attributes: String!) {
+    insertMetadata(input: { pubKey: $pubKey, attributes: $attributes }) {
+        metadata {
+            id
+            pubkey
+            attributes
+        }
+    }
+  }
+`;
 
 const paddingForLayout = (width: number) => {
   if (width <= 768) return '5px 10px';
@@ -62,6 +75,8 @@ export const ArtCreateView = () => {
   const { step_param }: { step_param: string } = useParams();
   const history = useHistory();
   const { width } = useWindowDimensions();
+
+  const [insertMetadata] = useMutation(InsertMetadataMutation);
 
   const [step, setStep] = useState<number>(0);
   const [stepsVisible, setStepsVisible] = useState<boolean>(true);
@@ -130,6 +145,17 @@ export const ArtCreateView = () => {
       attributes.properties?.maxSupply,
     );
     if (_nft) setNft(_nft);
+
+    const pubkey = _nft?.metadataAccount.toString();
+    const attrs = JSON.stringify(attributes.attributes);
+
+    await insertMetadata({
+        variables: {
+            pubKey: pubkey,
+            attributes: attrs
+        }
+    });
+
     clearInterval(inte);
   };
 
