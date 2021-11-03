@@ -32,7 +32,7 @@ export default class MetaplexDocument extends Document {
             crossOrigin="anonymous"
           />
         </Head>
-        <body>
+        <body style={{backgroundColor: '#08011c'}}>
           <Main />
           <NextScript />
           <script

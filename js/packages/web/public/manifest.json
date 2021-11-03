@@ -3,8 +3,8 @@
   "short_name": "COTD Home",
   "display": "standalone",
   "start_url": "./",
-  "theme_color": "#002140",
-  "background_color": "#001529",
+  "theme_color": "#0e0232",
+  "background_color": "#08011c",
   "icons": [
     {
       "src": "/favicon-16x16.png",
