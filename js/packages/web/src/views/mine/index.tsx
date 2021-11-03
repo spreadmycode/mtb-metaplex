@@ -56,12 +56,13 @@ export const MineView = () => {
             </Button>
             <Content style={{ display: 'flex', flexWrap: 'wrap' }}>
                 <Row style={{ width: '100%', marginTop: 10 }} justify="center" align="middle">
-                    {(!items || items.length == 0) &&
+                    {(!items || items.length == 0) ?
                         <h6 className="text-center text-white m-5">You have no COTD.</h6>
+                        :
+                        <Col>
+                            {artworkGrid}
+                        </Col>
                     }
-                    <Col>
-                        {artworkGrid}
-                    </Col>
                 </Row>
             </Content>
         </Layout>

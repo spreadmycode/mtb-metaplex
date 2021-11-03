@@ -180,40 +180,6 @@ export const LandingView = () => {
             <section className="banner c-container toppadding" id="cotds">
                 <div className="row align-items-center banner-image__inner wow fadeInLeft imageAnimationSection">
                     <img className="w-100 imageAnimation" src="/images/image-01.png" alt=""/>
-
-                    {/* <div className="col-md-6 wow fadeInRight">
-                        <h2 className="text-center text-white font-calibri mt-md-0 mt-5">About COTD</h2>
-                        <h4 className="text-white text-center font-calibri mt-md-2 ">Child Of The Dice is new project</h4>
-                        <h4 className="text-white text-center font-calibri mt-md-2 text-nowrap">who want be able to help childrens who needs</h4>
-                        <h4 className="text-white text-center font-calibri mt-md-2 ">thanks to charity donations.</h4>
-                        
-                        
-                        {wallet.connected && wallet.publicKey?.toBase58() == OWNER_WALLET &&
-                            <Link to={`/art/create`} className="button-inner-01 button btn-padding mt-4">
-                                <img src="/images/dice.png" alt=""/>
-                                <h3 className="text-black font-chiller font-weight-bold ml-3 mb-0">MINT COTD TO BE ALIVE</h3>
-                            </Link>
-                        }
-                        
-                        <div className="minting-inner mx-auto mt-md-5 mt-4 w-24em">
-                            <div className="bg-white">
-                                <h3 className="text-black px-2 font-chiller mb-1 pt-6">11%</h3>
-                            </div>
-                            <div className="text-center w-75">
-                                <h3 className="font-chiller text-center text-white mb-1">Minting</h3>
-                            </div>
-                        </div>
-                        <div className="mt-md-5 mt-4 d-flex justify-content-center">
-                            <a href="" className="button-inner-01 button btn-padding">
-                                <img src="/images/discord_black_icon.png" alt=""/>
-                                <h3 className="text-black font-chiller font-weight-bold ml-3 mb-0">Discord</h3>
-                            </a>
-                            <a href="" className="button-inner-01 button btn-padding">
-                                <img src="/images/twitter_black_icon.png" alt=""/>
-                                <h3 className="text-black font-chiller font-weight-bold ml-3 mb-0">Twitter</h3>
-                            </a>
-                        </div>
-                    </div> */}
                 </div>
                 
                 {/* Artwork */}
