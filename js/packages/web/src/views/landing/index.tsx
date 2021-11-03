@@ -6,8 +6,9 @@ import { useWallet } from '@solana/wallet-adapter-react';
 import { OWNER_WALLET } from '../../constants';
 import { Link } from 'react-router-dom';
 import Linkage from 'next/link';
+import useWindowDimensions from '../../utils/layout';
 import {
-    UnorderedListOutlined,
+    MenuOutlined,
     FileImageOutlined,
     WalletOutlined,
     CloseOutlined
@@ -20,6 +21,7 @@ export const LandingView = () => {
   const { setVisible } = useWalletModal();
   const [menuView, setMenuView] = useState(false);
   const open = useCallback(() => setVisible(true), [setVisible]);
+  const { width } = useWindowDimensions();
 
   const handleChangeWallet = useCallback(
     () => (wallet ? disconnect().catch(() => {}) : open()),
@@ -107,29 +109,28 @@ export const LandingView = () => {
   return (
     <Layout>   
         <Row style={{padding: '10px 10%'}}>
-            <Col xl={8} xs={12}>
-                <Row style={{marginTop: 15}}>
+            <Col span={8}>
+                <Row style={{marginTop: 10}}>
                     <Link to="/">
-                        <Col span={12}><img src={'/images/logo.png'} /></Col>
+                        <Col xl={16} xs={20}><img src={'/images/logo.png'} /></Col>
                     </Link>
-                    <Col span={12}></Col>
+                    <Col xl={8} xs={4}></Col>
                 </Row>
-                
             </Col>
-            <Col xl={8} xs={0}>
+            <Col span={8}>
                 <Row>
-                    <Col span={6}></Col>
-                    <Col span={12}><img src={'/images/brand.png'} /></Col>
-                    <Col span={6}></Col>
+                    <Col xl={7} xs={5}></Col>
+                    <Col xl={10} xs={14}><img src={'/images/brand.png'} /></Col>
+                    <Col xl={7} xs={5}></Col>
                 </Row>
             </Col>
-            <Col xl={8} xs={12}>
+            <Col span={8}>
                 <Row>
                     <Col style={{margin: '10px 0 0 auto'}}>
                         <Space>
                             <Button type={connected ? "ghost" : "text"} shape="round" size="middle" onClick={handleChangeWallet}>{connected ? shortenAddress(publicKey?.toBase58() || '', 4) : 'Connect'}</Button>
                             <Dropdown overlay={sp_menu} trigger={['click']} onVisibleChange={handleMenuToggle}>
-                                <Button type="text" shape="circle" size="middle" onClick={handleMenuToggle} icon={menuView ? <CloseOutlined /> : <UnorderedListOutlined />} />
+                                <Button type="text" shape="circle" size="middle" onClick={handleMenuToggle} icon={menuView ? <CloseOutlined /> : <MenuOutlined />} />
                             </Dropdown>
                         </Space>
                     </Col>
@@ -140,14 +141,19 @@ export const LandingView = () => {
 
         <Row>
             <Col span={24} style={{marginTop: 60}}>
-                <h5 className="text-center">Auction start every Tuesday and Friday at 6pm UTC.</h5>
-                <h6 className="text-center" style={{marginTop: "10px"}}>Launching 10 COTD per week via @holaplex</h6>
+                <h4 className="text-center" style={width > 768 ? {fontSize: 20} : {padding: '5px 20px', fontSize: 14}}>Auction start every Tuesday and Friday at 6pm UTC.</h4>
+                <h5 className="text-center" style={width > 768 ? {fontSize: 18, marginTop: "10px"} : {fontSize: 12, marginTop: "10px", padding: '5px 20px'}}>Launching 10 COTD per week via @holaplex</h5>
                 <div style={{width: "fit-content", margin: "30px auto"}}>
-                    <Button type="default" style={{borderRadius: 8, width: 280, height: 60}}><span style={{fontSize: 20}}>LIVE AUCTION</span></Button>
+                    <Button type="default" style={width > 768 ? {borderRadius: 8, width: 280, height: 60, fontSize: 20} : {borderRadius: 8, width: 200, height: 40, fontSize: 14}}>
+                        <span>LIVE AUCTION</span>
+                    </Button>
                 </div>
                 <div style={{width: "fit-content", margin: "30px auto"}}>
-                    <Button type="default" style={{borderRadius: 8, width: 260, height: 50}}>
-                        <Space><img src={'/images/head_discord.png'} width={20} height={15} /><span>JOIN OUR DISCORD</span></Space>
+                    <Button type="default" style={width > 768 ? {borderRadius: 8, width: 260, height: 50, fontSize: 18} : {borderRadius: 8, width: 180, height: 30, fontSize: 12}}>
+                        <Space>
+                            <img src={'/images/head_discord.png'} width={width > 768 ? 20 : 15} height={width > 768 ? 15 : 10} />
+                            <span>JOIN OUR DISCORD</span>
+                        </Space>
                     </Button>
                 </div>
             </Col>
