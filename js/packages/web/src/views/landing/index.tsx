@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Menu, Dropdown, Button, Layout, BackTop, Row, Col, Space } from 'antd';
+import { Menu, Dropdown, Button, Layout, BackTop, Row, Col, Space, Carousel } from 'antd';
 import React, { useCallback, useState } from 'react';
 import { ConnectButton, useWalletModal, shortenAddress, CurrentUserBadge } from '@oyster/common';
 import { useWallet } from '@solana/wallet-adapter-react';
@@ -13,7 +13,6 @@ import {
     WalletOutlined,
     CloseOutlined
 } from '@ant-design/icons';
-const { Header, Footer, Sider, Content } = Layout;
 
 export const LandingView = () => {
 
@@ -22,6 +21,7 @@ export const LandingView = () => {
   const [menuView, setMenuView] = useState(false);
   const open = useCallback(() => setVisible(true), [setVisible]);
   const { width } = useWindowDimensions();
+  const [carouselIndex, setCarouselIndex] = useState<number>(0);
 
   const handleChangeWallet = useCallback(
     () => (wallet ? disconnect().catch(() => {}) : open()),
@@ -31,6 +31,10 @@ export const LandingView = () => {
   const handleMenuToggle = () => {
         const view = !menuView;
         setMenuView(view);
+  }
+
+  const onCarouselChanged = (prev: number, next: number) => {
+    setCarouselIndex(next);
   }
 
   const sp_menu = (
@@ -52,22 +56,22 @@ export const LandingView = () => {
             </Linkage>
         </Menu.Item>
         <Menu.Item>
-            <Linkage href="/#about">
+            <Linkage href="/#roadmap">
                 <h6 className="text-center">BENEFITS  ROADMAP</h6>
             </Linkage>
         </Menu.Item>
         <Menu.Item>
-            <Linkage href="/#about">
+            <Linkage href="/#gallery">
                 <h6 className="text-center">GALLERY</h6>
             </Linkage>
         </Menu.Item>
         <Menu.Item>
-            <Linkage href="/#about">
+            <Linkage href="/#marketplace">
                 <h6 className="text-center">MARKETPLACE</h6>
             </Linkage>
         </Menu.Item>
         <Menu.Item>
-            <Linkage href="/#about">
+            <Linkage href="/#faq">
                 <h6 className="text-center">FAQ'S</h6>
             </Linkage>
         </Menu.Item>
@@ -106,9 +110,9 @@ export const LandingView = () => {
             <Col span={8}>
                 <Row style={{marginTop: 10}}>
                     <Link to="/">
-                        <Col xl={16} xs={22}><img src={'/images/logo.png'} /></Col>
+                        <Col xl={16} xs={24}><img src={'/images/logo.png'} /></Col>
                     </Link>
-                    <Col xl={8} xs={2}></Col>
+                    <Col xl={8} xs={0}></Col>
                 </Row>
             </Col>
             <Col span={8}>
@@ -152,6 +156,68 @@ export const LandingView = () => {
                 </div>
             </Col>
         </Row>
+
+        <Row style={width > 768 ? {width: '60%', margin: "80px auto"} : {width: '80%', margin: "30px auto"}}>
+            <Col xl={12} xs={24}>
+                <h3 className="text-blue">1,000 unique Childs</h3>
+                <h4 className="text-white">who need a family.</h4>
+                <br />
+                <p className="text-white">Child Of The Dice is an unique and original hand drawn collection created by a team of experienced artists.</p>
+                <br />
+                <p className="text-white">Each artwork is full drawn manually, our purpose is to give something unique and original with a story behind each child created.</p>
+                <br />
+                <p className="text-white">Take care of the child that you own because the supply is limited to 1,000 NFTs</p>
+            </Col>
+            <Col xl={12} xs={24}>
+                <div style={width > 768 ? {width: '70%', margin: '0 auto'} : {width: '50%', margin: '10px auto'}}>
+                    <img src={'/images/overview.png'} />
+                </div>
+            </Col>
+        </Row>
+
+        <div>
+            <Carousel
+                slidesToShow={width > 1024 ? 5 : 3}
+                centerMode={true}
+                centerPadding={'20px'}
+                draggable={true}
+                swipeToSlide={true}
+                touchThreshold={50}
+                focusOnSelect={true}
+                dotPosition={'bottom'}
+                autoplay={true}
+                beforeChange={onCarouselChanged}
+                adaptiveHeight={true}
+            >
+                <div>
+                    <img src={'/images/carousel/1.png'} style={carouselIndex == 0 ? {width: `${width/3}px`} : {padding: '10px', width: `${(width/3) * 0.9}px`}} />
+                </div>
+                <div>
+                    <img src={'/images/carousel/2.png'} style={carouselIndex == 1 ? {width: `${width/3}px`} : {padding: '10px', width: `${(width/3) * 0.9}px`}} />
+                </div>
+                <div>
+                    <img src={'/images/carousel/3.png'} style={carouselIndex == 2 ? {width: `${width/3}px`} : {padding: '10px', width: `${(width/3) * 0.9}px`}} />
+                </div>
+                <div>
+                    <img src={'/images/carousel/4.png'} style={carouselIndex == 3 ? {width: `${width/3}px`} : {padding: '10px', width: `${(width/3) * 0.9}px`}} />
+                </div>
+                <div>
+                    <img src={'/images/carousel/5.png'} style={carouselIndex == 4 ? {width: `${width/3}px`} : {padding: '10px', width: `${(width/3) * 0.9}px`}} />
+                </div>
+                <div>
+                    <img src={'/images/carousel/6.png'} style={carouselIndex == 5 ? {width: `${width/3}px`} : {padding: '10px', width: `${(width/3) * 0.9}px`}} />
+                </div>
+                <div>
+                    <img src={'/images/carousel/7.png'} style={carouselIndex == 6 ? {width: `${width/3}px`} : {padding: '10px', width: `${(width/3) * 0.9}px`}} />
+                </div>
+                <div>
+                    <img src={'/images/carousel/8.png'} style={carouselIndex == 7 ? {width: `${width/3}px`} : {padding: '10px', width: `${(width/3) * 0.9}px`}} />
+                </div>
+                <div>
+                    <img src={'/images/carousel/9.png'} style={carouselIndex == 8 ? {width: `${width/3}px`} : {padding: '10px', width: `${(width/3) * 0.9}px`}} />
+                </div>
+            </Carousel>
+        </div>
     </Layout>
   );
 };
