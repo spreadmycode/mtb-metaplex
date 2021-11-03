@@ -31,12 +31,6 @@ export const LandingView = () => {
   const handleMenuToggle = () => {
         const view = !menuView;
         setMenuView(view);
-
-        if (view) {
-
-        } else {
-
-        }
   }
 
   const sp_menu = (
@@ -112,9 +106,9 @@ export const LandingView = () => {
             <Col span={8}>
                 <Row style={{marginTop: 10}}>
                     <Link to="/">
-                        <Col xl={16} xs={20}><img src={'/images/logo.png'} /></Col>
+                        <Col xl={16} xs={22}><img src={'/images/logo.png'} /></Col>
                     </Link>
-                    <Col xl={8} xs={4}></Col>
+                    <Col xl={8} xs={2}></Col>
                 </Row>
             </Col>
             <Col span={8}>
