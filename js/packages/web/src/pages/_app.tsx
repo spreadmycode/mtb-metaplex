@@ -15,7 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Child of the Dice</title>
       </Head>
-      <div id="root" style={{backgroundColor: '#08011c'}}>
+      <div id="root">
         <ApolloProvider client={apolloClient}>
           <Component {...pageProps} />
         </ApolloProvider>

@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Menu, Dropdown, Button, Layout, BackTop, Row, Col, Space, Carousel } from 'antd';
+import { Menu, Dropdown, Button, Layout, BackTop, Row, Col, Space, Carousel, Collapse } from 'antd';
 import React, { useCallback, useState } from 'react';
 import { ConnectButton, useWalletModal, shortenAddress, CurrentUserBadge } from '@oyster/common';
 import { useWallet } from '@solana/wallet-adapter-react';
@@ -13,6 +13,8 @@ import {
     WalletOutlined,
     CloseOutlined
 } from '@ant-design/icons';
+
+const { Panel } = Collapse;
 
 export const LandingView = () => {
 
@@ -35,6 +37,10 @@ export const LandingView = () => {
 
   const onCarouselChanged = (prev: number, next: number) => {
     setCarouselIndex(next);
+  }
+
+  const onCollapseChanged = (key) => {
+      console.log(key);
   }
 
   const sp_menu = (
@@ -61,9 +67,9 @@ export const LandingView = () => {
             </Linkage>
         </Menu.Item>
         <Menu.Item>
-            <Linkage href="/#gallery">
+            <Link to="/gallery">
                 <h6 className="text-center">GALLERY</h6>
-            </Linkage>
+            </Link>
         </Menu.Item>
         <Menu.Item>
             <Linkage href="/#marketplace">
@@ -78,21 +84,21 @@ export const LandingView = () => {
         <Row>
             <div style={{width: 'fit-content', margin: '20px auto 10px auto'}}>
                 <Space>
-                    <Link to="https://instagram.com/cotd" target="_blank">
+                    <a href="https://instagram.com/cotd" target="_blank">
                         <Button type="ghost" style={{width: 30, height: 30, padding: 2}}>
                             <img src={'/images/head_instagram.png'} width={15} height={15} />
                         </Button>
-                    </Link>
-                    <Link to="https://twitter.com/cotd" target="_blank">
+                    </a>
+                    <a href="https://twitter.com/cotd" target="_blank">
                         <Button type="ghost" style={{width: 30, height: 30, padding: 2}}>
                             <img src={'/images/head_twitter.png'} width={15} height={15} />
                         </Button>
-                    </Link>
-                    <Link to="https://discord.com/cotd" target="_blank">
+                    </a>
+                    <a href="https://discord.com/cotd" target="_blank">
                         <Button type="ghost" style={{width: 30, height: 30, padding: 2}}>
                             <img src={'/images/head_discord.png'} width={15} height={15} />
                         </Button>
-                    </Link>
+                    </a>
                 </Space>
             </div>
         </Row>
@@ -243,6 +249,235 @@ export const LandingView = () => {
                 <h5 className="text-white" style={{marginTop: '20px'}}>CELESTIAL</h5>
                 <br />
                 <p className="text-white">Specifics childs with extraordinary wisdom and intelligence is in charge of the most important decisions of the childs planet. They decide on goals and priorities. They have uncommon insight and experience, and make the most crucial and difficult decisions. They decide when and if the children should intervene in any event. Their decisions are so complex that they are sometimes understood centruies later. For example, allowing a malevolent species to cononise a planet with a benevolent and harmless native species. It was carnage at first but it turned out that over time this harmless species, has successfully adaptedand developed a defence system that repels the colonising species and offers them protection for the future, allowing them to evolve and prosper in peace.</p>
+            </Col>
+        </Row>
+
+        <Row style={width > 768 ? {width: '70%', margin: "100px auto 80px auto"} : {width: '90%', margin: "100px auto 60px auto"}} id="roadmap">
+            <Col xl={12} xs={24}>
+                <h4 className="text-white">Benefits & Roadmap</h4>
+                <br />
+                <p className="text-white">The goal behind Child Of The Dice is to create an friendly, open and inclusive community centered around NFT artwork. Through Charity eveents and the eclectic community, Child Of The Dice will be able to help children in need. The need to advocate for children's illness has become more apparent in recent years and thus, Child Of The Dice was born.</p>
+            </Col>
+            <Col xl={12} xs={0} />
+            <Row style={{margin: '100px 0 0 0', width: '100%'}}>
+                <Col span={6}>
+                    <div style={{width: '80%'}}>
+                        <img src={'/images/roadmap1.png'} />
+                    </div>
+                </Col>
+                <Col span={18} style={{alignItems: 'center', display: 'flex'}}>
+                    <div>
+                        <h5 className="text-blue">Owner of an unique piece.</h5>
+                        <p className="text-white">You own an unique artwork with an original story.</p>
+                    </div>
+                </Col>
+            </Row>
+            <Row style={{margin: '100px 0 0 0', width: '100%'}}>
+                <Col span={6}>
+                    <div style={{width: '80%'}}>
+                        <img src={'/images/roadmap2.png'} />
+                    </div>
+                </Col>
+                <Col span={18} style={{alignItems: 'center', display: 'flex'}}>
+                    <div>
+                        <h5 className="text-blue">Supply of the collection</h5>
+                        <p className="text-white">Only 1,000 COTDs will be available.</p>
+                    </div>
+                </Col>
+            </Row>
+            <Row style={{margin: '100px 0 0 0', width: '100%'}}>
+                <Col span={6}>
+                    <div style={{width: '80%'}}>
+                        <img src={'/images/roadmap3.png'} />
+                    </div>
+                </Col>
+                <Col span={18} style={{alignItems: 'center', display: 'flex'}}>
+                    <div>
+                        <h5 className="text-blue">Charity Partners</h5>
+                        <p className="text-white">We'll be donating 10% generated from sales to childrens charites.</p>
+                    </div>
+                </Col>
+            </Row>
+            <Row style={{margin: '100px 0 0 0', width: '100%'}}>
+                <Col span={6}>
+                    <div style={{width: '80%'}}>
+                        <img src={'/images/roadmap4.png'} />
+                    </div>
+                </Col>
+                <Col span={18} style={{alignItems: 'center', display: 'flex'}}>
+                    <div>
+                        <h5 className="text-blue">Child of The Dice x Artists</h5>
+                        <p className="text-white">Open collaborations with other artists.</p>
+                    </div>
+                </Col>
+            </Row>
+            <Row style={{margin: '100px 0 0 0', width: '100%'}}>
+                <Col span={6}>
+                    <div style={{width: '80%'}}>
+                        <img src={'/images/roadmap5.png'} />
+                    </div>
+                </Col>
+                <Col span={18} style={{alignItems: 'center', display: 'flex'}}>
+                    <div>
+                        <h5 className="text-blue">Development of Cartoon</h5>
+                        <p className="text-white">Launch of COTD Cartoon</p>
+                    </div>
+                </Col>
+            </Row>
+            <Row style={{margin: '100px 0 0 0', width: '100%'}}>
+                <Col span={6}>
+                    <div style={{width: '80%'}}>
+                        <img src={'/images/roadmap6.png'} />
+                    </div>
+                </Col>
+                <Col span={18} style={{alignItems: 'center', display: 'flex'}}>
+                    <div>
+                        <h5 className="text-blue">Community wallet</h5>
+                        <p className="text-white">A community wallet will be set with 8% of the sales.</p>
+                    </div>
+                </Col>
+            </Row>
+        </Row>
+
+        <Row style={width > 768 ? {width: '70%', margin: "100px auto 80px auto"} : {width: '90%', margin: "100px auto 60px auto"}} id="faq">
+            <Col span={24} style={{marginBottom: '20px'}}>
+                <h4 className="text-white text-center">FAQ's</h4>
+            </Col>
+            <Col span={24}>
+                <Collapse
+                    style={{width: '100%'}}
+                    onChange={onCollapseChanged}
+                    expandIconPosition={'right'}>
+                    <Panel header="How can I buy a COTD?" key="1">
+                        <div>This is dummy text. This is dummy text. This is dummy text. This is dummy text.</div>
+                    </Panel>
+                    <Panel header="When the auctions are open?" key="2">
+                        <div>This is dummy text. This is dummy text. This is dummy text. This is dummy text.</div>
+                    </Panel>
+                    <Panel header="Is there a limit?" key="3">
+                        <div>This is dummy text. This is dummy text. This is dummy text. This is dummy text.</div>
+                    </Panel>
+                    <Panel header="How rare is my COTD?" key="4">
+                        <div>This is dummy text. This is dummy text. This is dummy text. This is dummy text.</div>
+                    </Panel>
+                    <Panel header="Will there be a secondary marketplace?" key="5">
+                        <div>This is dummy text. This is dummy text. This is dummy text. This is dummy text.</div>
+                    </Panel>
+                    <Panel header="Are there secondary sale royalties?" key="7">
+                        <div>This is dummy text. This is dummy text. This is dummy text. This is dummy text.</div>
+                    </Panel>
+                    <Panel header="Do I own the COTD after purchasing?" key="8">
+                        <div>This is dummy text. This is dummy text. This is dummy text. This is dummy text.</div>
+                    </Panel>
+                </Collapse>
+            </Col>
+        </Row>
+
+        <Row style={width > 768 ? {width: '70%', margin: "20px auto"} : {width: '90%', margin: "10px auto"}} id="cooperation">
+            <Col span={24}>
+                <h4 className="text-white text-center">In Cooperation with</h4>
+            </Col>
+            <Col span={24}>
+                <Row style={{padding: '20px'}}>
+                    <Col xl={8} xs={24} style={{marginTop: '20px'}}>
+                        <img src={'/images/team1.png'} style={{padding: '10px'}} />
+                        <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@SOLBigBrain</p>
+                        <Row>
+                            <Col span={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                <a href='https://twitter.com/cotd' target="_blank">
+                                    <img src={'/images/head_twitter.png'} width={20} height={20} style={{margin: '5px'}} />
+                                </a>
+                            </Col>
+                        </Row>
+                    </Col>
+                    <Col xl={8} xs={24} style={{marginTop: '20px'}}>
+                        <img src={'/images/team2.png'} style={{padding: '10px'}} />
+                        <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@SOLBigBrain</p>
+                        <Row>
+                            <Col span={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                <a href='https://twitter.com/cotd' target="_blank">
+                                    <img src={'/images/head_twitter.png'} width={20} height={20} style={{margin: '5px'}} />
+                                </a>
+                                <a href='https://instagram.com/cotd' target="_blank">
+                                    <img src={'/images/head_instagram.png'} width={20} height={20} style={{margin: '5px'}} />
+                                </a>
+                            </Col>
+                        </Row>
+                    </Col>
+                    <Col xl={8} xs={24} style={{marginTop: '20px'}}>
+                        <img src={'/images/team3.png'} style={{padding: '10px'}} />
+                        <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@SOLBigBrain</p>
+                        <Row>
+                            <Col span={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                <a href='https://instagram.com/cotd' target="_blank">
+                                    <img src={'/images/head_instagram.png'} width={20} height={20} style={{margin: '5px'}} />
+                                </a>
+                            </Col>
+                        </Row>
+                    </Col>
+                </Row>
+            </Col>
+        </Row>
+
+        <Row className="footer-bar">
+            <Col style={width > 768 ? {width: '70%', margin: "60px auto 0 auto"} : {width: '90%', margin: "40px auto 0 auto"}} id="footer">
+                <Row>
+                    <Col xl={8} xs={24} style={width > 768 ? {} : {display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <div>
+                            <p className="text-white mb-3">JOIN US ON</p>
+                            <Button type="default" style={{width: "200px", height: "40px", display: 'block', marginBottom: '10px'}}>
+                                <Space>
+                                    <img src={'/images/head_twitter.png'} width={15} height={15} />
+                                    <span>TWITTER</span>
+                                </Space>
+                            </Button>
+                            <Button type="default" style={{width: "200px", height: "40px", display: 'block', marginBottom: '10px'}}>
+                                <Space>
+                                    <img src={'/images/head_discord.png'} width={15} height={15} />
+                                    <span>DISCORD</span>
+                                </Space>
+                            </Button>
+                            <Button type="default" style={{width: "200px", height: "40px", display: 'block', marginBottom: '10px'}}>
+                                <Space>
+                                    <img src={'/images/head_instagram.png'} width={15} height={15} />
+                                    <span>INSTAGRAM</span>
+                                </Space>
+                            </Button>
+                        </div>
+                    </Col>
+                    <Col xl={8} xs={0}>
+                        <div style={{width: '100%', height: '100%', display: 'flex'}}>
+                            <div style={{width: 'fit-content', margin: 'auto', textAlign: 'center'}}>
+                                <Link to="/">
+                                    <img src={'/images/logo.png'} width={'70%'} />
+                                </Link>
+                            </div>
+                        </div>
+                    </Col>
+                    <Col xl={8} xs={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <div>
+                            <br />
+                            <Button type="text" size="small" style={{display: 'block'}}>
+                                ABOUT
+                            </Button>
+                            <Button type="text" size="small" style={{display: 'block'}}>
+                                BENEFITS AND ROADMAP
+                            </Button>
+                            <Button type="text" size="small" style={{display: 'block'}}>
+                                GALLERY
+                            </Button>
+                            <Button type="text" size="small" style={{display: 'block'}}>
+                                MARKETPLACE
+                            </Button>
+                            <Button type="text" size="small" style={{display: 'block'}}>
+                                FAQ
+                            </Button>
+                        </div>
+                    </Col>
+                </Row>
+                <Row>
+                    <p className="text-white text-center mt-5">© Child Of The Dice. All Rights Reserved 2021</p>
+                </Row>
             </Col>
         </Row>
     </Layout>

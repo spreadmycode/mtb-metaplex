@@ -13,6 +13,45 @@
     src: local('Calibri'), url('../../public/font/Calibri.ttf') format('truetype');
 }
 
+.mtb-container {
+    background: url('../../public/images/background.jpg') repeat-y;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    background-color: '#08011c';
+}
+
+.ant-collapse-content-box, .ant-collapse-content, .ant-collapse-content-active {
+    background-color: transparent;
+}
+
+.ant-collapse, .ant-collapse-icon-position-right {
+    background-color: transparent;
+    border: 0;
+}
+
+.ant-collapse > .ant-collapse-item {
+    border-bottom: solid 1px #00acfb;
+}
+
+.ant-collapse-item {
+    border: solid 1px #00acfb;
+    border-radius: 8px;
+    margin: 8px auto;
+}
+
+.ant-collapse > .ant-collapse-item:last-child, .ant-collapse > .ant-collapse-item:last-child > .ant-collapse-header {
+    border-radius: 8px;
+}
+
+.ant-collapse-header {
+    font-weight: 500;
+    font-size: 14px;
+}
+
 .font-calibri {
     font-family: "Calibri" !important;
 }
@@ -22,7 +61,7 @@
 }
 
 p {
-    font-weight: lighter !important;
+    font-weight: 100 !important;
     font-size: small;
 }
 
@@ -320,13 +359,15 @@ a:hover {
 /* border style */
 
 
-/* footer */
+/* footer-bar */
 
-footer {
-    padding: 3vw 0;
+.footer-bar {
+    background-color: #091131aa;
+    width: 100%;
+    padding: 10px;
 }
 
-/* footer */
+/* footer-bar */
 
 
 
