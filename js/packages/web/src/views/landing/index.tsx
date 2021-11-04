@@ -120,18 +120,18 @@ export const LandingView = () => {
             <div style={{width: 'fit-content', margin: '20px auto 10px auto'}}>
                 <Space>
                     <a href="https://instagram.com/cotd" target="_blank">
-                        <Button type="ghost" style={{width: 30, height: 30, padding: 2}}>
-                            <img src={'/images/head_instagram.png'} width={15} height={15} />
+                        <Button type="ghost" style={{width: 35, height: 35, padding: 2, borderRadius: 0}}>
+                            <img src={'/images/head_instagram.png'} width={20} height={20} />
                         </Button>
                     </a>
                     <a href="https://twitter.com/cotd" target="_blank">
-                        <Button type="ghost" style={{width: 30, height: 30, padding: 2}}>
-                            <img src={'/images/head_twitter.png'} width={15} height={15} />
+                        <Button type="ghost" style={{width: 35, height: 35, padding: 2, borderRadius: 0}}>
+                            <img src={'/images/head_twitter.png'} width={20} height={20} />
                         </Button>
                     </a>
                     <a href="https://discord.com/cotd" target="_blank">
-                        <Button type="ghost" style={{width: 30, height: 30, padding: 2}}>
-                            <img src={'/images/head_discord.png'} width={15} height={15} />
+                        <Button type="ghost" style={{width: 35, height: 35, padding: 2, borderRadius: 0}}>
+                            <img src={'/images/head_discord.png'} width={20} height={20} />
                         </Button>
                     </a>
                 </Space>
@@ -196,7 +196,7 @@ export const LandingView = () => {
                     <div style={{width: "fit-content", margin: "30px auto"}}>
                         <Button type="default" style={width > 768 ? {borderRadius: 8, width: 260, height: 50, fontSize: 18} : {borderRadius: 8, width: 180, height: 30, fontSize: 12}}>
                             <Space>
-                                <img src={'/images/head_discord.png'} width={width > 768 ? 20 : 15} height={width > 768 ? 15 : 10} />
+                                <img src={'/images/head_discord.png'} width={width > 768 ? 25 : 20} height={width > 768 ? 25 : 20} />
                                 <span>JOIN OUR DISCORD</span>
                             </Space>
                         </Button>
