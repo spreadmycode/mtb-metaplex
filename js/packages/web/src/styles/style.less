@@ -14,14 +14,7 @@
 }
 
 .mtb-container {
-    background: linear-gradient(0deg, #08011cee, #08011cee), url('../../public/images/background.png') repeat-y;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    width: 100%;
-    height: auto;
-    background-color: '#08011c';
+    background-color:#08011c;
 }
 
 .ant-collapse-content-box, .ant-collapse-content, .ant-collapse-content-active {
@@ -62,7 +55,23 @@
 
 p {
     font-weight: 100 !important;
-    font-size: small;
+    font-size: small !important;
+    z-index: 2 !important;
+}
+
+.background {
+    background:  linear-gradient(0deg, #08011cee, #08011cee), url('../../public/images/backgrounds/total.jpg') repeat-y;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.moving-image {
+    position: absolute;
+    right: 0;
+    top: 28%;
+    transition: all 2s;
 }
 
 h1,
