@@ -157,7 +157,7 @@ export const LandingView = () => {
             </Col>
         </Row>
 
-        <Row style={width > 768 ? {width: '60%', margin: "80px auto"} : {width: '80%', margin: "30px auto"}}>
+        <Row style={width > 768 ? {width: '60%', margin: "80px auto"} : {width: '80%', margin: "30px auto"}} id="about">
             <Col xl={12} xs={24}>
                 <h3 className="text-blue">1,000 unique Childs</h3>
                 <h4 className="text-white">who need a family.</h4>
@@ -177,47 +177,75 @@ export const LandingView = () => {
 
         <div>
             <Carousel
-                slidesToShow={width > 1024 ? 5 : 3}
+                slidesToShow={3}
                 centerMode={true}
                 centerPadding={'20px'}
                 draggable={true}
                 swipeToSlide={true}
                 touchThreshold={50}
                 focusOnSelect={true}
-                dotPosition={'bottom'}
+                dots={{className: "dots"}}
                 autoplay={true}
                 beforeChange={onCarouselChanged}
-                adaptiveHeight={true}
-            >
+                adaptiveHeight={true}>
                 <div>
-                    <img src={'/images/carousel/1.png'} style={carouselIndex == 0 ? {width: `${width/3}px`} : {padding: '10px', width: `${(width/3) * 0.9}px`}} />
+                    <img src={'/images/carousel/1.jpg'} style={carouselIndex == 0 ? {width: `${(width/3) * 1.4}px`} : {padding: `${(width/3) * 0.05}px`, width: `${(width/3) * 1.2}px`}} />
                 </div>
                 <div>
-                    <img src={'/images/carousel/2.png'} style={carouselIndex == 1 ? {width: `${width/3}px`} : {padding: '10px', width: `${(width/3) * 0.9}px`}} />
+                    <img src={'/images/carousel/2.jpg'} style={carouselIndex == 1 ? {width: `${(width/3) * 1.4}px`} : {padding: `${(width/3) * 0.05}px`, width: `${(width/3) * 1.2}px`}} />
                 </div>
                 <div>
-                    <img src={'/images/carousel/3.png'} style={carouselIndex == 2 ? {width: `${width/3}px`} : {padding: '10px', width: `${(width/3) * 0.9}px`}} />
+                    <img src={'/images/carousel/3.jpg'} style={carouselIndex == 2 ? {width: `${(width/3) * 1.4}px`} : {padding: `${(width/3) * 0.05}px`, width: `${(width/3) * 1.2}px`}} />
                 </div>
                 <div>
-                    <img src={'/images/carousel/4.png'} style={carouselIndex == 3 ? {width: `${width/3}px`} : {padding: '10px', width: `${(width/3) * 0.9}px`}} />
+                    <img src={'/images/carousel/4.jpg'} style={carouselIndex == 3 ? {width: `${(width/3) * 1.4}px`} : {padding: `${(width/3) * 0.05}px`, width: `${(width/3) * 1.2}px`}} />
                 </div>
                 <div>
-                    <img src={'/images/carousel/5.png'} style={carouselIndex == 4 ? {width: `${width/3}px`} : {padding: '10px', width: `${(width/3) * 0.9}px`}} />
+                    <img src={'/images/carousel/5.jpg'} style={carouselIndex == 4 ? {width: `${(width/3) * 1.4}px`} : {padding: `${(width/3) * 0.05}px`, width: `${(width/3) * 1.2}px`}} />
                 </div>
                 <div>
-                    <img src={'/images/carousel/6.png'} style={carouselIndex == 5 ? {width: `${width/3}px`} : {padding: '10px', width: `${(width/3) * 0.9}px`}} />
+                    <img src={'/images/carousel/6.jpg'} style={carouselIndex == 5 ? {width: `${(width/3) * 1.4}px`} : {padding: `${(width/3) * 0.05}px`, width: `${(width/3) * 1.2}px`}} />
                 </div>
                 <div>
-                    <img src={'/images/carousel/7.png'} style={carouselIndex == 6 ? {width: `${width/3}px`} : {padding: '10px', width: `${(width/3) * 0.9}px`}} />
+                    <img src={'/images/carousel/7.jpg'} style={carouselIndex == 6 ? {width: `${(width/3) * 1.4}px`} : {padding: `${(width/3) * 0.05}px`, width: `${(width/3) * 1.2}px`}} />
                 </div>
                 <div>
-                    <img src={'/images/carousel/8.png'} style={carouselIndex == 7 ? {width: `${width/3}px`} : {padding: '10px', width: `${(width/3) * 0.9}px`}} />
+                    <img src={'/images/carousel/8.jpg'} style={carouselIndex == 7 ? {width: `${(width/3) * 1.4}px`} : {padding: `${(width/3) * 0.05}px`, width: `${(width/3) * 1.2}px`}} />
                 </div>
                 <div>
-                    <img src={'/images/carousel/9.png'} style={carouselIndex == 8 ? {width: `${width/3}px`} : {padding: '10px', width: `${(width/3) * 0.9}px`}} />
+                    <img src={'/images/carousel/9.jpg'} style={carouselIndex == 8 ? {width: `${(width/3) * 1.4}px`} : {padding: `${(width/3) * 0.05}px`, width: `${(width/3) * 1.2}px`}} />
                 </div>
             </Carousel>
         </div>
+
+        <Row style={width > 768 ? {width: '70%', margin: "100px auto 80px auto"} : {width: '90%', margin: "100px auto 60px auto"}} id="factions">
+            <Col span={6}>
+                <h4 className="text-white text-center">Factions</h4>
+            </Col>
+            <Col span={18} />
+            <Col span={6}>
+                <div style={{margin: '20px'}}>
+                    <img src={'/images/faction1.png'} />
+                </div>
+            </Col>
+            <Col span={18}>
+                <h5 className="text-white" style={{marginTop: '20px'}}>SURREALIST</h5>
+                <br />
+                <p className="text-white">As great power implies great responsibility, and with the knowledge of the existence of terrifying forces of evil, they have decided to use their power to spread goodwill well-being, and to erase the evil and its atrocities. They have decided to use their most powerful children to form a special faction, called Surrealist. This faction is made up of the most powerful and combat capable childs needed to keep the peace and drive out the bad guys, colonizing and murderous, dangerous and destructive species across the galaxy and the universe and its borders. As the name suggests, this faction is composed of childs, with the most extraordinary and amazing powers. They will fight battles in the farthest reaches of the universe and return victorious, or never return.</p>
+            </Col>
+            <Col span={24}><br /></Col>
+            <Col span={24}><br /></Col>
+            <Col span={6}>
+                <div style={{margin: '20px'}}>
+                    <img src={'/images/faction2.png'} />
+                </div>
+            </Col>
+            <Col span={18}>
+                <h5 className="text-white" style={{marginTop: '20px'}}>CELESTIAL</h5>
+                <br />
+                <p className="text-white">Specifics childs with extraordinary wisdom and intelligence is in charge of the most important decisions of the childs planet. They decide on goals and priorities. They have uncommon insight and experience, and make the most crucial and difficult decisions. They decide when and if the children should intervene in any event. Their decisions are so complex that they are sometimes understood centruies later. For example, allowing a malevolent species to cononise a planet with a benevolent and harmless native species. It was carnage at first but it turned out that over time this harmless species, has successfully adaptedand developed a defence system that repels the colonising species and offers them protection for the future, allowing them to evolve and prosper in peace.</p>
+            </Col>
+        </Row>
     </Layout>
   );
 };
