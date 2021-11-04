@@ -98,7 +98,7 @@ export const LandingView = () => {
         </Menu.Item>
         <Menu.Item>
             <Linkage href="/#roadmap">
-                <h6 className="text-center">BENEFITS  ROADMAP</h6>
+                <h6 className="text-center">BENEFITS AND ROADMAP</h6>
             </Linkage>
         </Menu.Item>
         <Menu.Item>
@@ -148,9 +148,11 @@ export const LandingView = () => {
   return (
     <Layout>
         <div className="background">
-            <div className="moving-image" style={{transform: `translate3d(0px, ${movingImageYPos}%, 0px)`, zIndex: 1}}>
-                <img src={'/images/backgrounds/moving.png'} />
-            </div>
+            {(width > 768) && 
+                <div className="moving-image" style={{transform: `translate3d(0px, ${movingImageYPos}%, 0px)`, zIndex: 1}}>
+                    <img src={'/images/backgrounds/moving.png'} />
+                </div>
+            }
             <Row style={{padding: '10px 10%'}}>
                 <Col span={8}>
                     <Row style={{marginTop: 10}}>
@@ -463,24 +465,21 @@ export const LandingView = () => {
                         <Col xl={8} xs={24} style={width > 768 ? {} : {display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                             <div>
                                 <p className="text-white mb-3">JOIN US ON</p>
-                                <Button type="default" style={{width: "200px", height: "40px", display: 'block', marginBottom: '10px'}}>
-                                    <Space>
-                                        <img src={'/images/head_twitter.png'} width={15} height={15} />
-                                        <span>TWITTER</span>
-                                    </Space>
-                                </Button>
-                                <Button type="default" style={{width: "200px", height: "40px", display: 'block', marginBottom: '10px'}}>
-                                    <Space>
-                                        <img src={'/images/head_discord.png'} width={15} height={15} />
-                                        <span>DISCORD</span>
-                                    </Space>
-                                </Button>
-                                <Button type="default" style={{width: "200px", height: "40px", display: 'block', marginBottom: '10px'}}>
-                                    <Space>
-                                        <img src={'/images/head_instagram.png'} width={15} height={15} />
-                                        <span>INSTAGRAM</span>
-                                    </Space>
-                                </Button>
+                                <a href="https://twitter.com/cotd" target="_blank">
+                                    <Button type="default" style={{width: "200px", height: "40px", display: 'block', marginBottom: '10px'}}>
+                                        TWITTER
+                                    </Button>
+                                </a>
+                                <a href="https://discord.com/cotd" target="_blank">
+                                    <Button type="default" style={{width: "200px", height: "40px", display: 'block', marginBottom: '10px'}}>
+                                        DISCORD
+                                    </Button>
+                                </a>
+                                <a href="https://instagram.com/cotd" target="_blank">
+                                    <Button type="default" style={{width: "200px", height: "40px", display: 'block', marginBottom: '10px'}}>
+                                        INSTAGRAM
+                                    </Button>
+                                </a>
                             </div>
                         </Col>
                         <Col xl={8} xs={0}>
@@ -495,21 +494,31 @@ export const LandingView = () => {
                         <Col xl={8} xs={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                             <div>
                                 <br />
-                                <Button type="text" size="small" style={{display: 'block'}}>
-                                    ABOUT
-                                </Button>
-                                <Button type="text" size="small" style={{display: 'block'}}>
-                                    BENEFITS AND ROADMAP
-                                </Button>
-                                <Button type="text" size="small" style={{display: 'block'}}>
-                                    GALLERY
-                                </Button>
-                                <Button type="text" size="small" style={{display: 'block'}}>
-                                    MARKETPLACE
-                                </Button>
-                                <Button type="text" size="small" style={{display: 'block'}}>
-                                    FAQ
-                                </Button>
+                                <Linkage href="/#about">
+                                    <Button type="text" size="small" style={{display: 'block'}}>
+                                        ABOUT
+                                    </Button>
+                                </Linkage>
+                                <Linkage href="/#roadmap">
+                                    <Button type="text" size="small" style={{display: 'block'}}>
+                                        BENEFITS AND ROADMAP
+                                    </Button>
+                                </Linkage>
+                                <Link to="/gallery">
+                                    <Button type="text" size="small" style={{display: 'block'}}>
+                                        GALLERY
+                                    </Button>
+                                </Link>
+                                <Linkage href="/#marketplace">
+                                    <Button type="text" size="small" style={{display: 'block'}}>
+                                        MARKETPLACE
+                                    </Button>
+                                </Linkage>
+                                <Linkage href="/#faq">
+                                    <Button type="text" size="small" style={{display: 'block'}}>
+                                        FAQ
+                                    </Button>
+                                </Linkage>
                             </div>
                         </Col>
                     </Row>
