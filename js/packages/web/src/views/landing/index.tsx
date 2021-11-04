@@ -177,9 +177,8 @@ export const LandingView = () => {
 
         <div>
             <Carousel
-                slidesToShow={3}
+                slidesToShow={width > 768 ? 3 : 1}
                 centerMode={true}
-                centerPadding={'20px'}
                 draggable={true}
                 swipeToSlide={true}
                 touchThreshold={50}
@@ -189,31 +188,31 @@ export const LandingView = () => {
                 beforeChange={onCarouselChanged}
                 adaptiveHeight={true}>
                 <div>
-                    <img src={'/images/carousel/1.jpg'} style={carouselIndex == 0 ? {width: `${(width/3) * 1.4}px`} : {padding: `${(width/3) * 0.05}px`, width: `${(width/3) * 1.2}px`}} />
+                    <img src={'/images/carousel/1.jpg'} style={carouselIndex == 0 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                 </div>
                 <div>
-                    <img src={'/images/carousel/2.jpg'} style={carouselIndex == 1 ? {width: `${(width/3) * 1.4}px`} : {padding: `${(width/3) * 0.05}px`, width: `${(width/3) * 1.2}px`}} />
+                    <img src={'/images/carousel/2.jpg'} style={carouselIndex == 1 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                 </div>
                 <div>
-                    <img src={'/images/carousel/3.jpg'} style={carouselIndex == 2 ? {width: `${(width/3) * 1.4}px`} : {padding: `${(width/3) * 0.05}px`, width: `${(width/3) * 1.2}px`}} />
+                    <img src={'/images/carousel/3.jpg'} style={carouselIndex == 2 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                 </div>
                 <div>
-                    <img src={'/images/carousel/4.jpg'} style={carouselIndex == 3 ? {width: `${(width/3) * 1.4}px`} : {padding: `${(width/3) * 0.05}px`, width: `${(width/3) * 1.2}px`}} />
+                    <img src={'/images/carousel/4.jpg'} style={carouselIndex == 3 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                 </div>
                 <div>
-                    <img src={'/images/carousel/5.jpg'} style={carouselIndex == 4 ? {width: `${(width/3) * 1.4}px`} : {padding: `${(width/3) * 0.05}px`, width: `${(width/3) * 1.2}px`}} />
+                    <img src={'/images/carousel/5.jpg'} style={carouselIndex == 4 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                 </div>
                 <div>
-                    <img src={'/images/carousel/6.jpg'} style={carouselIndex == 5 ? {width: `${(width/3) * 1.4}px`} : {padding: `${(width/3) * 0.05}px`, width: `${(width/3) * 1.2}px`}} />
+                    <img src={'/images/carousel/6.jpg'} style={carouselIndex == 5 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                 </div>
                 <div>
-                    <img src={'/images/carousel/7.jpg'} style={carouselIndex == 6 ? {width: `${(width/3) * 1.4}px`} : {padding: `${(width/3) * 0.05}px`, width: `${(width/3) * 1.2}px`}} />
+                    <img src={'/images/carousel/7.jpg'} style={carouselIndex == 6 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                 </div>
                 <div>
-                    <img src={'/images/carousel/8.jpg'} style={carouselIndex == 7 ? {width: `${(width/3) * 1.4}px`} : {padding: `${(width/3) * 0.05}px`, width: `${(width/3) * 1.2}px`}} />
+                    <img src={'/images/carousel/8.jpg'} style={carouselIndex == 7 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                 </div>
                 <div>
-                    <img src={'/images/carousel/9.jpg'} style={carouselIndex == 8 ? {width: `${(width/3) * 1.4}px`} : {padding: `${(width/3) * 0.05}px`, width: `${(width/3) * 1.2}px`}} />
+                    <img src={'/images/carousel/9.jpg'} style={carouselIndex == 8 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                 </div>
             </Carousel>
         </div>
