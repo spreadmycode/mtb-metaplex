@@ -437,7 +437,7 @@ export const LandingView = () => {
                 <Col span={24}>
                     <Row style={{padding: '20px'}}>
                         <Col xl={6} xs={24} style={{marginTop: '20px', textAlign: 'center'}}>
-                            <img src={'/images/team1.png'} style={{padding: '10px'}} />
+                            <img src={'/images/team1.png'} width={width > 768 ? '90%' : '70%'} style={{padding: '10px'}} />
                             <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@SOLBigBrain</p>
                             <Row>
                                 <Col span={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
@@ -448,7 +448,7 @@ export const LandingView = () => {
                             </Row>
                         </Col>
                         <Col xl={6} xs={24} style={{marginTop: '20px', textAlign: 'center'}}>
-                            <img src={'/images/team2.png'} style={{padding: '10px'}} />
+                            <img src={'/images/team2.png'} width={width > 768 ? '90%' : '70%'} style={{padding: '10px'}} />
                             <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@Nakiwarai</p>
                             <Row>
                                 <Col span={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
@@ -462,7 +462,7 @@ export const LandingView = () => {
                             </Row>
                         </Col>
                         <Col xl={6} xs={24} style={{marginTop: '20px', textAlign: 'center'}}>
-                            <img src={'/images/team3.png'} style={{padding: '10px'}} />
+                            <img src={'/images/team3.png'} width={width > 768 ? '90%' : '70%'} style={{padding: '10px'}} />
                             <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@Alygator</p>
                             <Row>
                                 <Col span={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
@@ -473,7 +473,7 @@ export const LandingView = () => {
                             </Row>
                         </Col>
                         <Col xl={6} xs={24} style={{marginTop: '20px', textAlign: 'center'}}>
-                            <img src={'/images/team4.png'} style={{padding: '10px'}} />
+                            <img src={'/images/team4.png'} width={width > 768 ? '90%' : '70%'} style={{padding: '10px'}} />
                             <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@Redhotieh</p>
                             <Row>
                                 <Col span={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
