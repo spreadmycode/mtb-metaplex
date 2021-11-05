@@ -239,15 +239,17 @@ export const LandingView = () => {
             </Row>
         
             <Row style={width > 768 ? {width: '60%', margin: "80px auto"} : {width: '80%', margin: "30px auto"}} id="about">
-                <Col xl={12} xs={24}>
-                    <h3 className="text-blue">1,000 unique Childs</h3>
-                    <h4 className="text-white">who need a family.</h4>
-                    <br />
-                    <p className="text-white">Child Of The Dice is an unique and original hand drawn collection created by a team of experienced artists.</p>
-                    <br />
-                    <p className="text-white">Each artwork is full drawn manually, our purpose is to give something unique and original with a story behind each child created.</p>
-                    <br />
-                    <p className="text-white">Take care of the child that you own because the supply is limited to 1,000 NFTs</p>
+                <Col xl={12} xs={24} style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+                    <div style={{width: '100%'}}>
+                        <h3 className="text-blue">1,000 unique Childs</h3>
+                        <h4 className="text-white">who need a family.</h4>
+                        <br />
+                        <p className="text-white">Child Of The Dice is an unique and original hand drawn collection created by a team of experienced artists.</p>
+                        <br />
+                        <p className="text-white">Each artwork is full drawn manually, our purpose is to give something unique and original with a story behind each child created.</p>
+                        <br />
+                        <p className="text-white">Take care of the child that you own because the supply is limited to 1,000 NFTs</p>
+                    </div>
                 </Col>
                 <Col xl={12} xs={24}>
                     <div style={{width: '100%', textAlign: 'center'}}>
@@ -309,7 +311,7 @@ export const LandingView = () => {
                     </div>
                 </Col>
                 <Col span={18}>
-                    <h5 className="text-blue" style={{marginTop: '20px'}}>SURREALIST</h5>
+                    <h5 className="text-blue" style={{marginTop: '20px'}}>Surrealist</h5>
                     <br />
                     <p className="text-white">As great power implies great responsibility, and with the knowledge of the existence of terrifying forces of evil, they have decided to use their power to spread goodwill well-being, and to erase the evil and its atrocities. They have decided to use their most powerful children to form a special faction, called Surrealist. This faction is made up of the most powerful and combat capable childs needed to keep the peace and drive out the bad guys, colonizing and murderous, dangerous and destructive species across the galaxy and the universe and its borders. As the name suggests, this faction is composed of childs, with the most extraordinary and amazing powers. They will fight battles in the farthest reaches of the universe and return victorious, or never return.</p>
                 </Col>
@@ -321,7 +323,7 @@ export const LandingView = () => {
                     </div>
                 </Col>
                 <Col span={18}>
-                    <h5 className="text-blue" style={{marginTop: '20px'}}>CELESTIAL</h5>
+                    <h5 className="text-blue" style={{marginTop: '20px'}}>Celestial</h5>
                     <br />
                     <p className="text-white">Specifics childs with extraordinary wisdom and intelligence is in charge of the most important decisions of the childs planet. They decide on goals and priorities. They have uncommon insight and experience, and make the most crucial and difficult decisions. They decide when and if the children should intervene in any event. Their decisions are so complex that they are sometimes understood centruies later. For example, allowing a malevolent species to cononise a planet with a benevolent and harmless native species. It was carnage at first but it turned out that over time this harmless species, has successfully adaptedand developed a defence system that repels the colonising species and offers them protection for the future, allowing them to evolve and prosper in peace.</p>
                 </Col>
@@ -435,7 +437,7 @@ export const LandingView = () => {
                     </div>
                     <div className={activeFaqIndex == 2 ? 'faq active-faq' : 'faq'}>
                         <div className='faq-header' onClick={() => handleFaq(2)}>
-                            <div>Is there a limit?"</div>
+                            <div>Is there a limit?</div>
                             <div className='faq-icon'>{activeFaqIndex == 2 ? <MinusOutlined /> : <PlusOutlined />}</div>
                         </div>
                         <div className={activeFaqIndex == 2 ? 'active-faq-content' : 'faq-content'}>This is dummy text. This is dummy text.</div>
@@ -462,18 +464,11 @@ export const LandingView = () => {
                         <div className={activeFaqIndex == 5 ? 'active-faq-content' : 'faq-content'}>This is dummy text. This is dummy text.</div>
                     </div>
                     <div className={activeFaqIndex == 6 ? 'faq active-faq' : 'faq'}>
-                        <div className='faq-header' onClick={() => handleFaq(6)}>
-                            <div>Are there secondary sale royalties?</div>
+                        <div className='faq-header' onClick={() => handleFaq(7)}>
+                            <div>Do I own the COTD after purchasing?</div>
                             <div className='faq-icon'>{activeFaqIndex == 6 ? <MinusOutlined /> : <PlusOutlined />}</div>
                         </div>
                         <div className={activeFaqIndex == 6 ? 'active-faq-content' : 'faq-content'}>This is dummy text. This is dummy text.</div>
-                    </div>
-                    <div className={activeFaqIndex == 7 ? 'faq active-faq' : 'faq'}>
-                        <div className='faq-header' onClick={() => handleFaq(7)}>
-                            <div>Do I own the COTD after purchasing?</div>
-                            <div className='faq-icon'>{activeFaqIndex == 7 ? <MinusOutlined /> : <PlusOutlined />}</div>
-                        </div>
-                        <div className={activeFaqIndex == 7 ? 'active-faq-content' : 'faq-content'}>This is dummy text. This is dummy text.</div>
                     </div>
                 </Col>
             </Row>
@@ -511,11 +506,14 @@ export const LandingView = () => {
                         </Col>
                         <Col xl={6} xs={24} style={{marginTop: '20px', textAlign: 'center'}}>
                             <img src={'/images/team3.png'} width={width > 768 ? '90%' : '70%'} style={{padding: '10px'}} />
-                            <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@Alygator</p>
+                            <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@itsthealygator</p>
                             <Row>
                                 <Col span={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                                     <a href='https://twitter.com/cotd' target="_blank">
                                         <img src={'/images/head_twitter.png'} width={20} height={20} style={{margin: '5px'}} />
+                                    </a>
+                                    <a href='https://instagram.com/cotd' target="_blank">
+                                        <img src={'/images/head_instagram.png'} width={20} height={20} style={{margin: '5px'}} />
                                     </a>
                                 </Col>
                             </Row>
