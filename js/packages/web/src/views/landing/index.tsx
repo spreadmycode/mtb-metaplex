@@ -9,6 +9,8 @@ import useWindowDimensions from '../../utils/layout';
 import {
     MenuOutlined,
     CloseOutlined,
+    MinusOutlined,
+    PlusOutlined,
 } from '@ant-design/icons';
 
 const { Panel } = Collapse;
@@ -24,6 +26,7 @@ export const LandingView = () => {
   const [carouselIndex, setCarouselIndex] = useState<number>(0);
   const [scrollDir, setScrollDir] = useState(SCROLL_DOWN);
   const [movingImageYPos, setMovingImageYPos] = useState(width > 768 ? 28 : 50);
+  const [activeFaqIndex, setActiveFaqIndex] = useState(-1);
 
   const handleChangeWallet = useCallback(
     () => (wallet ? disconnect().catch(() => {}) : open()),
@@ -37,6 +40,14 @@ export const LandingView = () => {
 
   const onCarouselChanged = (prev: number, next: number) => {
     setCarouselIndex(next);
+  }
+
+  const handleFaq = (index: number) => {
+    if (index == activeFaqIndex) {
+        setActiveFaqIndex(-1);
+    } else {
+        setActiveFaqIndex(index);
+    }
   }
 
   useEffect(() => {
@@ -179,10 +190,10 @@ export const LandingView = () => {
                 <Col span={8}>
                     <Row>
                         <Col style={{margin: '10px 0 0 auto'}}>
-                            <Space>
-                                <Button type={connected ? "ghost" : "text"} shape="round" size="middle" onClick={handleChangeWallet}>{connected ? shortenAddress(publicKey?.toBase58() || '', 4) : 'Connect'}</Button>
+                            <Space size={'middle'}>
+                                <button className="connect-button" onClick={handleChangeWallet} style={width > 768 ? {fontSize: '16px'} : {fontSize: '14px'}}>{connected ? shortenAddress(publicKey?.toBase58() || '', width > 768 ? 4 : 2) : width > 768 ? 'CONNECT WALLET' : 'CONNECT'}</button>
                                 <Dropdown overlay={sp_menu} trigger={['click']} onVisibleChange={handleMenuToggle}>
-                                    <Button type="text" shape="circle" size="middle" onClick={handleMenuToggle} icon={menuView ? <CloseOutlined /> : <MenuOutlined />} />
+                                    <Button type="text" shape="circle" size="large" onClick={handleMenuToggle} icon={menuView ? <CloseOutlined /> : <MenuOutlined />} />
                                 </Dropdown>
                             </Space>
                         </Col>
@@ -402,31 +413,62 @@ export const LandingView = () => {
                     <h4 className="text-white text-center">FAQ's</h4>
                 </Col>
                 <Col span={24}>
-                    <Collapse
-                        style={{width: '100%'}}
-                        expandIconPosition={'right'}>
-                        <Panel header="How can I buy a COTD?" key="1">
-                            <div>This is dummy text. This is dummy text. This is dummy text. This is dummy text.</div>
-                        </Panel>
-                        <Panel header="When the auctions are open?" key="2">
-                            <div>This is dummy text. This is dummy text. This is dummy text. This is dummy text.</div>
-                        </Panel>
-                        <Panel header="Is there a limit?" key="3">
-                            <div>This is dummy text. This is dummy text. This is dummy text. This is dummy text.</div>
-                        </Panel>
-                        <Panel header="How rare is my COTD?" key="4">
-                            <div>This is dummy text. This is dummy text. This is dummy text. This is dummy text.</div>
-                        </Panel>
-                        <Panel header="Will there be a secondary marketplace?" key="5">
-                            <div>This is dummy text. This is dummy text. This is dummy text. This is dummy text.</div>
-                        </Panel>
-                        <Panel header="Are there secondary sale royalties?" key="7">
-                            <div>This is dummy text. This is dummy text. This is dummy text. This is dummy text.</div>
-                        </Panel>
-                        <Panel header="Do I own the COTD after purchasing?" key="8">
-                            <div>This is dummy text. This is dummy text. This is dummy text. This is dummy text.</div>
-                        </Panel>
-                    </Collapse>
+                    <div className={activeFaqIndex == 0 ? 'faq active-faq' : 'faq'}>
+                        <div className='faq-header' onClick={() => handleFaq(0)}>
+                            <div>How can I buy a COTD?</div>
+                            <div className='faq-icon'>{activeFaqIndex == 0 ? <MinusOutlined /> : <PlusOutlined />}</div>
+                        </div>
+                        <div className={activeFaqIndex == 0 ? 'active-faq-content' : 'faq-content'}>This is dummy text. This is dummy text.</div>
+                    </div>
+                    <div className={activeFaqIndex == 1 ? 'faq active-faq' : 'faq'}>
+                        <div className='faq-header' onClick={() => handleFaq(1)}>
+                            <div>When the auctions are open?</div>
+                            <div className='faq-icon'>{activeFaqIndex == 1 ? <MinusOutlined /> : <PlusOutlined />}</div>
+                        </div>
+                        <div className={activeFaqIndex == 1 ? 'active-faq-content' : 'faq-content'}>This is dummy text. This is dummy text.</div>
+                    </div>
+                    <div className={activeFaqIndex == 2 ? 'faq active-faq' : 'faq'}>
+                        <div className='faq-header' onClick={() => handleFaq(2)}>
+                            <div>Is there a limit?"</div>
+                            <div className='faq-icon'>{activeFaqIndex == 2 ? <MinusOutlined /> : <PlusOutlined />}</div>
+                        </div>
+                        <div className={activeFaqIndex == 2 ? 'active-faq-content' : 'faq-content'}>This is dummy text. This is dummy text.</div>
+                    </div>
+                    <div className={activeFaqIndex == 3 ? 'faq active-faq' : 'faq'}>
+                        <div className='faq-header' onClick={() => handleFaq(3)}>
+                            <div>How rare is my COTD?</div>
+                            <div className='faq-icon'>{activeFaqIndex == 3 ? <MinusOutlined /> : <PlusOutlined />}</div>
+                        </div>
+                        <div className={activeFaqIndex == 3 ? 'active-faq-content' : 'faq-content'}>This is dummy text. This is dummy text.</div>
+                    </div>
+                    <div className={activeFaqIndex == 4 ? 'faq active-faq' : 'faq'}>
+                        <div className='faq-header' onClick={() => handleFaq(4)}>
+                            <div>Will there be a secondary marketplace?</div>
+                            <div className='faq-icon'>{activeFaqIndex == 4 ? <MinusOutlined /> : <PlusOutlined />}</div>
+                        </div>
+                        <div className={activeFaqIndex == 4 ? 'active-faq-content' : 'faq-content'}>This is dummy text. This is dummy text.</div>
+                    </div>
+                    <div className={activeFaqIndex == 5 ? 'faq active-faq' : 'faq'}>
+                        <div className='faq-header' onClick={() => handleFaq(5)}>
+                            <div>Are there secondary sale royalties?</div>
+                            <div className='faq-icon'>{activeFaqIndex == 5 ? <MinusOutlined /> : <PlusOutlined />}</div>
+                        </div>
+                        <div className={activeFaqIndex == 5 ? 'active-faq-content' : 'faq-content'}>This is dummy text. This is dummy text.</div>
+                    </div>
+                    <div className={activeFaqIndex == 6 ? 'faq active-faq' : 'faq'}>
+                        <div className='faq-header' onClick={() => handleFaq(6)}>
+                            <div>Are there secondary sale royalties?</div>
+                            <div className='faq-icon'>{activeFaqIndex == 6 ? <MinusOutlined /> : <PlusOutlined />}</div>
+                        </div>
+                        <div className={activeFaqIndex == 6 ? 'active-faq-content' : 'faq-content'}>This is dummy text. This is dummy text.</div>
+                    </div>
+                    <div className={activeFaqIndex == 7 ? 'faq active-faq' : 'faq'}>
+                        <div className='faq-header' onClick={() => handleFaq(7)}>
+                            <div>Do I own the COTD after purchasing?</div>
+                            <div className='faq-icon'>{activeFaqIndex == 7 ? <MinusOutlined /> : <PlusOutlined />}</div>
+                        </div>
+                        <div className={activeFaqIndex == 7 ? 'active-faq-content' : 'faq-content'}>This is dummy text. This is dummy text.</div>
+                    </div>
                 </Col>
             </Row>
 

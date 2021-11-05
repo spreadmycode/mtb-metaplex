@@ -17,32 +17,47 @@
     background-color:#08011c;
 }
 
-.ant-collapse-content-box, .ant-collapse-content, .ant-collapse-content-active {
-    background-color: transparent;
+.faq {
+    background: #2e1964;
+    margin: 10px auto;
+    border: solid 1px transparent;
+    border-radius: 10px;
+    transition: background-color 0.5s;
+    color: white;
+    padding: 5px 10px;
 }
 
-.ant-collapse, .ant-collapse-icon-position-right {
-    background-color: transparent;
-    border: 0;
+.active-faq {
+    border: solid 1px white;
+    background: #30cfbe;
 }
 
-.ant-collapse > .ant-collapse-item {
-    border-bottom: solid 1px #00acfb;
+.faq-header {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
 }
 
-.ant-collapse-item {
-    border: solid 1px #00acfb;
-    border-radius: 8px;
-    margin: 8px auto;
+.faq-content {
+    display: none;
+    transition: display 0.5s;
 }
 
-.ant-collapse > .ant-collapse-item:last-child, .ant-collapse > .ant-collapse-item:last-child > .ant-collapse-header {
-    border-radius: 8px;
+.faq-icon {
+    position: relative;
+    align-items: center;
+    flex: 1 auto;
+    display: flex;
+    justify-content: right;
+    transition: all 0.5s;
 }
 
-.ant-collapse-header {
-    font-weight: 500;
+.active-faq-content {
     font-size: 14px;
+    padding: 10px;
+    display: block;
 }
 
 .font-calibri {
@@ -104,6 +119,21 @@ p {
 
 .hand-cursor {
     cursor: pointer;
+}
+
+.connect-button {
+    font-weight: 500;
+    color: #08011c;
+    background-color: white;
+    border: solid 1px transparent;
+    border-radius: 2px;
+    transition: all 0.5s;
+}
+
+.connect-button:hover {
+    color: white;
+    border: solid 1px white;
+    background-color: transparent;
 }
 
 h1 {
