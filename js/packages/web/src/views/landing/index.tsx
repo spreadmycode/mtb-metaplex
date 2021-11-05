@@ -1,5 +1,5 @@
 import { Menu, Dropdown, Button, Layout, BackTop, Row, Col, Space, Carousel, Collapse } from 'antd';
-import React, { useCallback, useState, useRef, useEffect } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { ConnectButton, useWalletModal, shortenAddress, CurrentUserBadge } from '@oyster/common';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { OWNER_WALLET } from '../../constants';
@@ -8,7 +8,7 @@ import Linkage from 'next/link';
 import useWindowDimensions from '../../utils/layout';
 import {
     MenuOutlined,
-    CloseOutlined
+    CloseOutlined,
 } from '@ant-design/icons';
 
 const { Panel } = Collapse;
@@ -81,15 +81,27 @@ export const LandingView = () => {
   const sp_menu = (
     <Menu style={{backgroundColor:'#08011c', width: 'fit-content', padding: 5, marginTop: 60}}>
         <Menu.Item>
-            <Row>
-                <Link to="/mine">
-                    <div style={{border: 'solid 1px grey', borderRadius: 8, width: '100%', padding: 10}}>
+            <Row style={{width: '100%'}}>
+                <div style={{border: 'solid 1px grey', borderRadius: 8, width: '100%', padding: 10}}>
+                    <Link to="/mine">
                         <h6 className="text-center">MY COTD</h6>
                         <p className="text-center">COTDs can be seen from phantom wallet</p>
-                    </div>
-                </Link>
+                    </Link>
+                </div>
             </Row>
         </Menu.Item>
+        {(publicKey?.toBase58() == OWNER_WALLET) &&
+            <Menu.Item>
+                <Row style={{width: '100%'}}>
+                    <div style={{border: 'solid 1px grey', borderRadius: 8, width: '100%', padding: 10}}>
+                        <Link to="/art/create">
+                            <h6 className="text-center">Create COTD</h6>
+                            <p className="text-center">You are admin of COTD.</p>
+                        </Link>
+                    </div>
+                </Row>
+            </Menu.Item>
+        }
         <Row style={{width: '100%', height: 20}} />
         <Menu.Item>
             <Linkage href="/#about">
@@ -148,11 +160,6 @@ export const LandingView = () => {
   return (
     <Layout>
         <div className="background">
-            {(width > 768) && 
-                <div className="moving-image" style={{transform: `translate3d(0px, ${movingImageYPos}%, 0px)`, zIndex: 1}}>
-                    <img src={'/images/backgrounds/moving.png'} />
-                </div>
-            }
             <Row style={{padding: '10px 10%'}}>
                 <Col span={8}>
                     <Row style={{marginTop: 10}}>
@@ -180,7 +187,17 @@ export const LandingView = () => {
                             </Space>
                         </Col>
                     </Row>
-
+                    {connected && 
+                        <Row>
+                            <div style={{width: 'fit-content', margin: '10px 0 0 auto', color: "grey", fontSize: '10px'}}>
+                                <CurrentUserBadge
+                                    showBalance={true}
+                                    showAddress={false}
+                                    iconSize={16}
+                                />
+                            </div>
+                        </Row>
+                    }
                 </Col>
             </Row>
 
@@ -527,6 +544,15 @@ export const LandingView = () => {
                     </Row>
                 </Col>
             </Row>
+
+            {(width > 768) && 
+                <div className="moving-image" style={{transform: `translate3d(0px, ${movingImageYPos}%, 0px)`, zIndex: 1}}>
+                    <img src={'/images/backgrounds/moving.png'} />
+                </div>
+            }
+            <BackTop>
+                <div className="back-top-button">UP</div>
+            </BackTop>
         </div>
     </Layout>
   );
