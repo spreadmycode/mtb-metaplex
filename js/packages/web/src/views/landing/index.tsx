@@ -193,7 +193,7 @@ export const LandingView = () => {
                                 <CurrentUserBadge
                                     showBalance={true}
                                     showAddress={false}
-                                    iconSize={16}
+                                    iconSize={14}
                                 />
                             </div>
                         </Row>
@@ -252,31 +252,31 @@ export const LandingView = () => {
                     beforeChange={onCarouselChanged}
                     adaptiveHeight={true}>
                     <div>
-                        <img src={'/images/carousel/1.jpg'} style={carouselIndex == 0 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
+                        <img className="hand-cursor" src={'/images/carousel/1.jpg'} style={carouselIndex == 0 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                     </div>
                     <div>
-                        <img src={'/images/carousel/2.jpg'} style={carouselIndex == 1 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
+                        <img className="hand-cursor" src={'/images/carousel/2.jpg'} style={carouselIndex == 1 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                     </div>
                     <div>
-                        <img src={'/images/carousel/3.jpg'} style={carouselIndex == 2 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
+                        <img className="hand-cursor" src={'/images/carousel/3.jpg'} style={carouselIndex == 2 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                     </div>
                     <div>
-                        <img src={'/images/carousel/4.jpg'} style={carouselIndex == 3 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
+                        <img className="hand-cursor" src={'/images/carousel/4.jpg'} style={carouselIndex == 3 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                     </div>
                     <div>
-                        <img src={'/images/carousel/5.jpg'} style={carouselIndex == 4 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
+                        <img className="hand-cursor" src={'/images/carousel/5.jpg'} style={carouselIndex == 4 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                     </div>
                     <div>
-                        <img src={'/images/carousel/6.jpg'} style={carouselIndex == 5 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
+                        <img className="hand-cursor" src={'/images/carousel/6.jpg'} style={carouselIndex == 5 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                     </div>
                     <div>
-                        <img src={'/images/carousel/7.jpg'} style={carouselIndex == 6 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
+                        <img className="hand-cursor" src={'/images/carousel/7.jpg'} style={carouselIndex == 6 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                     </div>
                     <div>
-                        <img src={'/images/carousel/8.jpg'} style={carouselIndex == 7 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
+                        <img className="hand-cursor" src={'/images/carousel/8.jpg'} style={carouselIndex == 7 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                     </div>
                     <div>
-                        <img src={'/images/carousel/9.jpg'} style={carouselIndex == 8 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
+                        <img className="hand-cursor" src={'/images/carousel/9.jpg'} style={carouselIndex == 8 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                     </div>
                 </Carousel>
             </div>
@@ -436,7 +436,7 @@ export const LandingView = () => {
                 </Col>
                 <Col span={24}>
                     <Row style={{padding: '20px'}}>
-                        <Col xl={8} xs={24} style={{marginTop: '20px'}}>
+                        <Col xl={6} xs={24} style={{marginTop: '20px', textAlign: 'center'}}>
                             <img src={'/images/team1.png'} style={{padding: '10px'}} />
                             <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@SOLBigBrain</p>
                             <Row>
@@ -447,23 +447,34 @@ export const LandingView = () => {
                                 </Col>
                             </Row>
                         </Col>
-                        <Col xl={8} xs={24} style={{marginTop: '20px'}}>
+                        <Col xl={6} xs={24} style={{marginTop: '20px', textAlign: 'center'}}>
                             <img src={'/images/team2.png'} style={{padding: '10px'}} />
-                            <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@SOLBigBrain</p>
+                            <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@Nakiwarai</p>
                             <Row>
                                 <Col span={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                                     <a href='https://twitter.com/cotd' target="_blank">
                                         <img src={'/images/head_twitter.png'} width={20} height={20} style={{margin: '5px'}} />
                                     </a>
-                                    <a href='https://instagram.com/cotd' target="_blank">
-                                        <img src={'/images/head_instagram.png'} width={20} height={20} style={{margin: '5px'}} />
+                                    <a href='https://mysite.com/cotd' target="_blank">
+                                        <img src={'/images/head_web.png'} width={20} height={20} style={{margin: '5px'}} />
                                     </a>
                                 </Col>
                             </Row>
                         </Col>
-                        <Col xl={8} xs={24} style={{marginTop: '20px'}}>
+                        <Col xl={6} xs={24} style={{marginTop: '20px', textAlign: 'center'}}>
                             <img src={'/images/team3.png'} style={{padding: '10px'}} />
-                            <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@SOLBigBrain</p>
+                            <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@Alygator</p>
+                            <Row>
+                                <Col span={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                                    <a href='https://twitter.com/cotd' target="_blank">
+                                        <img src={'/images/head_twitter.png'} width={20} height={20} style={{margin: '5px'}} />
+                                    </a>
+                                </Col>
+                            </Row>
+                        </Col>
+                        <Col xl={6} xs={24} style={{marginTop: '20px', textAlign: 'center'}}>
+                            <img src={'/images/team4.png'} style={{padding: '10px'}} />
+                            <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@Redhotieh</p>
                             <Row>
                                 <Col span={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                                     <a href='https://instagram.com/cotd' target="_blank">
@@ -483,17 +494,17 @@ export const LandingView = () => {
                             <div>
                                 <p className="text-white mb-3">JOIN US ON</p>
                                 <a href="https://twitter.com/cotd" target="_blank">
-                                    <Button type="default" style={{width: "200px", height: "40px", display: 'block', marginBottom: '10px'}}>
+                                    <Button type="default" style={{width: "200px", height: "40px", display: 'block', marginBottom: '10px', borderRadius: 0}}>
                                         TWITTER
                                     </Button>
                                 </a>
                                 <a href="https://discord.com/cotd" target="_blank">
-                                    <Button type="default" style={{width: "200px", height: "40px", display: 'block', marginBottom: '10px'}}>
+                                    <Button type="default" style={{width: "200px", height: "40px", display: 'block', marginBottom: '10px', borderRadius: 0}}>
                                         DISCORD
                                     </Button>
                                 </a>
                                 <a href="https://instagram.com/cotd" target="_blank">
-                                    <Button type="default" style={{width: "200px", height: "40px", display: 'block', marginBottom: '10px'}}>
+                                    <Button type="default" style={{width: "200px", height: "40px", display: 'block', marginBottom: '10px', borderRadius: 0}}>
                                         INSTAGRAM
                                     </Button>
                                 </a>
