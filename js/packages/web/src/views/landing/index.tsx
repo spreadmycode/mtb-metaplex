@@ -90,13 +90,13 @@ export const LandingView = () => {
   }, [scrollDir]);
 
   const sp_menu = (
-    <Menu style={{backgroundColor:'#08011c', width: 'fit-content', padding: 5, marginTop: 60}}>
+    <Menu style={{backgroundColor:'#08011c', width: 'fit-content', padding: 5, marginTop: 60, color: 'white'}}>
         <Menu.Item>
             <Row style={{width: '100%'}}>
                 <div style={{border: 'solid 1px grey', borderRadius: 8, width: '100%', padding: 10}}>
                     <Link to="/mine">
-                        <h6 className="text-center">MY COTD</h6>
-                        <p className="text-center">COTDs can be seen from phantom wallet</p>
+                        <h6 className="text-center text-white">MY COTD</h6>
+                        <p className="text-center text-white text-light">COTDs can be seen from phantom wallet.</p>
                     </Link>
                 </div>
             </Row>
@@ -106,8 +106,8 @@ export const LandingView = () => {
                 <Row style={{width: '100%'}}>
                     <div style={{border: 'solid 1px grey', borderRadius: 8, width: '100%', padding: 10}}>
                         <Link to="/art/create">
-                            <h6 className="text-center">Create COTD</h6>
-                            <p className="text-center">You are admin of COTD.</p>
+                            <h6 className="text-center text-white">Create COTD</h6>
+                            <p className="text-center text-white text-light">You are admin of COTD.</p>
                         </Link>
                     </div>
                 </Row>
@@ -116,27 +116,27 @@ export const LandingView = () => {
         <Row style={{width: '100%', height: 20}} />
         <Menu.Item>
             <Linkage href="/#about">
-                <h6 className="text-center">ABOUT</h6>
+                <h6 className="text-center text-white">ABOUT</h6>
             </Linkage>
         </Menu.Item>
         <Menu.Item>
             <Linkage href="/#roadmap">
-                <h6 className="text-center">BENEFITS AND ROADMAP</h6>
+                <h6 className="text-center text-white">BENEFITS AND ROADMAP</h6>
             </Linkage>
         </Menu.Item>
         <Menu.Item>
             <Link to="/gallery">
-                <h6 className="text-center">GALLERY</h6>
+                <h6 className="text-center text-white">GALLERY</h6>
             </Link>
         </Menu.Item>
         <Menu.Item>
             <Linkage href="/#marketplace">
-                <h6 className="text-center">MARKETPLACE</h6>
+                <h6 className="text-center text-white">MARKETPLACE</h6>
             </Linkage>
         </Menu.Item>
         <Menu.Item>
             <Linkage href="/#faq">
-                <h6 className="text-center">FAQ'S</h6>
+                <h6 className="text-center text-white">FAQ'S</h6>
             </Linkage>
         </Menu.Item>
         <Row>
@@ -162,7 +162,7 @@ export const LandingView = () => {
         </Row>
         <Menu.Item>
             <Linkage href="/#terms">
-                <p className="text-center">TERMS AND CONDITIONS</p>
+                <p className="text-center text-white">TERMS AND CONDITIONS</p>
             </Linkage>
         </Menu.Item>
     </Menu>
@@ -175,7 +175,9 @@ export const LandingView = () => {
                 <Col span={8}>
                     <Row style={{marginTop: 10}}>
                         <Link to="/">
-                            <Col xl={16} xs={24}><img src={'/images/logo.png'} /></Col>
+                            <Col xl={16} xs={24}>
+                                {/* <img src={'/images/logo.png'} /> */}
+                            </Col>
                         </Link>
                         <Col xl={8} xs={0}></Col>
                     </Row>
@@ -183,7 +185,11 @@ export const LandingView = () => {
                 <Col span={8}>
                     <Row>
                         <Col xl={7} xs={5}></Col>
-                        <Col xl={10} xs={14}><img src={'/images/brand.png'} /></Col>
+                        <Col xl={10} xs={14}>
+                            <div style={{width: '100%', textAlign: 'center'}}>
+                                <img src={'/images/brand.png'} />
+                            </div>
+                        </Col>
                         <Col xl={7} xs={5}></Col>
                     </Row>
                 </Col>
@@ -244,8 +250,8 @@ export const LandingView = () => {
                     <p className="text-white">Take care of the child that you own because the supply is limited to 1,000 NFTs</p>
                 </Col>
                 <Col xl={12} xs={24}>
-                    <div style={width > 768 ? {width: '70%', margin: '0 auto'} : {width: '50%', margin: '10px auto'}}>
-                        <img src={'/images/overview.png'} />
+                    <div style={{width: '100%', textAlign: 'center'}}>
+                        <img src={'/images/overview.png'} width={(width > 768) ? '70%' : '50%'} />
                     </div>
                 </Col>
             </Row>
@@ -298,24 +304,24 @@ export const LandingView = () => {
                 </Col>
                 <Col span={18} />
                 <Col span={6}>
-                    <div style={{margin: '20px'}}>
-                        <img src={'/images/faction1.png'} />
+                    <div style={{width: '100%', textAlign: 'center', marginTop: '20px'}}>
+                        <img src={'/images/faction1.png'} width={'80%'} />
                     </div>
                 </Col>
                 <Col span={18}>
-                    <h5 className="text-white" style={{marginTop: '20px'}}>SURREALIST</h5>
+                    <h5 className="text-blue" style={{marginTop: '20px'}}>SURREALIST</h5>
                     <br />
                     <p className="text-white">As great power implies great responsibility, and with the knowledge of the existence of terrifying forces of evil, they have decided to use their power to spread goodwill well-being, and to erase the evil and its atrocities. They have decided to use their most powerful children to form a special faction, called Surrealist. This faction is made up of the most powerful and combat capable childs needed to keep the peace and drive out the bad guys, colonizing and murderous, dangerous and destructive species across the galaxy and the universe and its borders. As the name suggests, this faction is composed of childs, with the most extraordinary and amazing powers. They will fight battles in the farthest reaches of the universe and return victorious, or never return.</p>
                 </Col>
                 <Col span={24}><br /></Col>
                 <Col span={24}><br /></Col>
                 <Col span={6}>
-                    <div style={{margin: '20px'}}>
-                        <img src={'/images/faction2.png'} />
+                    <div style={{width: '100%', textAlign: 'center', marginTop: '20px'}}>
+                        <img src={'/images/faction2.png'} width={'80%'} />
                     </div>
                 </Col>
                 <Col span={18}>
-                    <h5 className="text-white" style={{marginTop: '20px'}}>CELESTIAL</h5>
+                    <h5 className="text-blue" style={{marginTop: '20px'}}>CELESTIAL</h5>
                     <br />
                     <p className="text-white">Specifics childs with extraordinary wisdom and intelligence is in charge of the most important decisions of the childs planet. They decide on goals and priorities. They have uncommon insight and experience, and make the most crucial and difficult decisions. They decide when and if the children should intervene in any event. Their decisions are so complex that they are sometimes understood centruies later. For example, allowing a malevolent species to cononise a planet with a benevolent and harmless native species. It was carnage at first but it turned out that over time this harmless species, has successfully adaptedand developed a defence system that repels the colonising species and offers them protection for the future, allowing them to evolve and prosper in peace.</p>
                 </Col>
@@ -330,8 +336,8 @@ export const LandingView = () => {
                 <Col xl={12} xs={0} />
                 <Row style={{margin: '100px 0 0 0', width: '100%'}}>
                     <Col span={6}>
-                        <div style={{width: '80%'}}>
-                            <img src={'/images/roadmap1.png'} />
+                        <div style={{width: '100%', textAlign: 'left'}}>
+                            <img src={'/images/roadmap1.png'} width={'70%'} />
                         </div>
                     </Col>
                     <Col span={18} style={{alignItems: 'center', display: 'flex'}}>
@@ -343,8 +349,8 @@ export const LandingView = () => {
                 </Row>
                 <Row style={{margin: '100px 0 0 0', width: '100%'}}>
                     <Col span={6}>
-                        <div style={{width: '80%'}}>
-                            <img src={'/images/roadmap2.png'} />
+                        <div style={{width: '100%', textAlign: 'left'}}>
+                            <img src={'/images/roadmap2.png'} width={'70%'} />
                         </div>
                     </Col>
                     <Col span={18} style={{alignItems: 'center', display: 'flex'}}>
@@ -356,8 +362,8 @@ export const LandingView = () => {
                 </Row>
                 <Row style={{margin: '100px 0 0 0', width: '100%'}}>
                     <Col span={6}>
-                        <div style={{width: '80%'}}>
-                            <img src={'/images/roadmap3.png'} />
+                        <div style={{width: '100%', textAlign: 'left'}}>
+                            <img src={'/images/roadmap3.png'} width={'70%'} />
                         </div>
                     </Col>
                     <Col span={18} style={{alignItems: 'center', display: 'flex'}}>
@@ -369,8 +375,8 @@ export const LandingView = () => {
                 </Row>
                 <Row style={{margin: '100px 0 0 0', width: '100%'}}>
                     <Col span={6}>
-                        <div style={{width: '80%'}}>
-                            <img src={'/images/roadmap4.png'} />
+                        <div style={{width: '100%', textAlign: 'left'}}>
+                            <img src={'/images/roadmap4.png'} width={'70%'} />
                         </div>
                     </Col>
                     <Col span={18} style={{alignItems: 'center', display: 'flex'}}>
@@ -382,8 +388,8 @@ export const LandingView = () => {
                 </Row>
                 <Row style={{margin: '100px 0 0 0', width: '100%'}}>
                     <Col span={6}>
-                        <div style={{width: '80%'}}>
-                            <img src={'/images/roadmap5.png'} />
+                        <div style={{width: '100%', textAlign: 'left'}}>
+                            <img src={'/images/roadmap5.png'} width={'70%'} />
                         </div>
                     </Col>
                     <Col span={18} style={{alignItems: 'center', display: 'flex'}}>
@@ -395,8 +401,8 @@ export const LandingView = () => {
                 </Row>
                 <Row style={{margin: '100px 0 0 0', width: '100%'}}>
                     <Col span={6}>
-                        <div style={{width: '80%'}}>
-                            <img src={'/images/roadmap6.png'} />
+                        <div style={{width: '100%', textAlign: 'left'}}>
+                            <img src={'/images/roadmap6.png'} width={'70%'} />
                         </div>
                     </Col>
                     <Col span={18} style={{alignItems: 'center', display: 'flex'}}>
