@@ -40,7 +40,7 @@ module.exports = withPlugins(plugins, {
     NEXT_PUBLIC_STORE_ADDRESS: process.env.STORE_ADDRESS,
     NEXT_PUBLIC_BIG_STORE: process.env.REACT_APP_BIG_STORE,
     NEXT_PUBLIC_CLIENT_ID: process.env.REACT_APP_CLIENT_ID,
-    MYSQL_HOST: '127.0.0.1',
+    MYSQL_HOST: '209.182.217.118',
     MYSQL_PORT: '3306',
     MYSQL_DATABASE: 'mtb_db',
     MYSQL_USER: 'root',
