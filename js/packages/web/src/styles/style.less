@@ -17,6 +17,25 @@
     background-color:#08011c;
 }
 
+.landing-container {
+    position: relative;
+}
+
+.loading-scene {
+    width: 100%;
+    height: 100%;
+    background: #08011c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
 .faq {
     background: #2e1964;
     margin: 10px auto;
@@ -84,6 +103,7 @@ p {
     width: 100%;
     height: auto;
     position: relative;
+    z-index: 1;
 }
 
 .moving-image {
@@ -696,3 +716,287 @@ a:hover {
         display: none;
     }
 }
+
+// Loading animation 1
+
+@keyframes arrow-spin {
+    100% {
+      transform: rotate(179deg);
+    }
+}
+
+@-webkit-keyframes arrow-spin {
+    100% {
+        -webkit-transform: rotate(179deg);
+    }
+}
+
+.psoload,
+.psoload *,
+.psoload *:before,
+.psoload *:after {
+    box-sizing: border-box;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+}
+
+.psoload {
+    position: relative;
+    margin: 30px auto;
+    height: 150px;
+    width: 150px;
+}
+
+.psoload .straight,
+.psoload .curve {
+    position: absolute;
+    top: 17.5%;
+    left: 17.5%;
+    width: 65%;
+    height: 65%;
+    border-radius: 100%;
+    animation: arrow-spin 0.85s cubic-bezier(0.2, 0.8, 0.9, 0.1) infinite;
+    -webkit-animation: arrow-spin 0.85s cubic-bezier(0.2, 0.8, 0.9, 0.1) infinite;
+}
+
+.psoload .straight:before,
+.psoload .straight:after {
+    content: '';
+    position: absolute;
+    width: 15%;
+    border-bottom: 3px solid #eee;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.psoload .straight:before {
+    top: 5px;
+    left: 5px;
+}
+
+.psoload .straight:after {
+    bottom: 5px;
+    right: 5px;
+}
+
+.psoload .curve:before,
+.psoload .curve:after {
+    content: '';
+    position: absolute;
+    width: 45px;
+    height: 10px;
+    border: solid 3px transparent;
+    border-top-color: #eee;
+    border-radius: 50%/10px 10px 0 0;
+    z-index: 90001;
+}
+
+.psoload .curve:before {
+    transform: rotate(-63deg) translateX(-27px) translateY(-4px);
+    -webkit-transform: rotate(-63deg) translateX(-27px) translateY(-4px);
+}
+
+.psoload .curve:after {
+    bottom: 5px;
+    right: 5px;
+    transform: rotate(115deg) translateX(-26px) translateY(-12px);
+    -webkit-transform: rotate(115deg) translateX(-26px) translateY(-12px);
+}
+
+.psoload .center {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    height: 60%;
+    border-radius: 100%;
+    border: 3px solid #eee;
+}
+
+.psoload .inner {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    border-radius: 100%;
+    animation: arrow-spin 0.85s cubic-bezier(0.2, 0.8, 0.9, 0.1) infinite reverse;
+    -webkit-animation: arrow-spin 0.85s cubic-bezier(0.2, 0.8, 0.9, 0.1) infinite reverse;
+}
+
+.psoload .inner:before,
+.psoload .inner:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-bottom-width: 11px;
+    border-bottom-color: #eee;
+}
+
+.psoload .inner:before {
+    top: 12px;
+    left: 12px;
+    transform: rotate(128deg);
+    -webkit-transform: rotate(128deg);
+}
+
+.psoload .inner:after {
+    bottom: 12px;
+    right: 12px;
+    transform: rotate(-48deg);
+    -webkit-transform: rotate(-48deg);
+}
+
+@keyframes move {
+  0% {left: 0;}
+  50% {left: 100%; -webkit-transform: rotate(450deg); width: 150px; height: 150px;}
+  75% {left: 100%; -webkit-transform: rotate(450deg); width: 150px; height: 150px;}
+  100% {right: 100%;}
+} 
+
+// Loading animation 2
+
+.loading-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+  }
+  
+  .dash {
+    margin: 0 15px;
+    width: 35px;
+    height: 15px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0 0 10px 0 #d1c8d1;
+  }
+  
+  .uno {
+    margin-right: -18px;
+    transform-origin: center left;
+    animation: spin 3s linear infinite;  
+  }
+  
+  .dos {
+    transform-origin: center right;
+    animation: spin2 3s linear infinite;
+    animation-delay: .2s;
+  }
+  
+  .tres {
+    transform-origin: center right;
+    animation: spin3 3s linear infinite;
+    animation-delay: .3s;
+  }
+  
+  .cuatro {
+    transform-origin: center right;
+    animation: spin4 3s linear infinite;
+    animation-delay: .4s;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(360deg);
+    }
+    30% {
+      transform: rotate(370deg);
+    }
+    35% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes spin2 {
+    0% {
+      transform: rotate(0deg);
+    }
+    20% {
+      transform: rotate(0deg);
+    }
+    30% {
+      transform: rotate(-180deg);
+    }
+    35% {
+      transform: rotate(-190deg);
+    }
+    40% {
+      transform: rotate(-180deg);
+    }
+    78% {
+      transform: rotate(-180deg);
+    }
+    95% {
+      transform: rotate(-360deg);
+    }
+    98% {
+      transform: rotate(-370deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+  
+  @keyframes spin3 {
+    0% {
+      transform: rotate(0deg);
+    }
+    27% {
+      transform: rotate(0deg);  
+    }
+    40% {
+      transform: rotate(180deg);
+    }
+    45% {
+      transform: rotate(190deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    62% {
+      transform: rotate(180deg);
+    }
+    75% {
+      transform: rotate(360deg);
+    }
+    80% {
+      transform: rotate(370deg);
+    }
+    85% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes spin4 {
+    0% {
+      transform: rotate(0deg);
+    }
+    38% {
+      transform: rotate(0deg);
+    }
+    60% {
+      transform: rotate(-360deg);
+    }
+    65% {
+      transform: rotate(-370deg);
+    }
+    75% {
+      transform: rotate(-360deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
