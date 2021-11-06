@@ -23,7 +23,7 @@ const plugins = [
 
 module.exports = withPlugins(plugins, {
   assetPrefix,
-  reactStrictMode: true,
+  reactStrictMode: false,
   eslint: {
     ignoreDuringBuilds: true,
   },
