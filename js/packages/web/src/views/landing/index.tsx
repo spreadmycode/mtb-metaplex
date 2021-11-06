@@ -11,6 +11,7 @@ import {
     CloseOutlined,
     MinusOutlined,
     PlusOutlined,
+    CaretUpOutlined
 } from '@ant-design/icons';
 
 const { Panel } = Collapse;
@@ -25,7 +26,7 @@ export const LandingView = () => {
   const { width } = useWindowDimensions();
   const [carouselIndex, setCarouselIndex] = useState<number>(0);
   const [scrollDir, setScrollDir] = useState(SCROLL_DOWN);
-  const [movingImageYPos, setMovingImageYPos] = useState(width > 768 ? 28 : 50);
+  const [movingImageYPos, setMovingImageYPos] = useState(30);
   const [activeFaqIndex, setActiveFaqIndex] = useState(-1);
 
   const handleChangeWallet = useCallback(
@@ -306,8 +307,10 @@ export const LandingView = () => {
                 </Col>
                 <Col span={18} />
                 <Col span={6}>
-                    <div style={{width: '100%', textAlign: 'center', marginTop: '20px'}}>
-                        <img src={'/images/faction1.png'} width={'80%'} />
+                    <div style={{width: '100%', display: 'flex', justifyContent: 'center', marginTop: '20px'}}>
+                        <div style={{width: '80%', textAlign: 'center', position: 'relative', overflow: 'hidden', borderRadius: '50%'}}>
+                            <img src={'/images/faction1.jpg'} style={{transform: 'scale(1.05)'}} />
+                        </div>
                     </div>
                 </Col>
                 <Col span={18}>
@@ -318,8 +321,10 @@ export const LandingView = () => {
                 <Col span={24}><br /></Col>
                 <Col span={24}><br /></Col>
                 <Col span={6}>
-                    <div style={{width: '100%', textAlign: 'center', marginTop: '20px'}}>
-                        <img src={'/images/faction2.png'} width={'80%'} />
+                    <div style={{width: '100%', display: 'flex', justifyContent: 'center', marginTop: '20px'}}>
+                        <div style={{width: '80%', textAlign: 'center', position: 'relative', overflow: 'hidden', borderRadius: '50%'}}>
+                            <img src={'/images/faction2.jpg'} style={{transform: 'scale(1.05)'}} />
+                        </div>
                     </div>
                 </Col>
                 <Col span={18}>
@@ -480,7 +485,11 @@ export const LandingView = () => {
                 <Col span={24}>
                     <Row style={{padding: '20px'}}>
                         <Col xl={6} xs={24} style={{marginTop: '20px', textAlign: 'center'}}>
-                            <img src={'/images/team1.png'} width={width > 768 ? '90%' : '70%'} style={{padding: '10px'}} />
+                            <div style={{width: '100%', display: 'flex', justifyContent: 'center', padding: '10px'}}>
+                                <div style={{width: '80%', textAlign: 'center', position: 'relative', overflow: 'hidden', borderRadius: '50%'}}>
+                                    <img src={'/images/team1.jpg'} style={{transform: 'scale(1.05)'}} />
+                                </div>
+                            </div>
                             <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@SOLBigBrain</p>
                             <Row>
                                 <Col span={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
@@ -491,8 +500,11 @@ export const LandingView = () => {
                             </Row>
                         </Col>
                         <Col xl={6} xs={24} style={{marginTop: '20px', textAlign: 'center'}}>
-                            <img src={'/images/team2.png'} width={width > 768 ? '90%' : '70%'} style={{padding: '10px'}} />
-                            <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@Nakiwarai</p>
+                            <div style={{width: '100%', display: 'flex', justifyContent: 'center', padding: '10px'}}>
+                                <div style={{width: '80%', textAlign: 'center', position: 'relative', overflow: 'hidden', borderRadius: '50%'}}>
+                                    <img src={'/images/team2.jpg'} style={{transform: 'scale(1.05)'}} />
+                                </div>
+                            </div>                            <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@Nakiwarai</p>
                             <Row>
                                 <Col span={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                                     <a href='https://twitter.com/cotd' target="_blank">
@@ -505,8 +517,11 @@ export const LandingView = () => {
                             </Row>
                         </Col>
                         <Col xl={6} xs={24} style={{marginTop: '20px', textAlign: 'center'}}>
-                            <img src={'/images/team3.png'} width={width > 768 ? '90%' : '70%'} style={{padding: '10px'}} />
-                            <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@itsthealygator</p>
+                            <div style={{width: '100%', display: 'flex', justifyContent: 'center', padding: '10px'}}>
+                                <div style={{width: '80%', textAlign: 'center', position: 'relative', overflow: 'hidden', borderRadius: '50%'}}>
+                                    <img src={'/images/team3.jpg'} style={{transform: 'scale(1.05)'}} />
+                                </div>
+                            </div>                            <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@itsthealygator</p>
                             <Row>
                                 <Col span={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                                     <a href='https://twitter.com/cotd' target="_blank">
@@ -519,8 +534,11 @@ export const LandingView = () => {
                             </Row>
                         </Col>
                         <Col xl={6} xs={24} style={{marginTop: '20px', textAlign: 'center'}}>
-                            <img src={'/images/team4.png'} width={width > 768 ? '90%' : '70%'} style={{padding: '10px'}} />
-                            <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@Redhotieh</p>
+                            <div style={{width: '100%', display: 'flex', justifyContent: 'center', padding: '10px'}}>
+                                <div style={{width: '80%', textAlign: 'center', position: 'relative', overflow: 'hidden', borderRadius: '50%'}}>
+                                    <img src={'/images/team4.jpg'} style={{transform: 'scale(1.05)'}} />
+                                </div>
+                            </div>                            <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@Redhotieh</p>
                             <Row>
                                 <Col span={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                                     <a href='https://instagram.com/cotd' target="_blank">
@@ -608,7 +626,7 @@ export const LandingView = () => {
                 </div>
             }
             <BackTop>
-                <div className="back-top-button">UP</div>
+                <div className="back-top-button"><CaretUpOutlined /></div>
             </BackTop>
         </div>
     </Layout>
