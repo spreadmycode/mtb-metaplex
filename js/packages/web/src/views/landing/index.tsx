@@ -1,9 +1,9 @@
 import { Menu, Dropdown, Button, Layout, BackTop, Row, Col, Space, Carousel } from 'antd';
 import React, { useCallback, useState, useEffect } from 'react';
-import { ConnectButton, useWalletModal, shortenAddress, CurrentUserBadge } from '@oyster/common';
+import { ConnectButton, useWalletModal, shortenAddress, CurrentUserBadge, notify } from '@oyster/common';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { OWNER_WALLET } from '../../constants';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Linkage from 'next/link';
 import useWindowDimensions from '../../utils/layout';
 import {
@@ -19,6 +19,7 @@ const [SCROLL_UP, SCROLL_DOWN] = [0, 1];
 export const LandingView = () => {
   const { wallet, publicKey, connect, connected, disconnect } = useWallet();
   const { setVisible } = useWalletModal();
+  const history = useHistory();
   const [menuView, setMenuView] = useState(false);
   const open = useCallback(() => setVisible(true), [setVisible]);
   const { width } = useWindowDimensions();
@@ -47,6 +48,20 @@ export const LandingView = () => {
     } else {
         setActiveFaqIndex(index);
     }
+  }
+
+  const handleMine = () => {
+      if (connected) {
+            history.push('/mine');
+      } else {
+            notify({
+                message: 'Please connect wallet.',
+                type: 'info',
+            });
+            handleChangeWallet();
+            history.push('/');
+      }
+      handleMenuToggle();
   }
 
   useEffect(() => {
@@ -92,7 +107,7 @@ export const LandingView = () => {
     <Menu style={{backgroundColor:'#08011c', width: 'fit-content', padding: 5, marginTop: 60, color: 'white'}}>
         <Menu.Item>
             <Row style={{width: '100%'}}>
-                <div style={{border: 'solid 1px grey', borderRadius: 8, width: '100%', padding: 10}}>
+                <div style={{border: 'solid 1px grey', borderRadius: 8, width: '100%', padding: 10}} onClick={handleMine}>
                     <Link to="/mine">
                         <h6 className="text-center text-white">MY COTD</h6>
                         <p className="text-center text-white text-light">COTDs can be seen from phantom wallet.</p>
