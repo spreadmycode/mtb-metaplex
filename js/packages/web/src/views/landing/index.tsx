@@ -1,5 +1,5 @@
 import { Menu, Dropdown, Button, Layout, BackTop, Row, Col, Space, Carousel } from 'antd';
-import React, { useCallback, useState, useEffect, useMemo } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import { ConnectButton, useWalletModal, shortenAddress, CurrentUserBadge } from '@oyster/common';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { OWNER_WALLET } from '../../constants';
@@ -26,7 +26,6 @@ export const LandingView = () => {
   const [scrollDir, setScrollDir] = useState(SCROLL_DOWN);
   const [movingImageYPos, setMovingImageYPos] = useState(30);
   const [activeFaqIndex, setActiveFaqIndex] = useState(-1);
-  const [isLoading, setIsLoading] = useState(true);
 
   const handleChangeWallet = useCallback(
     () => (wallet ? disconnect().catch(() => {}) : open()),
@@ -49,12 +48,6 @@ export const LandingView = () => {
         setActiveFaqIndex(index);
     }
   }
-
-    useEffect(() => {
-        (async () => {
-            setTimeout(() => setIsLoading(false), 10000);
-        })();
-    }, []);
 
   useEffect(() => {
     const threshold = 0;
@@ -177,22 +170,6 @@ export const LandingView = () => {
   return (
     <Layout>
         <div className="landing-container">
-            {isLoading &&
-            <div className="loading-scene">
-                {/* <div className="psoload">
-                    <div className="straight"></div>
-                    <div className="curve"></div>
-                    <div className="center"></div>
-                    <div className="inner"></div>
-                </div> */}
-                <div className="loading-container">
-                    <div className="dash uno"></div>
-                    <div className="dash dos"></div>
-                    <div className="dash tres"></div>
-                    <div className="dash cuatro"></div>
-                </div>
-            </div>
-            }
             <div className="background">
                 <Row style={{padding: '10px 10%'}}>
                     <Col span={8}>
@@ -508,7 +485,7 @@ export const LandingView = () => {
                         <Row style={{padding: '20px'}}>
                             <Col xl={6} xs={24} style={{marginTop: '20px', textAlign: 'center'}}>
                                 <div style={{width: '100%', display: 'flex', justifyContent: 'center', padding: '10px'}}>
-                                    <div style={{width: '80%', textAlign: 'center', position: 'relative', overflow: 'hidden', borderRadius: '50%'}}>
+                                    <div style={{width: (width > 768) ? '90%' : '70%', textAlign: 'center', position: 'relative', overflow: 'hidden', borderRadius: '50%'}}>
                                         <img src={'/images/team1.jpg'} style={{transform: 'scale(1.05)'}} />
                                     </div>
                                 </div>
@@ -523,7 +500,7 @@ export const LandingView = () => {
                             </Col>
                             <Col xl={6} xs={24} style={{marginTop: '20px', textAlign: 'center'}}>
                                 <div style={{width: '100%', display: 'flex', justifyContent: 'center', padding: '10px'}}>
-                                    <div style={{width: '80%', textAlign: 'center', position: 'relative', overflow: 'hidden', borderRadius: '50%'}}>
+                                    <div style={{width: (width > 768) ? '90%' : '70%', textAlign: 'center', position: 'relative', overflow: 'hidden', borderRadius: '50%'}}>
                                         <img src={'/images/team2.jpg'} style={{transform: 'scale(1.05)'}} />
                                     </div>
                                 </div>                            <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@Nakiwarai</p>
@@ -540,7 +517,7 @@ export const LandingView = () => {
                             </Col>
                             <Col xl={6} xs={24} style={{marginTop: '20px', textAlign: 'center'}}>
                                 <div style={{width: '100%', display: 'flex', justifyContent: 'center', padding: '10px'}}>
-                                    <div style={{width: '80%', textAlign: 'center', position: 'relative', overflow: 'hidden', borderRadius: '50%'}}>
+                                    <div style={{width: (width > 768) ? '90%' : '70%', textAlign: 'center', position: 'relative', overflow: 'hidden', borderRadius: '50%'}}>
                                         <img src={'/images/team3.jpg'} style={{transform: 'scale(1.05)'}} />
                                     </div>
                                 </div>                            <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@itsthealygator</p>
@@ -557,7 +534,7 @@ export const LandingView = () => {
                             </Col>
                             <Col xl={6} xs={24} style={{marginTop: '20px', textAlign: 'center'}}>
                                 <div style={{width: '100%', display: 'flex', justifyContent: 'center', padding: '10px'}}>
-                                    <div style={{width: '80%', textAlign: 'center', position: 'relative', overflow: 'hidden', borderRadius: '50%'}}>
+                                    <div style={{width: (width > 768) ? '90%' : '70%', textAlign: 'center', position: 'relative', overflow: 'hidden', borderRadius: '50%'}}>
                                         <img src={'/images/team4.jpg'} style={{transform: 'scale(1.05)'}} />
                                     </div>
                                 </div>                            <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@Redhotieh</p>
