@@ -271,31 +271,31 @@ export const LandingView = () => {
                     beforeChange={onCarouselChanged}
                     adaptiveHeight={true}>
                     <div>
-                        <img className="hand-cursor" src={'/images/carousel/1.png'} style={carouselIndex == 0 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
+                        <img className="hand-cursor" src={'/images/carousel/1.jpg'} style={carouselIndex == 0 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                     </div>
                     <div>
-                        <img className="hand-cursor" src={'/images/carousel/2.png'} style={carouselIndex == 1 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
+                        <img className="hand-cursor" src={'/images/carousel/2.jpg'} style={carouselIndex == 1 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                     </div>
                     <div>
-                        <img className="hand-cursor" src={'/images/carousel/3.png'} style={carouselIndex == 2 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
+                        <img className="hand-cursor" src={'/images/carousel/3.jpg'} style={carouselIndex == 2 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                     </div>
                     <div>
-                        <img className="hand-cursor" src={'/images/carousel/4.png'} style={carouselIndex == 3 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
+                        <img className="hand-cursor" src={'/images/carousel/4.jpg'} style={carouselIndex == 3 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                     </div>
                     <div>
-                        <img className="hand-cursor" src={'/images/carousel/5.png'} style={carouselIndex == 4 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
+                        <img className="hand-cursor" src={'/images/carousel/5.jpg'} style={carouselIndex == 4 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                     </div>
                     <div>
-                        <img className="hand-cursor" src={'/images/carousel/6.png'} style={carouselIndex == 5 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
+                        <img className="hand-cursor" src={'/images/carousel/6.jpg'} style={carouselIndex == 5 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                     </div>
                     <div>
-                        <img className="hand-cursor" src={'/images/carousel/7.png'} style={carouselIndex == 6 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
+                        <img className="hand-cursor" src={'/images/carousel/7.jpg'} style={carouselIndex == 6 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                     </div>
                     <div>
-                        <img className="hand-cursor" src={'/images/carousel/8.png'} style={carouselIndex == 7 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
+                        <img className="hand-cursor" src={'/images/carousel/8.jpg'} style={carouselIndex == 7 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                     </div>
                     <div>
-                        <img className="hand-cursor" src={'/images/carousel/9.png'} style={carouselIndex == 8 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
+                        <img className="hand-cursor" src={'/images/carousel/9.jpg'} style={carouselIndex == 8 ? {padding: `${(width/3) * 0.05}px`} : {padding: `${(width/3) * 0.1}px`}} />
                     </div>
                 </Carousel>
             </div>
