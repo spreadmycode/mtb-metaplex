@@ -464,7 +464,7 @@ export const LandingView = () => {
                         <div className={activeFaqIndex == 5 ? 'active-faq-content' : 'faq-content'}>This is dummy text. This is dummy text.</div>
                     </div>
                     <div className={activeFaqIndex == 6 ? 'faq active-faq' : 'faq'}>
-                        <div className='faq-header' onClick={() => handleFaq(7)}>
+                        <div className='faq-header' onClick={() => handleFaq(6)}>
                             <div>Do I own the COTD after purchasing?</div>
                             <div className='faq-icon'>{activeFaqIndex == 6 ? <MinusOutlined /> : <PlusOutlined />}</div>
                         </div>
