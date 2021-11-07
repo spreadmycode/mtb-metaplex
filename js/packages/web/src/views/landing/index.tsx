@@ -1,10 +1,9 @@
 import { Menu, Dropdown, Button, Layout, BackTop, Row, Col, Space, Carousel } from 'antd';
-import React, { useCallback, useState, useEffect } from 'react';
+import React, { useCallback, useState, useEffect, useRef } from 'react';
 import { ConnectButton, useWalletModal, shortenAddress, CurrentUserBadge, notify } from '@oyster/common';
 import { useWallet } from '@solana/wallet-adapter-react';
 import { OWNER_WALLET } from '../../constants';
 import { Link, useHistory } from 'react-router-dom';
-import Linkage from 'next/link';
 import useWindowDimensions from '../../utils/layout';
 import {
     MenuOutlined,
@@ -17,6 +16,9 @@ import {
 const [SCROLL_UP, SCROLL_DOWN] = [0, 1];
 
 export const LandingView = () => {
+  const aboutRef = useRef(null);
+  const roadmapRef = useRef(null);
+  const faqRef = useRef(null);
   const { wallet, publicKey, connect, connected, disconnect } = useWallet();
   const { setVisible } = useWalletModal();
   const history = useHistory();
@@ -62,6 +64,16 @@ export const LandingView = () => {
             history.push('/');
       }
       handleMenuToggle();
+  }
+
+  const scrollTo = (ref) => {
+    window.scroll(
+      {
+        top: ref.current.offsetTop,
+        behavior: "smooth",
+      }
+    );
+    handleMenuToggle();
   }
 
   useEffect(() => {
@@ -129,14 +141,10 @@ export const LandingView = () => {
         }
         <Row style={{width: '100%', height: 20}} />
         <Menu.Item>
-            <Linkage href="/#about">
-                <h6 className="text-center text-white">ABOUT</h6>
-            </Linkage>
+          <h6 className="text-center text-white" onClick={() => scrollTo(aboutRef)}>ABOUT</h6>
         </Menu.Item>
         <Menu.Item>
-            <Linkage href="/#roadmap">
-                <h6 className="text-center text-white">BENEFITS AND ROADMAP</h6>
-            </Linkage>
+          <h6 className="text-center text-white" onClick={() => scrollTo(roadmapRef)}>BENEFITS AND ROADMAP</h6>
         </Menu.Item>
         <Menu.Item>
             <Link to="/gallery">
@@ -144,14 +152,10 @@ export const LandingView = () => {
             </Link>
         </Menu.Item>
         <Menu.Item>
-            <Linkage href="/#marketplace">
-                <h6 className="text-center text-white">MARKETPLACE</h6>
-            </Linkage>
+          <h6 className="text-center text-white" onClick={() => scrollTo(aboutRef)}>MARKETPLACE</h6>
         </Menu.Item>
         <Menu.Item>
-            <Linkage href="/#faq">
-                <h6 className="text-center text-white">FAQ'S</h6>
-            </Linkage>
+          <h6 className="text-center text-white" onClick={() => scrollTo(faqRef)}>FAQ'S</h6>
         </Menu.Item>
         <Row>
             <div style={{width: 'fit-content', margin: '20px auto 10px auto'}}>
@@ -175,9 +179,7 @@ export const LandingView = () => {
             </div>
         </Row>
         <Menu.Item>
-            <Linkage href="/#terms">
-                <p className="text-center text-white">TERMS AND CONDITIONS</p>
-            </Linkage>
+          <p className="text-center text-white" onClick={() => scrollTo(aboutRef)}>TERMS AND CONDITIONS</p>
         </Menu.Item>
     </Menu>
   );
@@ -253,7 +255,7 @@ export const LandingView = () => {
                     </Col>
                 </Row>
             
-                <Row style={width > 768 ? {width: '60%', margin: "80px auto"} : {width: '80%', margin: "30px auto"}} id="about">
+                <Row ref={aboutRef} style={width > 768 ? {width: '60%', margin: "80px auto"} : {width: '80%', margin: "30px auto"}} id="about">
                     <Col xl={12} xs={24} style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                         <div style={{width: '100%'}}>
                             <h3 className="text-blue">1,000 unique Childs</h3>
@@ -348,7 +350,7 @@ export const LandingView = () => {
                     </Col>
                 </Row>
 
-                <Row style={width > 768 ? {width: '70%', margin: "100px auto 80px auto", zIndex: 2, position: 'relative'} : {width: '90%', margin: "100px auto 60px auto", zIndex: 2, position: 'relative'}} id="roadmap">
+                <Row ref={roadmapRef} style={width > 768 ? {width: '70%', margin: "100px auto 80px auto", zIndex: 2, position: 'relative'} : {width: '90%', margin: "100px auto 60px auto", zIndex: 2, position: 'relative'}} id="roadmap">
                     <Col xl={12} xs={24}>
                         <h4 className="text-white">Benefits & Roadmap</h4>
                         <br />
@@ -435,7 +437,7 @@ export const LandingView = () => {
                     </Row>
                 </Row>
 
-                <Row style={width > 768 ? {width: '70%', margin: "100px auto 80px auto"} : {width: '90%', margin: "100px auto 60px auto"}} id="faq">
+                <Row ref={faqRef} style={width > 768 ? {width: '70%', margin: "100px auto 80px auto"} : {width: '90%', margin: "100px auto 60px auto"}} id="faq">
                     <Col span={24} style={{marginBottom: '20px'}}>
                         <h4 className="text-white text-center">FAQ's</h4>
                     </Col>
@@ -445,49 +447,49 @@ export const LandingView = () => {
                                 <div>How can I buy a COTD?</div>
                                 <div className='faq-icon'>{activeFaqIndex == 0 ? <MinusOutlined /> : <PlusOutlined />}</div>
                             </div>
-                            <div className={activeFaqIndex == 0 ? 'active-faq-content' : 'faq-content'}>This is dummy text. This is dummy text.</div>
+                            <div className={activeFaqIndex == 0 ? 'active-faq-content' : 'faq-content'}>COTD purchasing happens through our ‘Live Auction’ which can be found at the top of the website. After purchasing you can check your COTD on 'MY COTD' section.</div>
                         </div>
                         <div className={activeFaqIndex == 1 ? 'faq active-faq' : 'faq'}>
                             <div className='faq-header' onClick={() => handleFaq(1)}>
                                 <div>When the auctions are open?</div>
                                 <div className='faq-icon'>{activeFaqIndex == 1 ? <MinusOutlined /> : <PlusOutlined />}</div>
                             </div>
-                            <div className={activeFaqIndex == 1 ? 'active-faq-content' : 'faq-content'}>This is dummy text. This is dummy text.</div>
+                            <div className={activeFaqIndex == 1 ? 'active-faq-content' : 'faq-content'}>The auction is open at November 22th (4PM UTC). Auction will last for 24h at the starting bid of 0.5 SOL.</div>
                         </div>
                         <div className={activeFaqIndex == 2 ? 'faq active-faq' : 'faq'}>
                             <div className='faq-header' onClick={() => handleFaq(2)}>
                                 <div>Is there a limit?</div>
                                 <div className='faq-icon'>{activeFaqIndex == 2 ? <MinusOutlined /> : <PlusOutlined />}</div>
                             </div>
-                            <div className={activeFaqIndex == 2 ? 'active-faq-content' : 'faq-content'}>This is dummy text. This is dummy text.</div>
+                            <div className={activeFaqIndex == 2 ? 'active-faq-content' : 'faq-content'}>The supply of the collection is limited to 1000 COTD. No limit is applied to own multiple COTD.</div>
                         </div>
                         <div className={activeFaqIndex == 3 ? 'faq active-faq' : 'faq'}>
                             <div className='faq-header' onClick={() => handleFaq(3)}>
                                 <div>How rare is my COTD?</div>
                                 <div className='faq-icon'>{activeFaqIndex == 3 ? <MinusOutlined /> : <PlusOutlined />}</div>
                             </div>
-                            <div className={activeFaqIndex == 3 ? 'active-faq-content' : 'faq-content'}>This is dummy text. This is dummy text.</div>
+                            <div className={activeFaqIndex == 3 ? 'active-faq-content' : 'faq-content'}>Every COTD is special and unique with an original story.</div>
                         </div>
                         <div className={activeFaqIndex == 4 ? 'faq active-faq' : 'faq'}>
                             <div className='faq-header' onClick={() => handleFaq(4)}>
                                 <div>Will there be a secondary marketplace?</div>
                                 <div className='faq-icon'>{activeFaqIndex == 4 ? <MinusOutlined /> : <PlusOutlined />}</div>
                             </div>
-                            <div className={activeFaqIndex == 4 ? 'active-faq-content' : 'faq-content'}>This is dummy text. This is dummy text.</div>
+                            <div className={activeFaqIndex == 4 ? 'active-faq-content' : 'faq-content'}>Yes, we will apply on MagicEden and ExchangeArt.</div>
                         </div>
                         <div className={activeFaqIndex == 5 ? 'faq active-faq' : 'faq'}>
                             <div className='faq-header' onClick={() => handleFaq(5)}>
                                 <div>Are there secondary sale royalties?</div>
                                 <div className='faq-icon'>{activeFaqIndex == 5 ? <MinusOutlined /> : <PlusOutlined />}</div>
                             </div>
-                            <div className={activeFaqIndex == 5 ? 'active-faq-content' : 'faq-content'}>This is dummy text. This is dummy text.</div>
+                            <div className={activeFaqIndex == 5 ? 'active-faq-content' : 'faq-content'}>Yes, royalties are set at 10% for future project expansion.</div>
                         </div>
                         <div className={activeFaqIndex == 6 ? 'faq active-faq' : 'faq'}>
                             <div className='faq-header' onClick={() => handleFaq(6)}>
                                 <div>Do I own the COTD after purchasing?</div>
                                 <div className='faq-icon'>{activeFaqIndex == 6 ? <MinusOutlined /> : <PlusOutlined />}</div>
                             </div>
-                            <div className={activeFaqIndex == 6 ? 'active-faq-content' : 'faq-content'}>This is dummy text. This is dummy text.</div>
+                            <div className={activeFaqIndex == 6 ? 'active-faq-content' : 'faq-content'}>Yes, full intellectual properties are given to the buyer. You can learn more on our terms section.</div>
                         </div>
                     </Col>
                 </Row>
@@ -518,7 +520,8 @@ export const LandingView = () => {
                                     <div style={{width: (width > 768) ? '90%' : '70%', textAlign: 'center', position: 'relative', overflow: 'hidden', borderRadius: '50%'}}>
                                         <img src={'/images/team2.jpg'} style={{transform: 'scale(1.05)'}} />
                                     </div>
-                                </div>                            <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@Nakiwarai</p>
+                                </div>                            
+                                <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@Nakiwarai</p>
                                 <Row>
                                     <Col span={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                                         <a href='https://twitter.com/cotd' target="_blank">
@@ -535,7 +538,8 @@ export const LandingView = () => {
                                     <div style={{width: (width > 768) ? '90%' : '70%', textAlign: 'center', position: 'relative', overflow: 'hidden', borderRadius: '50%'}}>
                                         <img src={'/images/team3.jpg'} style={{transform: 'scale(1.05)'}} />
                                     </div>
-                                </div>                            <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@itsthealygator</p>
+                                </div>                            
+                                <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@itsthealygator</p>
                                 <Row>
                                     <Col span={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                                         <a href='https://twitter.com/cotd' target="_blank">
@@ -552,7 +556,8 @@ export const LandingView = () => {
                                     <div style={{width: (width > 768) ? '90%' : '70%', textAlign: 'center', position: 'relative', overflow: 'hidden', borderRadius: '50%'}}>
                                         <img src={'/images/team4.jpg'} style={{transform: 'scale(1.05)'}} />
                                     </div>
-                                </div>                            <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@Redhotieh</p>
+                                </div>                            
+                                <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@Redhotieh</p>
                                 <Row>
                                     <Col span={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                                         <a href='https://instagram.com/cotd' target="_blank">
@@ -600,36 +605,28 @@ export const LandingView = () => {
                             <Col xl={8} xs={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                                 <div>
                                     <br />
-                                    <Linkage href="/#about">
-                                        <Button type="text" size="small" style={{display: 'block'}}>
-                                            ABOUT
-                                        </Button>
-                                    </Linkage>
-                                    <Linkage href="/#roadmap">
-                                        <Button type="text" size="small" style={{display: 'block'}}>
-                                            BENEFITS AND ROADMAP
-                                        </Button>
-                                    </Linkage>
+                                    <Button type="text" size="small" style={{display: 'block'}} onClick={() => scrollTo(aboutRef)}>
+                                        ABOUT
+                                    </Button>
+                                    <Button type="text" size="small" style={{display: 'block'}} onClick={() => scrollTo(roadmapRef)}>
+                                        BENEFITS AND ROADMAP
+                                    </Button>
                                     <Link to="/gallery">
                                         <Button type="text" size="small" style={{display: 'block'}}>
                                             GALLERY
                                         </Button>
                                     </Link>
-                                    <Linkage href="/#marketplace">
-                                        <Button type="text" size="small" style={{display: 'block'}}>
-                                            MARKETPLACE
-                                        </Button>
-                                    </Linkage>
-                                    <Linkage href="/#faq">
-                                        <Button type="text" size="small" style={{display: 'block'}}>
-                                            FAQ
-                                        </Button>
-                                    </Linkage>
+                                    <Button type="text" size="small" style={{display: 'block'}} onClick={() => scrollTo(aboutRef)}>
+                                        MARKETPLACE
+                                    </Button>
+                                    <Button type="text" size="small" style={{display: 'block'}} onClick={() => scrollTo(faqRef)}>
+                                        FAQ
+                                    </Button>
                                 </div>
                             </Col>
                         </Row>
                         <Row>
-                            <p className="text-white text-center mt-5">© Child Of The Dice. All Rights Reserved 2021</p>
+                            <p className="text-white text-center mt-5" onClick={() => scrollTo(aboutRef)}>© Child Of The Dice. All Rights Reserved 2021</p>
                         </Row>
                     </Col>
                 </Row>
