@@ -147,12 +147,14 @@ export const LandingView = () => {
           <h6 className="text-center text-white" onClick={() => scrollTo(roadmapRef)}>BENEFITS AND ROADMAP</h6>
         </Menu.Item>
         <Menu.Item>
-            <Link to="/gallery">
-                <h6 className="text-center text-white">GALLERY</h6>
-            </Link>
+          <Link to="/gallery">
+            <h6 className="text-center text-white">GALLERY</h6>
+          </Link>
         </Menu.Item>
         <Menu.Item>
-          <h6 className="text-center text-white" onClick={() => scrollTo(aboutRef)}>MARKETPLACE</h6>
+          <Link to="/marketplace">
+            <h6 className="text-center text-white">MARKETPLACE</h6>
+          </Link>
         </Menu.Item>
         <Menu.Item>
           <h6 className="text-center text-white" onClick={() => scrollTo(faqRef)}>FAQ'S</h6>
@@ -188,12 +190,12 @@ export const LandingView = () => {
     <Layout>
         <div className="landing-container">
             <div className="background">
-                <Row style={{padding: '10px 10%'}}>
+                <Row style={{padding: (width > 768) ? '10px 10%' : '10px 20px 10px 5px'}}>
                     <Col span={8}>
-                        <Row style={{marginTop: 10}}>
+                        <Row style={{marginTop: '10px'}}>
                             <Link to="/">
-                                <Col xl={16} xs={24}>
-                                    {/* <img src={'/images/logo.png'} /> */}
+                                <Col xl={16} xs={24} >
+                                    <img src={'/images/logo.png'} />
                                 </Col>
                             </Link>
                             <Col xl={8} xs={0}></Col>
@@ -213,10 +215,10 @@ export const LandingView = () => {
                     <Col span={8}>
                         <Row>
                             <Col style={{margin: '10px 0 0 auto'}}>
-                                <Space size={'middle'}>
-                                    <button className="connect-button" onClick={handleChangeWallet} style={width > 768 ? {fontSize: '16px'} : {fontSize: '14px'}}>{connected ? shortenAddress(publicKey?.toBase58() || '', width > 768 ? 4 : 2) : width > 768 ? 'CONNECT WALLET' : 'CONNECT'}</button>
+                                <Space size={(width > 768) ? 'middle' : 'small'}>
+                                    <button className="connect-button" onClick={handleChangeWallet} style={width > 768 ? {fontSize: '16px'} : {fontSize: '12px'}}>{connected ? shortenAddress(publicKey?.toBase58() || '', width > 768 ? 4 : 2) : width > 768 ? 'CONNECT WALLET' : 'CONNECT'}</button>
                                     <Dropdown overlay={sp_menu} trigger={['click']} onVisibleChange={handleMenuToggle}>
-                                        <Button type="text" shape="circle" size="large" onClick={handleMenuToggle} icon={menuView ? <CloseOutlined /> : <MenuOutlined />} />
+                                        <Button type="text" shape="circle" size={(width > 768) ? 'large' : 'small'} onClick={handleMenuToggle} icon={menuView ? <CloseOutlined /> : <MenuOutlined />} />
                                     </Dropdown>
                                 </Space>
                             </Col>
@@ -616,9 +618,11 @@ export const LandingView = () => {
                                             GALLERY
                                         </Button>
                                     </Link>
-                                    <Button type="text" size="small" style={{display: 'block'}} onClick={() => scrollTo(aboutRef)}>
-                                        MARKETPLACE
-                                    </Button>
+                                    <Link to="/marketplace">
+                                      <Button type="text" size="small" style={{display: 'block'}}>
+                                          MARKETPLACE
+                                      </Button>
+                                    </Link>
                                     <Button type="text" size="small" style={{display: 'block'}} onClick={() => scrollTo(faqRef)}>
                                         FAQ
                                     </Button>

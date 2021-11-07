@@ -15,6 +15,7 @@ import { AdminView } from './views/admin';
 import { BillingView } from './views/auction/billing';
 import { GalleryView } from './views/gallery';
 import { LandingView } from './views/landing';
+import { MarketPlace } from './views/marketplace';
 import { MineView } from './views/mine';
 
 export function Routes() {
@@ -63,6 +64,8 @@ export function Routes() {
             <Route exact path="/gallery" component={() => <GalleryView />} />
 
             <Route exact path="/mine" component={() => <MineView />} />
+
+            <Route exact path="/marketplace" component={() => <MarketPlace />} />
 
           </Switch>
         </Providers>
