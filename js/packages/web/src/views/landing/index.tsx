@@ -239,7 +239,7 @@ export const LandingView = () => {
 
                 <Row>
                     <Col span={24} style={{marginTop: 60}}>
-                        <h4 className="text-center" style={width > 768 ? {fontSize: 20} : {padding: '5px 20px', fontSize: 14}}>Auction start every Tuesday and Friday at 6pm UTC.</h4>
+                        <h4 className="text-center" style={width > 768 ? {fontSize: 20} : {padding: '5px 20px', fontSize: 14}}>First auction will start November 23th at 6pm UTC.</h4>
                         <h5 className="text-center" style={width > 768 ? {fontSize: 18, marginTop: "10px"} : {fontSize: 12, marginTop: "10px", padding: '5px 20px'}}>Launching 10 COTD per week via @holaplex</h5>
                         <div style={{width: "fit-content", margin: "30px auto"}}>
                             <Button type="default" style={width > 768 ? {borderRadius: 8, width: 280, height: 60, fontSize: 20} : {borderRadius: 8, width: 200, height: 40, fontSize: 14}}>
@@ -456,7 +456,7 @@ export const LandingView = () => {
                                 <div>When the auctions are open?</div>
                                 <div className='faq-icon'>{activeFaqIndex == 1 ? <MinusOutlined /> : <PlusOutlined />}</div>
                             </div>
-                            <div className={activeFaqIndex == 1 ? 'active-faq-content' : 'faq-content'}>The auction is open at November 22th (4PM UTC). Auction will last for 24h at the starting bid of 0.5 SOL.</div>
+                            <div className={activeFaqIndex == 1 ? 'active-faq-content' : 'faq-content'}>The auction is open at November 23th (4PM UTC). Auction will last for 24h at the starting bid of 0.5 SOL.</div>
                         </div>
                         <div className={activeFaqIndex == 2 ? 'faq active-faq' : 'faq'}>
                             <div className='faq-header' onClick={() => handleFaq(2)}>
