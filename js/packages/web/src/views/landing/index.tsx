@@ -167,12 +167,12 @@ export const LandingView = () => {
                             <img src={'/images/head_instagram.png'} width={20} height={20} />
                         </Button>
                     </a>
-                    <a href="https://twitter.com/cotd" target="_blank">
+                    <a href="https://twitter.com/ChildOfTheDice" target="_blank">
                         <Button type="ghost" style={{width: 35, height: 35, padding: 2, borderRadius: 0}}>
                             <img src={'/images/head_twitter.png'} width={20} height={20} />
                         </Button>
                     </a>
-                    <a href="https://discord.com/cotd" target="_blank">
+                    <a href="https://discord.gg/childofthedice" target="_blank">
                         <Button type="ghost" style={{width: 35, height: 35, padding: 2, borderRadius: 0}}>
                             <img src={'/images/head_discord.png'} width={20} height={20} />
                         </Button>
@@ -511,7 +511,7 @@ export const LandingView = () => {
                                 <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@SOLBigBrain</p>
                                 <Row>
                                     <Col span={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                                        <a href='https://twitter.com/cotd' target="_blank">
+                                        <a href='https://twitter.com/SOLBigBrain' target="_blank">
                                             <img src={'/images/head_twitter.png'} width={20} height={20} style={{margin: '5px'}} />
                                         </a>
                                     </Col>
@@ -526,10 +526,10 @@ export const LandingView = () => {
                                 <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@Nakiwarai</p>
                                 <Row>
                                     <Col span={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                                        <a href='https://twitter.com/cotd' target="_blank">
+                                        <a href='https://twitter.com/Kamidzukuri' target="_blank">
                                             <img src={'/images/head_twitter.png'} width={20} height={20} style={{margin: '5px'}} />
                                         </a>
-                                        <a href='https://mysite.com/cotd' target="_blank">
+                                        <a href='https://artstation.com/nakiwarai' target="_blank">
                                             <img src={'/images/head_web.png'} width={20} height={20} style={{margin: '5px'}} />
                                         </a>
                                     </Col>
@@ -544,10 +544,10 @@ export const LandingView = () => {
                                 <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@itsthealygator</p>
                                 <Row>
                                     <Col span={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                                        <a href='https://twitter.com/cotd' target="_blank">
+                                        <a href='https://twitter.com/itsthealygator' target="_blank">
                                             <img src={'/images/head_twitter.png'} width={20} height={20} style={{margin: '5px'}} />
                                         </a>
-                                        <a href='https://instagram.com/cotd' target="_blank">
+                                        <a href='https://www.instagram.com/thealygator' target="_blank">
                                             <img src={'/images/head_instagram.png'} width={20} height={20} style={{margin: '5px'}} />
                                         </a>
                                     </Col>
@@ -562,7 +562,7 @@ export const LandingView = () => {
                                 <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@Redhotieh</p>
                                 <Row>
                                     <Col span={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                                        <a href='https://instagram.com/cotd' target="_blank">
+                                        <a href='https://www.instagram.com/redhotieh' target="_blank">
                                             <img src={'/images/head_instagram.png'} width={20} height={20} style={{margin: '5px'}} />
                                         </a>
                                     </Col>
@@ -578,12 +578,12 @@ export const LandingView = () => {
                             <Col xl={8} xs={24} style={width > 768 ? {} : {display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                                 <div>
                                     <p className="text-white mb-3">JOIN US ON</p>
-                                    <a href="https://twitter.com/cotd" target="_blank">
+                                    <a href="https://twitter.com/ChildOfTheDice" target="_blank">
                                         <Button type="default" style={{width: "200px", height: "40px", display: 'block', marginBottom: '10px', borderRadius: 0}}>
                                             TWITTER
                                         </Button>
                                     </a>
-                                    <a href="https://discord.com/cotd" target="_blank">
+                                    <a href="https://discord.gg/childofthedice" target="_blank">
                                         <Button type="default" style={{width: "200px", height: "40px", display: 'block', marginBottom: '10px', borderRadius: 0}}>
                                             DISCORD
                                         </Button>
