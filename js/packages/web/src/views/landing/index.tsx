@@ -247,12 +247,14 @@ export const LandingView = () => {
                             </Button>
                         </div>
                         <div style={{width: "fit-content", margin: "30px auto"}}>
-                            <Button type="default" style={width > 768 ? {borderRadius: 8, width: 260, height: 50, fontSize: 18} : {borderRadius: 8, width: 180, height: 30, fontSize: 12}}>
-                                <Space>
-                                    <img src={'/images/head_discord.png'} width={width > 768 ? 25 : 20} height={width > 768 ? 25 : 20} />
-                                    <span>JOIN OUR DISCORD</span>
-                                </Space>
-                            </Button>
+                            <a href="https://discord.gg/childofthedice" target="_blank">
+                                <Button type="default" style={width > 768 ? {borderRadius: 8, width: 260, height: 50, fontSize: 18} : {borderRadius: 8, width: 180, height: 30, fontSize: 12}}>
+                                    <Space>
+                                        <img src={'/images/head_discord.png'} width={width > 768 ? 25 : 20} height={width > 768 ? 25 : 20} />
+                                        <span>JOIN OUR DISCORD</span>
+                                    </Space>
+                                </Button>
+                            </a>
                         </div>
                     </Col>
                 </Row>
