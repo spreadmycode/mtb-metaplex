@@ -259,7 +259,7 @@ export const LandingView = () => {
                     </Col>
                 </Row>
             
-                <Row ref={aboutRef} style={width > 768 ? {width: '60%', margin: "80px auto"} : {width: '80%', margin: "30px auto"}} id="about">
+                <Row ref={aboutRef} style={width > 768 ? {width: '70%', margin: "80px auto"} : {width: '90%', margin: "30px auto"}} id="about">
                     <Col xl={12} xs={24} style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                         <div style={{width: '100%'}}>
                             <h3 className="text-blue">1,000 unique Childs</h3>
