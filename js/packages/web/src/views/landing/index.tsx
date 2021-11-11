@@ -262,14 +262,14 @@ export const LandingView = () => {
                 <Row ref={aboutRef} style={width > 768 ? {width: '70%', margin: "80px auto"} : {width: '90%', margin: "30px auto"}} id="about">
                     <Col xl={12} xs={24} style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                         <div style={{width: '100%'}}>
-                            <h3 className="text-blue">1,000 unique Childs</h3>
+                            <h3 className="text-blue">1,000 unique Children</h3>
                             <h4 className="text-white">who need a family.</h4>
                             <br />
-                            <p className="text-white">Child Of The Dice is an unique and original hand drawn collection created by a team of experienced artists.</p>
+                            <p className="text-white">Child Of The Dice is a unique and original hand drawn collection created by a team of experienced artists.</p>
                             <br />
-                            <p className="text-white">Each artwork is full drawn manually, our purpose is to give something unique and original with a story behind each child created.</p>
+                            <p className="text-white">Each artwork is completely drawn manually. Our purpose is to give something unique and original, and to tell a story behind each child created.</p>
                             <br />
-                            <p className="text-white">Take care of the child that you own because the supply is limited to 1,000 NFTs</p>
+                            <p className="text-white">Take care of the child that you own because the supply is limited to 1000 NFTs.</p>
                         </div>
                     </Col>
                     <Col xl={12} xs={24}>
@@ -334,9 +334,9 @@ export const LandingView = () => {
                         </div>
                     </Col>
                     <Col span={18}>
-                        <h5 className="text-blue" style={{marginTop: '20px'}}>Surrealist</h5>
+                        <h5 className="text-blue" style={{marginTop: '20px'}}>Surrealist:</h5>
                         <br />
-                        <p className="text-white">As great power implies great responsibility, and with the knowledge of the existence of terrifying forces of evil, they have decided to use their power to spread goodwill well-being, and to erase the evil and its atrocities. They have decided to use their most powerful children to form a special faction, called Surrealist. This faction is made up of the most powerful and combat capable childs needed to keep the peace and drive out the bad guys, colonizing and murderous, dangerous and destructive species across the galaxy and the universe and its borders. As the name suggests, this faction is composed of childs, with the most extraordinary and amazing powers. They will fight battles in the farthest reaches of the universe and return victorious, or never return.</p>
+                        <p className="text-white">As great power implies great responsibility, and with the knowledge of the existence of terrifying forces of evil, they have decided to use their power to spread goodwill, well-being, and to erase the evil and its atrocities. They have decided to use their most powerful children to form a special faction, called Surrealist. This faction is made up of the most powerful and combat-capable children needed to keep the peace and drive out the bad guys. They fight tirelessly against the colonizing, murderous, dangerous and destructive species across the galaxy and it's borders. As the name suggests, this faction is composed of children with the most extraordinary and amazing powers. They will fight battles in the farthest reaches of the universe and return victorious, or never return.</p>
                     </Col>
                     <Col span={24}><br /></Col>
                     <Col span={24}><br /></Col>
@@ -348,17 +348,17 @@ export const LandingView = () => {
                         </div>
                     </Col>
                     <Col span={18}>
-                        <h5 className="text-blue" style={{marginTop: '20px'}}>Celestial</h5>
+                        <h5 className="text-blue" style={{marginTop: '20px'}}>Celestial:</h5>
                         <br />
-                        <p className="text-white">Specifics childs with extraordinary wisdom and intelligence is in charge of the most important decisions of the childs planet. They decide on goals and priorities. They have uncommon insight and experience, and make the most crucial and difficult decisions. They decide when and if the children should intervene in any event. Their decisions are so complex that they are sometimes understood centruies later. For example, allowing a malevolent species to cononise a planet with a benevolent and harmless native species. It was carnage at first but it turned out that over time this harmless species, has successfully adaptedand developed a defence system that repels the colonising species and offers them protection for the future, allowing them to evolve and prosper in peace.</p>
+                        <p className="text-white">Specifics children with extraordinary wisdom and intelligence are in charge of the most important decisions of the children's planet. They decide on goals and priorities. They have rare insights and experience, and make the most crucial and difficult decisions. They decide when and if the children should intervene in any event. Their decisions are so complex that they are sometimes not understood until centuries later... For example, allowing a malevolent species to colonize a planet and destory a benevolent and harmless native species. It was carnage at first, but it turned out that over time this harmless species has successfully adapted and developed a defense system that repels the colonizing species and offers them protection for the future, allowing them to evolve and prosper in peace.</p>
                     </Col>
                 </Row>
 
                 <Row ref={roadmapRef} style={width > 768 ? {width: '70%', margin: "100px auto 80px auto", zIndex: 2, position: 'relative'} : {width: '90%', margin: "100px auto 60px auto", zIndex: 2, position: 'relative'}} id="roadmap">
                     <Col xl={12} xs={24}>
-                        <h4 className="text-white">Benefits & Roadmap</h4>
+                        <h4 className="text-white">Benefits & Roadmap:</h4>
                         <br />
-                        <p className="text-white">The goal behind Child Of The Dice is to create an friendly, open and inclusive community centered around NFT artwork. Through Charity eveents and the eclectic community, Child Of The Dice will be able to help children in need. The need to advocate for children's illness has become more apparent in recent years and thus, Child Of The Dice was born.</p>
+                        <p className="text-white">The goal behind Child Of The Dice is to create a friendly, open, and inclusive community centered around NFT artwork. Through Charity events and the eclectic community, Child Of The Dice will be able to help children in need. The need to advocate for children's illness has become more apparent in recent years and thus, Child Of The Dice was born.</p>
                     </Col>
                     <Col xl={12} xs={0} />
                     <Row style={{margin: '100px 0 0 0', width: '100%'}}>
@@ -370,7 +370,7 @@ export const LandingView = () => {
                         <Col span={18} style={{alignItems: 'center', display: 'flex'}}>
                             <div>
                                 <h5 className="text-blue">Owner of an unique piece.</h5>
-                                <p className="text-white">You own an unique artwork with an original story.</p>
+                                <p className="text-white">You own a unique artwork with an original story.</p>
                             </div>
                         </Col>
                     </Row>
@@ -396,7 +396,7 @@ export const LandingView = () => {
                         <Col span={18} style={{alignItems: 'center', display: 'flex'}}>
                             <div>
                                 <h5 className="text-blue">Charity Partners</h5>
-                                <p className="text-white">We'll be donating 10% generated from sales to childrens charites.</p>
+                                <p className="text-white">We'll be donating 10% of the revenue generated from sales to children's charities.</p>
                             </div>
                         </Col>
                     </Row>
@@ -409,7 +409,7 @@ export const LandingView = () => {
                         <Col span={18} style={{alignItems: 'center', display: 'flex'}}>
                             <div>
                                 <h5 className="text-blue">Child of The Dice x Artists</h5>
-                                <p className="text-white">Open collaborations with other artists.</p>
+                                <p className="text-white">Open collaborations with other artists.c</p>
                             </div>
                         </Col>
                     </Row>
@@ -435,7 +435,7 @@ export const LandingView = () => {
                         <Col span={18} style={{alignItems: 'center', display: 'flex'}}>
                             <div>
                                 <h5 className="text-blue">Community wallet</h5>
-                                <p className="text-white">A community wallet will be set with 8% of the sales.</p>
+                                <p className="text-white">A community wallet will be set with 8% of the total sales.</p>
                             </div>
                         </Col>
                     </Row>
