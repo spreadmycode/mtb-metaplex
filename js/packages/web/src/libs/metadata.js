@@ -1,28 +1,11 @@
-import excuteQuery from './db';
+import axios from "axios";
 
 export async function insertMetadata(pubKey, attributes) {
-    try {
-        const result = await excuteQuery({
-            query: 'INSERT INTO metadata (pubkey, attributes) VALUES(?, ?)',
-            values: [pubKey, attributes],
-        });
-        console.log(result);
-    } catch (error) {
-        console.log(error);
-    }
-    return {pubKey, attributes};
+    const response = await axios.post('http://209.182.217.118/insert_metadata', { data: {pubKey, attributes}});
+    return response.data;
 }
 
 export async function getAll() {
-    try {
-        const result = await excuteQuery({
-            query: 'SELECT * FROM metadata',
-            values: [],
-        });
-        console.log(result);
-        return result;
-    } catch (error) {
-        console.log(error);
-    }
-    return [];
+    const response = await axios.post('http://209.182.217.118/get_all', {});
+    return response.data;
 }
