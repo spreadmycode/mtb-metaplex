@@ -22,7 +22,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Child of the Dice</title>
       </Head>
-      <div id="root">
+      <div id="root" className={isLoading ? 'hide-scrollbar' : ''}>
         {isLoading &&
           <div className="loading-scene">
               {/* <div className="psoload">
