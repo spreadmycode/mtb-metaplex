@@ -39,9 +39,11 @@ export default function App({ Component, pageProps }: AppProps) {
               </div>
           </div>
         }
-        <ApolloProvider client={apolloClient}>
-          <Component {...pageProps} />
-        </ApolloProvider>
+        <div style={{visibility: isLoading ? 'hidden' : 'visible'}}>
+          <ApolloProvider client={apolloClient}>
+            <Component {...pageProps} />
+          </ApolloProvider>
+        </div>
       </div>
     </>
   );
