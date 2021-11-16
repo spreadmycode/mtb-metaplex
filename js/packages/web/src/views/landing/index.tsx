@@ -242,9 +242,11 @@ export const LandingView = () => {
                         <h4 className="text-center" style={width > 768 ? {fontSize: 20} : {padding: '5px 20px', fontSize: 14}}>First auction will start November 23th at 6pm UTC.</h4>
                         <h5 className="text-center" style={width > 768 ? {fontSize: 18, marginTop: "10px"} : {fontSize: 12, marginTop: "10px", padding: '5px 20px'}}>Launching 10 COTD per week via @holaplex</h5>
                         <div style={{width: "fit-content", margin: "30px auto"}}>
-                            <Button type="default" style={width > 768 ? {borderRadius: 8, width: 280, height: 60, fontSize: 20} : {borderRadius: 8, width: 200, height: 40, fontSize: 14}}>
-                                <span>LIVE AUCTION</span>
-                            </Button>
+                            <a href="https://childofdice.holaplex.com" target="_blank">
+                                <Button type="default" style={width > 768 ? {borderRadius: 8, width: 280, height: 60, fontSize: 20} : {borderRadius: 8, width: 200, height: 40, fontSize: 14}}>
+                                    <span>LIVE AUCTION</span>
+                                </Button>
+                            </a>
                         </div>
                         <div style={{width: "fit-content", margin: "30px auto"}}>
                             <a href="https://discord.gg/childofthedice" target="_blank">
