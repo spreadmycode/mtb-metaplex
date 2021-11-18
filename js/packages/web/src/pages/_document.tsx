@@ -23,7 +23,7 @@ export default class MetaplexDocument extends Document {
           />
           <link rel="icon" href="/favicon.ico" />
           <meta name="theme-color" content="#121312" />
-          <meta name="description" content="Purchase your own COTDs." />
+          <meta name="description" content="Original hand-drawn NFT project built on #Solana. Unique story behind each child created, via @holaplex" />
           <link rel="manifest" href="/manifest.json" />
           <link
             rel="stylesheet"
