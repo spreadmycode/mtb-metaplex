@@ -31,6 +31,10 @@ export default class MetaplexDocument extends Document {
             integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
             crossOrigin="anonymous"
           />
+          <meta property="og:title" content="Child of the Dice" />
+          <meta property="og:description" content="Original hand-drawn NFT project built on #Solana. Unique story behind each child created, live auction via @holaplex" />
+          <meta property="og:url" content="https://childofdice.com/" />
+          <meta property="og:type" content="website" />
         </Head>
         <body className="mtb-container">
           <Main />
