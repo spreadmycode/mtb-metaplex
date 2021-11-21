@@ -172,7 +172,7 @@ export const LandingView = () => {
                             <img src={'/images/head_twitter.png'} width={20} height={20} />
                         </Button>
                     </a>
-                    <a href="https://discord.gg/childofthedice" target="_blank">
+                    <a href="https://discord.com/invite/cotd" target="_blank">
                         <Button type="ghost" style={{width: 35, height: 35, padding: 2, borderRadius: 0}}>
                             <img src={'/images/head_discord.png'} width={20} height={20} />
                         </Button>
@@ -249,7 +249,7 @@ export const LandingView = () => {
                             </a>
                         </div>
                         <div style={{width: "fit-content", margin: "30px auto"}}>
-                            <a href="https://discord.gg/childofthedice" target="_blank">
+                            <a href="https://discord.com/invite/cotd" target="_blank">
                                 <Button type="default" style={width > 768 ? {borderRadius: 8, width: 260, height: 50, fontSize: 18} : {borderRadius: 8, width: 180, height: 30, fontSize: 12}}>
                                     <Space>
                                         <img src={'/images/head_discord.png'} width={width > 768 ? 25 : 20} height={width > 768 ? 25 : 20} />
@@ -587,7 +587,7 @@ export const LandingView = () => {
                                             TWITTER
                                         </Button>
                                     </a>
-                                    <a href="https://discord.gg/childofthedice" target="_blank">
+                                    <a href="https://discord.com/invite/cotd" target="_blank">
                                         <Button type="default" style={{width: "200px", height: "40px", display: 'block', marginBottom: '10px', borderRadius: 0}}>
                                             DISCORD
                                         </Button>
