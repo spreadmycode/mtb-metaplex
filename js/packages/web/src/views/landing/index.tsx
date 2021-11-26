@@ -512,10 +512,10 @@ export const LandingView = () => {
                                         <img src={'/images/team1.jpg'} style={{transform: 'scale(1.05)'}} />
                                     </div>
                                 </div>
-                                <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@SOLBigBrain</p>
+                                <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@wgmidiot</p>
                                 <Row>
                                     <Col span={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                                        <a href='https://twitter.com/SOLBigBrain' target="_blank">
+                                        <a href='https://twitter.com/wgmidiot' target="_blank">
                                             <img src={'/images/head_twitter.png'} width={20} height={20} style={{margin: '5px'}} />
                                         </a>
                                     </Col>
