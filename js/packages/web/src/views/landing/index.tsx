@@ -66,14 +66,16 @@ export const LandingView = () => {
       handleMenuToggle();
   }
 
-  const scrollTo = (ref) => {
+  const scrollTo = (ref: any, flagMenu: boolean) => {
     window.scroll(
       {
         top: ref.current.offsetTop,
         behavior: "smooth",
       }
     );
-    handleMenuToggle();
+    if (flagMenu) {
+        handleMenuToggle();
+    }
   }
 
   useEffect(() => {
@@ -141,10 +143,10 @@ export const LandingView = () => {
         }
         <Row style={{width: '100%', height: 20}} />
         <Menu.Item>
-          <h6 className="text-center text-white" onClick={() => scrollTo(aboutRef)}>ABOUT</h6>
+          <h6 className="text-center text-white" onClick={() => scrollTo(aboutRef, true)}>ABOUT</h6>
         </Menu.Item>
         <Menu.Item>
-          <h6 className="text-center text-white" onClick={() => scrollTo(roadmapRef)}>BENEFITS AND ROADMAP</h6>
+          <h6 className="text-center text-white" onClick={() => scrollTo(roadmapRef, true)}>BENEFITS AND ROADMAP</h6>
         </Menu.Item>
         <Menu.Item>
           <Link to="/gallery">
@@ -157,7 +159,7 @@ export const LandingView = () => {
           </Link>
         </Menu.Item>
         <Menu.Item>
-          <h6 className="text-center text-white" onClick={() => scrollTo(faqRef)}>FAQ'S</h6>
+          <h6 className="text-center text-white" onClick={() => scrollTo(faqRef, true)}>FAQ'S</h6>
         </Menu.Item>
         <Row>
             <div style={{width: 'fit-content', margin: '20px auto 10px auto'}}>
@@ -181,7 +183,7 @@ export const LandingView = () => {
             </div>
         </Row>
         <Menu.Item>
-          <p className="text-center text-white" onClick={() => scrollTo(aboutRef)}>TERMS AND CONDITIONS</p>
+          <p className="text-center text-white" onClick={() => scrollTo(aboutRef, true)}>TERMS AND CONDITIONS</p>
         </Menu.Item>
     </Menu>
   );
@@ -611,10 +613,10 @@ export const LandingView = () => {
                             <Col xl={8} xs={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                                 <div>
                                     <br />
-                                    <Button type="text" size="small" style={{display: 'block'}} onClick={() => scrollTo(aboutRef)}>
+                                    <Button type="text" size="small" style={{display: 'block'}} onClick={() => scrollTo(aboutRef, false)}>
                                         ABOUT
                                     </Button>
-                                    <Button type="text" size="small" style={{display: 'block'}} onClick={() => scrollTo(roadmapRef)}>
+                                    <Button type="text" size="small" style={{display: 'block'}} onClick={() => scrollTo(roadmapRef, false)}>
                                         BENEFITS AND ROADMAP
                                     </Button>
                                     <Link to="/gallery">
@@ -627,14 +629,14 @@ export const LandingView = () => {
                                           MARKETPLACE
                                       </Button>
                                     </Link>
-                                    <Button type="text" size="small" style={{display: 'block'}} onClick={() => scrollTo(faqRef)}>
+                                    <Button type="text" size="small" style={{display: 'block'}} onClick={() => scrollTo(faqRef, false)}>
                                         FAQ
                                     </Button>
                                 </div>
                             </Col>
                         </Row>
                         <Row>
-                            <p className="text-white text-center mt-5" onClick={() => scrollTo(aboutRef)}>© Child Of The Dice. All Rights Reserved 2021</p>
+                            <p className="text-white text-center mt-5" onClick={() => scrollTo(aboutRef, false)}>© Child Of The Dice. All Rights Reserved 2021</p>
                         </Row>
                     </Col>
                 </Row>
