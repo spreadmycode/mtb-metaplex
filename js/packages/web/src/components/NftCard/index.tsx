@@ -97,13 +97,13 @@ export const NftCard = (props: NftCardProps) => {
         description={
           <Row justify="center" align="middle">
             <Col flex={12}>
-              <MetaAvatar creators={creators} size={32} />
+              {/* <MetaAvatar creators={creators} size={32} /> */}
               <div className="edition-badge">{badge}</div>
             </Col>
             <Col flex="auto">
-              <Link to={`/art/${pubkey}`}>
+              <a href={`https://explorer.solana.com/address/${pubkey}`} target="_blank">
                 <Button type="text" shape="round" size="middle" className="m-2" icon={<InfoCircleOutlined />}></Button>
-              </Link>
+              </a>
             </Col>
           </Row>
         }

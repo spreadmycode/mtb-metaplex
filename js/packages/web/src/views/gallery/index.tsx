@@ -3,9 +3,6 @@ import Masonry from 'react-masonry-css';
 import { CardLoader } from '../../components/MyLoader';
 import { useHistory } from 'react-router-dom';
 import { NftCard } from '../../components/NftCard';
-import { useMeta } from '../../contexts';
-import { useCreatorArts } from '../../hooks';
-import { OWNER_WALLET } from '../../constants';
 import { useState, useEffect } from 'react';
 const { Option } = Select;
 const { Content } = Layout;
@@ -24,27 +21,29 @@ const GetAllMutation = gql`
 `;
 
 export const GalleryView = () => {
-    const createdMetadata = useCreatorArts(OWNER_WALLET || '');
-    const { metadata, isLoading } = useMeta();
     const history = useHistory();
-    const [nfts, setNfts] = useState(createdMetadata);
+    const [nfts, setNfts] = useState<any>([]);
     const [background, setBackground] = useState('');
     const [faction, setFaction] = useState('');
     const [type, setType] = useState('');
     const [generation, setGeneration] = useState('');
     const [sequence, setSequence] = useState('');
-
-    const [attributes, setAttributes] = useState<Array<{pubkey: string, attributes: any}>>();
+    const [isLoading, setIsLoading] = useState(false);
     const [getAll] = useMutation(GetAllMutation);
 
     useEffect(() => {
         (async () => {
+            setIsLoading(true);
+
             const metadatasMut = await getAll();
             const metadatas = metadatasMut.data.getAll.metadatas;
-            const attributes = metadatas?.map((data) => {
-                return {pubkey: data.pubkey, attributes: JSON.parse(data.attributes)};
+            console.log(metadatas);
+            const nfts = metadatas?.map((data: any) => {
+              return {pubkey: data.pubkey, metadata: JSON.parse(data.attributes)};
             })
-            setAttributes(attributes);
+            setNfts(nfts);
+
+            setIsLoading(false);
         })();
     }, []);
 
@@ -62,12 +61,15 @@ export const GalleryView = () => {
           columnClassName="my-masonry-grid_column"
         >
           {!isLoading
-            ? nfts.map((m, idx) => {
+            ? nfts.map((m: any, idx) => {
                 const id = m.pubkey;
                 return (
                     <NftCard
                       key={id}
                       pubkey={m.pubkey}
+                      image={m.metadata.image}
+                      name={m.metadata.name}
+                      creators={m.metadata.properties.creators}
                       preview={true}
                       small={true}
                     />
@@ -86,7 +88,7 @@ export const GalleryView = () => {
             {type: 'Sequence', value: sequence},
         ];
         
-        setNfts(createdMetadata.filter(nft => {
+        setNfts(nfts.filter((nft: any) => {
             let searchResult = [
                 {type: 'Background', value: false},
                 {type: 'Faction', value: false},
@@ -95,41 +97,36 @@ export const GalleryView = () => {
                 {type: 'Sequence', value: false},
                 {type: 'Input', value: false}
             ]
-            for (let i = 0; i < (attributes ? attributes.length : 0); i++) {
-                const attribute = attributes ? attributes[i] : undefined;
-                if (attribute == undefined) continue;
-                if (nft.pubkey == attribute.pubkey) {
-                    let attrs = attribute.attributes;
-                    for (let j = 0; j < attrs.length; j++) {
-                        const attr = attrs[j];
-                        for (let k = 0; k < searchParmas.length; k++) {
-                            let searchParam = searchParmas[k];
-                            if (searchParam.type == attr.trait_type) {
-                                if (searchParam.value == '') {
-                                    for (let l = 0; l < searchResult.length; l++) {
-                                        if (searchResult[l].type == attr.trait_type) {
-                                            searchResult[l].value = true;
-                                        }
-                                    }
-                                } else if (searchParam.value == attr.value) {
-                                    for (let l = 0; l < searchResult.length; l++) {
-                                        if (searchResult[l].type == attr.trait_type) {
-                                            searchResult[l].value = true;
-                                        }
-                                    }
-                                }
-                            }
-                        }
 
-                        if (_type == attr.trait_type) {
-                            if (_value == '') {
-                                searchResult[5].value = true;
-                            } else if (_value == attr.value) {
-                                searchResult[5].value = true;
-                            }
-                        } 
-                    }
-                }
+            let attrs = nft.metadata.attributes;
+            for (let j = 0; j < attrs.length; j++) {
+              const attr = attrs[j];
+              for (let k = 0; k < searchParmas.length; k++) {
+                  let searchParam = searchParmas[k];
+                  if (searchParam.type == attr.trait_type) {
+                      if (searchParam.value == '') {
+                          for (let l = 0; l < searchResult.length; l++) {
+                              if (searchResult[l].type == attr.trait_type) {
+                                  searchResult[l].value = true;
+                              }
+                          }
+                      } else if (searchParam.value == attr.value) {
+                          for (let l = 0; l < searchResult.length; l++) {
+                              if (searchResult[l].type == attr.trait_type) {
+                                  searchResult[l].value = true;
+                              }
+                          }
+                      }
+                  }
+              }
+
+              if (_type == attr.trait_type) {
+                  if (_value == '') {
+                      searchResult[5].value = true;
+                  } else if (_value == attr.value) {
+                      searchResult[5].value = true;
+                  }
+              } 
             }
             let flag = true;
             for (let i = 0; i < searchResult.length; i++) {
