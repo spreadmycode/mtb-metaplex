@@ -509,7 +509,7 @@ export const LandingView = () => {
                     <Col span={24}>
                         <Row style={{padding: '20px'}}>
                             <Col xl={6} xs={24} style={{marginTop: '20px', textAlign: 'center'}}>
-                                <div style={{width: '100%', display: 'flex', justifyContent: 'center', padding: '10px'}}>
+                                {/* <div style={{width: '100%', display: 'flex', justifyContent: 'center', padding: '10px'}}>
                                     <div style={{width: (width > 768) ? '90%' : '70%', textAlign: 'center', position: 'relative', overflow: 'hidden', borderRadius: '50%'}}>
                                         <img src={'/images/team1.jpg'} style={{transform: 'scale(1.05)'}} />
                                     </div>
@@ -521,7 +521,7 @@ export const LandingView = () => {
                                             <img src={'/images/head_twitter.png'} width={20} height={20} style={{margin: '5px'}} />
                                         </a>
                                     </Col>
-                                </Row>
+                                </Row> */}
                             </Col>
                             <Col xl={6} xs={24} style={{marginTop: '20px', textAlign: 'center'}}>
                                 <div style={{width: '100%', display: 'flex', justifyContent: 'center', padding: '10px'}}>
@@ -560,7 +560,7 @@ export const LandingView = () => {
                                 </Row>
                             </Col>
                             <Col xl={6} xs={24} style={{marginTop: '20px', textAlign: 'center'}}>
-                                <div style={{width: '100%', display: 'flex', justifyContent: 'center', padding: '10px'}}>
+                                {/* <div style={{width: '100%', display: 'flex', justifyContent: 'center', padding: '10px'}}>
                                     <div style={{width: (width > 768) ? '90%' : '70%', textAlign: 'center', position: 'relative', overflow: 'hidden', borderRadius: '50%'}}>
                                         <img src={'/images/team4.jpg'} style={{transform: 'scale(1.05)'}} />
                                     </div>
@@ -572,10 +572,38 @@ export const LandingView = () => {
                                             <img src={'/images/head_instagram.png'} width={20} height={20} style={{margin: '5px'}} />
                                         </a>
                                     </Col>
-                                </Row>
+                                </Row> */}
                             </Col>
                         </Row>
                     </Col>
+                </Row>
+
+                <Row style={width > 768 ? {width: '70%', margin: "30px auto"} : {width: '90%', margin: "20px auto"}} id="marketplaces">
+                    <Col span={24}>
+                        <h4 className="text-white text-center">Boutique and marketplaces</h4>
+                    </Col>
+                    <Col span={24} style={{marginTop: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                        <div style={{display: 'flex'}}>
+                            <a href="https://cotdnft.holaplex.com/#/" target="_blank">
+                                <div>
+                                    <img src={'/images/holaplex.png'} width={120} />
+                                    <p className="text-white text-center">Holaplex</p>
+                                </div>
+                            </a>
+                            <a href="https://magiceden.io/marketplace/child_of_the_dice" target="_blank">
+                                <div>
+                                    <img src={'/images/magiceden.png'} width={120} />
+                                    <p className="text-white text-center">MagicEden</p>
+                                </div>
+                            </a>
+                            <a href="https://exchange.art/collections/Child%20Of%20The%20Dice%20Gen" target="_blank">
+                                <div>
+                                    <img src={'/images/exchange.png'} width={120} />
+                                    <p className="text-white text-center">Exchange</p>
+                                </div>
+                            </a>
+                        </div>                       
+                    </Col>        
                 </Row>
 
                 <Row className="footer-bar">
