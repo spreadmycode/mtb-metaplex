@@ -596,7 +596,7 @@ export const LandingView = () => {
                                     <p className="text-white text-center">MagicEden</p>
                                 </div>
                             </a>
-                            <a href="https://exchange.art/collections/Child%20Of%20The%20Dice%20Gen" target="_blank">
+                            <a href="https://exchange.art/collections/Child%20Of%20The%20Dice%20Gen2" target="_blank">
                                 <div>
                                     <img src={'/images/exchange.png'} width={120} />
                                     <p className="text-white text-center">Exchange</p>
