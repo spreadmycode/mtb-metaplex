@@ -266,7 +266,7 @@ export const LandingView = () => {
                 <Row ref={aboutRef} style={width > 768 ? {width: '70%', margin: "80px auto"} : {width: '90%', margin: "30px auto"}} id="about">
                     <Col xl={12} xs={24} style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                         <div style={{width: '100%'}}>
-                            <h3 className="text-blue">1,000 unique Children</h3>
+                            <h3 className="text-blue">Zahki Kapusta</h3>
                             <h4 className="text-white">who need a family.</h4>
                             <br />
                             <p className="text-white">Child Of The Dice is a unique and original hand drawn collection created by a team of experienced artists.</p>
