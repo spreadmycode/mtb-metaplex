@@ -57,7 +57,7 @@ export const MineView = () => {
                 <Row style={{ width: '100%', marginTop: 10 }} justify="center" align="middle">
                     {isLoading ?
                         <div className="w-full flex justify-center items-center">
-                            <div className="loader"></div>
+                            <div className="loader-nts"></div>
                         </div>
                     :
                         (!nfts || nfts.length == 0) ?
