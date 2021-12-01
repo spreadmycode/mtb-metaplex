@@ -207,12 +207,17 @@ export const GalleryView = () => {
             </Row>
             <Content style={{ display: 'flex', flexWrap: 'wrap' }}>
                 <Row style={{ width: '100%', marginTop: 20 }} justify="center" align="middle">
-                    {(!nfts || nfts.length == 0) ?
-                        <h6 className="text-center text-white m-5">There is no COTD.</h6>
-                        :
-                        <Col>
-                            {artworkGrid}
-                        </Col>
+                    {isLoading ?
+                        <div className="w-full flex justify-center items-center">
+                            <div className="loader"></div>
+                        </div>
+                    :
+                        (!nfts || nfts.length == 0) ?
+                            <h6 className="text-center text-white m-5">There is no COTD.</h6>
+                            :
+                            <Col>
+                                {artworkGrid}
+                            </Col>
                     }
                 </Row>
             </Content>

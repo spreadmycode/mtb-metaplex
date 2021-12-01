@@ -3,15 +3,13 @@ import Masonry from 'react-masonry-css';
 import { CardLoader } from '../../components/MyLoader';
 import { useHistory } from 'react-router-dom';
 import { NftCard } from '../../components/NftCard';
-import { useUserArts } from '../../hooks';
-import { useMeta } from '../../contexts';
+import useWalletNfts from '../../hooks/useWalletNfts';
 
 const { Content } = Layout;
 
 export const MineView = () => {
 
-    const ownedMetadata = useUserArts();
-    const { metadata, isLoading } = useMeta();
+    const {isLoading, nfts} = useWalletNfts();
     const history = useHistory();
 
     const breakpointColumnsObj = {
@@ -21,8 +19,6 @@ export const MineView = () => {
         500: 1,
     };
 
-    const items = ownedMetadata.map(m => m.metadata);
-
     const artworkGrid = (
         <Masonry
           breakpointCols={breakpointColumnsObj}
@@ -30,14 +26,17 @@ export const MineView = () => {
           columnClassName="my-masonry-grid_column"
         >
           {!isLoading
-            ? items.map((m, idx) => {
+            ? nfts.map((m, idx) => {
                 const id = m.pubkey;
                 return (
                     <NftCard
-                      key={id}
-                      pubkey={m.pubkey}
-                      preview={true}
-                      small={true}
+                        key={id}
+                        pubkey={m.pubkey}
+                        image={m.image}
+                        name={m.name}
+                        creators={m.properties.creators}
+                        preview={true}
+                        small={true}
                     />
                 );
               })
@@ -56,12 +55,17 @@ export const MineView = () => {
             </Button>
             <Content style={{ display: 'flex', flexWrap: 'wrap' }}>
                 <Row style={{ width: '100%', marginTop: 10 }} justify="center" align="middle">
-                    {(!items || items.length == 0) ?
-                        <h6 className="text-center text-white m-5">You have no COTD.</h6>
-                        :
-                        <Col>
-                            {artworkGrid}
-                        </Col>
+                    {isLoading ?
+                        <div className="w-full flex justify-center items-center">
+                            <div className="loader"></div>
+                        </div>
+                    :
+                        (!nfts || nfts.length == 0) ?
+                            <h6 className="text-center text-white m-5">You have no COTD.</h6>
+                            :
+                            <Col>
+                                {artworkGrid}
+                            </Col>
                     }
                 </Row>
             </Content>

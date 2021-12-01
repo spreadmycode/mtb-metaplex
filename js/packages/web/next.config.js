@@ -27,12 +27,12 @@ module.exports = withPlugins(plugins, {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  // webpack: (config, { isServer }) => {
-  //   if (!isServer) {
-  //     config.resolve.fallback.fs = false;
-  //   }
-  //   return config;
-  // },
+  webpack: (config, { isServer }) => {
+    if (!isServer) {
+      config.resolve.fallback.fs = false;
+    }
+    return config;
+  },
   env: {
     NEXT_PUBLIC_STORE_OWNER_ADDRESS:
       process.env.STORE_OWNER_ADDRESS ||
