@@ -241,7 +241,7 @@ export const LandingView = () => {
 
                 <Row>
                     <Col span={24} style={{marginTop: 60}}>
-                        <h4 className="text-center" style={width > 768 ? {fontSize: 20} : {padding: '5px 20px', fontSize: 14}}>Open auction every Tuesday and Friday at 6pm UTC</h4>
+                        <h4 className="text-center" style={width > 768 ? {fontSize: 20} : {padding: '5px 20px', fontSize: 14}}>Open auction every Friday at 1 PM PST</h4>
                         <h5 className="text-center" style={width > 768 ? {fontSize: 18, marginTop: "10px"} : {fontSize: 12, marginTop: "10px", padding: '5px 20px'}}>Launching 5 COTD every open auction</h5>
                         <div style={{width: "fit-content", margin: "30px auto"}}>
                             <a href="https://cotdnft.holaplex.com/#/" target="_blank">
@@ -266,14 +266,14 @@ export const LandingView = () => {
                 <Row ref={aboutRef} style={width > 768 ? {width: '70%', margin: "80px auto"} : {width: '90%', margin: "30px auto"}} id="about">
                     <Col xl={12} xs={24} style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                         <div style={{width: '100%'}}>
-                            <h3 className="text-blue">1,000 unique Children</h3>
-                            <h4 className="text-white">who need a family.</h4>
+                            <h3 className="text-blue">300 unique Child's from three different planets</h3>
+                            <h4 className="text-white">which need a family.</h4>
                             <br />
-                            <p className="text-white">Child Of The Dice is a unique and original hand drawn collection created by a team of experienced artists.</p>
+                            <p className="text-white">The Childs are from three different planets and part of two various factions with a unique achievement mission. GEN 2 is limited to a total of 300 COTDs numbered #001 - #300, each with its exceptional rarity with its original story.</p>
                             <br />
-                            <p className="text-white">Each artwork is completely drawn manually. Our purpose is to give something unique and original, and to tell a story behind each child created.</p>
+                            <p className="text-white">Each artwork is hand-drawn manually. Our purpose is to give something unique and original and tell a story behind each child created.</p>
                             <br />
-                            <p className="text-white">Take care of the child that you own because the supply is limited to 1000 NFTs.</p>
+                            <p className="text-white">Take care of the child you own because the supply is limited to 300 NFTs.</p>
                         </div>
                     </Col>
                     <Col xl={12} xs={24}>
@@ -340,7 +340,7 @@ export const LandingView = () => {
                     <Col span={18}>
                         <h5 className="text-blue" style={{marginTop: '20px'}}>Surrealist:</h5>
                         <br />
-                        <p className="text-white">As great power implies great responsibility, and with the knowledge of the existence of terrifying forces of evil, they have decided to use their power to spread goodwill, well-being, and to erase the evil and its atrocities. They have decided to use their most powerful children to form a special faction, called Surrealist. This faction is made up of the most powerful and combat-capable children needed to keep the peace and drive out the bad guys. They fight tirelessly against the colonizing, murderous, dangerous and destructive species across the galaxy and it's borders. As the name suggests, this faction is composed of children with the most extraordinary and amazing powers. They will fight battles in the farthest reaches of the universe and return victorious, or never return.</p>
+                        <p className="text-white">Great power implies great responsibility, and with the knowledge of the existence of terrifying forces of evil, they have decided to use their power to spread goodwill, well-being and erase corruption and its atrocities. They have decided to use their most potent children to form a unique faction, called Surrealists. This faction comprises the most potent and combat-capable children needed to keep the peace and drive out the bad guys. They fight tirelessly against the colonizing, murderous, dangerous and destructive species across the galaxy and its borders. As the name suggests, this faction is composed of children with extraordinary and unique powers. They will fight battles in the farthest reaches of the universe and return victorious or never return.</p>
                     </Col>
                     <Col span={24}><br /></Col>
                     <Col span={24}><br /></Col>
@@ -354,7 +354,7 @@ export const LandingView = () => {
                     <Col span={18}>
                         <h5 className="text-blue" style={{marginTop: '20px'}}>Celestial:</h5>
                         <br />
-                        <p className="text-white">Specifics children with extraordinary wisdom and intelligence are in charge of the most important decisions of the children's planet. They decide on goals and priorities. They have rare insights and experience, and make the most crucial and difficult decisions. They decide when and if the children should intervene in any event. Their decisions are so complex that they are sometimes not understood until centuries later... For example, allowing a malevolent species to colonize a planet and destory a benevolent and harmless native species. It was carnage at first, but it turned out that over time this harmless species has successfully adapted and developed a defense system that repels the colonizing species and offers them protection for the future, allowing them to evolve and prosper in peace.</p>
+                        <p className="text-white">Specific children with extraordinary wisdom and intelligence are in charge of the most critical decisions on the children's planet. They decide on goals and priorities. They have rare insights and experience and make the most crucial and difficult decisions. They choose when and if the children should intervene in any event. Their choices are so complex that they are sometimes not understood until centuries later... For example, allowing a venomous species to colonize a planet and destroy humans and harmless native species. It was carnage at first, but it turned out that over time these harmless species have successfully adapted and developed a defence system that repels the colonising species and offers them protection for the future, allowing them to evolve and prosper in peace.</p>
                     </Col>
                 </Row>
 
@@ -362,7 +362,7 @@ export const LandingView = () => {
                     <Col xl={12} xs={24}>
                         <h4 className="text-white">Benefits & Roadmap:</h4>
                         <br />
-                        <p className="text-white">The goal behind Child Of The Dice is to create a friendly, open, and inclusive community centered around NFT artwork. Through Charity events and the eclectic community, Child Of The Dice will be able to help children in need. The need to advocate for children's illness has become more apparent in recent years and thus, Child Of The Dice was born.</p>
+                        <p className="text-white">The goal behind Child Of The Dice is to create a friendly, open, and inclusive community centred around NFT artwork. Through Charity events and the eclectic neighbourhood, Child Of The Dice will help children in need. The need to advocate for children's illness has become more apparent in recent years, and thus, Child Of The Dice was born.</p>
                     </Col>
                     <Col xl={12} xs={0} />
                     <Row style={{margin: '100px 0 0 0', width: '100%'}}>
@@ -374,7 +374,7 @@ export const LandingView = () => {
                         <Col span={18} style={{alignItems: 'center', display: 'flex'}}>
                             <div>
                                 <h5 className="text-blue">Owner of an unique piece.</h5>
-                                <p className="text-white">You own a unique artwork with an original story.</p>
+                                <p className="text-white">You own unique artwork with an original story.</p>
                             </div>
                         </Col>
                     </Row>
@@ -387,7 +387,7 @@ export const LandingView = () => {
                         <Col span={18} style={{alignItems: 'center', display: 'flex'}}>
                             <div>
                                 <h5 className="text-blue">Supply of the collection</h5>
-                                <p className="text-white">Only 1,000 COTDs will be available.</p>
+                                <p className="text-white">Only 300 COTDs will be available.</p>
                             </div>
                         </Col>
                     </Row>
@@ -400,7 +400,7 @@ export const LandingView = () => {
                         <Col span={18} style={{alignItems: 'center', display: 'flex'}}>
                             <div>
                                 <h5 className="text-blue">Charity Partners</h5>
-                                <p className="text-white">We'll be donating 10% of the revenue generated from sales to children's charities.</p>
+                                <p className="text-white">We'll donate 10% of the revenue generated from sales to children's charities.</p>
                             </div>
                         </Col>
                     </Row>
@@ -413,7 +413,7 @@ export const LandingView = () => {
                         <Col span={18} style={{alignItems: 'center', display: 'flex'}}>
                             <div>
                                 <h5 className="text-blue">Child of The Dice x Artists</h5>
-                                <p className="text-white">Open collaborations with other artists.c</p>
+                                <p className="text-white">Open collaborations with other artists.</p>
                             </div>
                         </Col>
                     </Row>
@@ -455,14 +455,14 @@ export const LandingView = () => {
                                 <div>How can I buy a COTD?</div>
                                 <div className='faq-icon'>{activeFaqIndex == 0 ? <MinusOutlined /> : <PlusOutlined />}</div>
                             </div>
-                            <div className={activeFaqIndex == 0 ? 'active-faq-content' : 'faq-content'}>COTD purchasing happens through our ‘Live Auction’ which can be found at the top of the website. After purchasing you can check your COTD on 'MY COTD' section.</div>
+                            <div className={activeFaqIndex == 0 ? 'active-faq-content' : 'faq-content'}>COTD purchasing happens through our page Auction', which can be found at the top of the website. After purchasing, you can check your COTD on the 'MY COTD' section.</div>
                         </div>
                         <div className={activeFaqIndex == 1 ? 'faq active-faq' : 'faq'}>
                             <div className='faq-header' onClick={() => handleFaq(1)}>
-                                <div>When the auctions are open?</div>
+                                <div>When are the auctions open?</div>
                                 <div className='faq-icon'>{activeFaqIndex == 1 ? <MinusOutlined /> : <PlusOutlined />}</div>
                             </div>
-                            <div className={activeFaqIndex == 1 ? 'active-faq-content' : 'faq-content'}>The auction is open at November 23rd (6PM UTC). Auction will last for 24h at the starting bid of 0.5 SOL.</div>
+                            <div className={activeFaqIndex == 1 ? 'active-faq-content' : 'faq-content'}>The auction is open every Friday at 1 PM PST on our Auction page.</div>
                         </div>
                         <div className={activeFaqIndex == 2 ? 'faq active-faq' : 'faq'}>
                             <div className='faq-header' onClick={() => handleFaq(2)}>
@@ -476,14 +476,14 @@ export const LandingView = () => {
                                 <div>How rare is my COTD?</div>
                                 <div className='faq-icon'>{activeFaqIndex == 3 ? <MinusOutlined /> : <PlusOutlined />}</div>
                             </div>
-                            <div className={activeFaqIndex == 3 ? 'active-faq-content' : 'faq-content'}>Every COTD is special and unique with an original story.</div>
+                            <div className={activeFaqIndex == 3 ? 'active-faq-content' : 'faq-content'}>Each COTD is special and unique, with an original story.</div>
                         </div>
                         <div className={activeFaqIndex == 4 ? 'faq active-faq' : 'faq'}>
                             <div className='faq-header' onClick={() => handleFaq(4)}>
                                 <div>Will there be a secondary marketplace?</div>
                                 <div className='faq-icon'>{activeFaqIndex == 4 ? <MinusOutlined /> : <PlusOutlined />}</div>
                             </div>
-                            <div className={activeFaqIndex == 4 ? 'active-faq-content' : 'faq-content'}>Yes, we will apply on MagicEden and ExchangeArt.</div>
+                            <div className={activeFaqIndex == 4 ? 'active-faq-content' : 'faq-content'}>Yes, we are listed on MagicEden and ExchangeArt.</div>
                         </div>
                         <div className={activeFaqIndex == 5 ? 'faq active-faq' : 'faq'}>
                             <div className='faq-header' onClick={() => handleFaq(5)}>
@@ -497,7 +497,7 @@ export const LandingView = () => {
                                 <div>Do I own the COTD after purchasing?</div>
                                 <div className='faq-icon'>{activeFaqIndex == 6 ? <MinusOutlined /> : <PlusOutlined />}</div>
                             </div>
-                            <div className={activeFaqIndex == 6 ? 'active-faq-content' : 'faq-content'}>Yes, full intellectual properties are given to the buyer. You can learn more on our terms section.</div>
+                            <div className={activeFaqIndex == 6 ? 'active-faq-content' : 'faq-content'}>Yes, complete intellectual properties are given to the buyer.</div>
                         </div>
                     </Col>
                 </Row>
@@ -532,10 +532,10 @@ export const LandingView = () => {
                                 <p className="text-white text-center" style={{marginTop: '20px', marginBottom: '20px'}}>@Nakiwarai</p>
                                 <Row>
                                     <Col span={24} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-                                        <a href='https://twitter.com/Kamidzukuri' target="_blank">
+                                        <a href='https://twitter.com/nakiwarai43' target="_blank">
                                             <img src={'/images/head_twitter.png'} width={20} height={20} style={{margin: '5px'}} />
                                         </a>
-                                        <a href='https://artstation.com/nakiwarai' target="_blank">
+                                        <a href='https://www.artstation.com/nakiwarai' target="_blank">
                                             <img src={'/images/head_web.png'} width={20} height={20} style={{margin: '5px'}} />
                                         </a>
                                     </Col>
