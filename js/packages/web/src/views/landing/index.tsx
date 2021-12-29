@@ -241,7 +241,7 @@ export const LandingView = () => {
 
                 <Row>
                     <Col span={24} style={{marginTop: 60}}>
-                        <h4 className="text-center" style={width > 768 ? {fontSize: 20} : {padding: '5px 20px', fontSize: 14}}>Open auction every Friday at 1 PM PST</h4>
+                        <h4 className="text-center" style={width > 768 ? {fontSize: 20} : {padding: '5px 20px', fontSize: 14}}>Live auction once a week</h4>
                         {/* <h5 className="text-center" style={width > 768 ? {fontSize: 18, marginTop: "10px"} : {fontSize: 12, marginTop: "10px", padding: '5px 20px'}}>Launching 5 COTD every open auction</h5> */}
                         <div style={{width: "fit-content", margin: "30px auto"}}>
                             <a href="https://cotdnft.holaplex.com/#/" target="_blank">
@@ -269,7 +269,7 @@ export const LandingView = () => {
                             <h3 className="text-blue">300 unique Child's from three different planets</h3>
                             <h4 className="text-white">which need a family.</h4>
                             <br />
-                            <p className="text-white">The Childs are from three different planets and part of two various factions with a unique achievement mission. GEN 2 is limited to a total of 300 COTDs numbered #001 - #300, each with its exceptional rarity with its original story.</p>
+                            <p className="text-white">The children are part of two factions with a unique story and a mission to accomplish ~ only 300 will exist on the last generation. 1/1 by @nakiwarai43.</p>
                             <br />
                             <p className="text-white">Each artwork is hand-drawn manually. Our purpose is to give something unique and original and tell a story behind each child created.</p>
                             <br />
