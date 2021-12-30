@@ -266,14 +266,14 @@ export const LandingView = () => {
                 <Row ref={aboutRef} style={width > 768 ? {width: '70%', margin: "80px auto"} : {width: '90%', margin: "30px auto"}} id="about">
                     <Col xl={12} xs={24} style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                         <div style={{width: '100%'}}>
-                            <h3 className="text-blue">300 unique Children from three different planets</h3>
+                            <h3 className="text-blue">150 unique Children from three different planets</h3>
                             <h4 className="text-white">which need a family.</h4>
                             <br />
-                            <p className="text-white">The children are part of two factions with a unique story and a mission to accomplish ~ only 300 will exist on the last generation. 1/1 by @nakiwarai43.</p>
+                            <p className="text-white">The children are part of two factions with a unique story and a mission to accomplish ~ only 150 will exist on the last generation. 1/1 by @nakiwarai43.</p>
                             <br />
                             <p className="text-white">Each artwork is hand-drawn manually. Our purpose is to give something unique and original and tell a story behind each child created.</p>
                             <br />
-                            <p className="text-white">Take care of the child you own because the supply is limited to 300 NFTs.</p>
+                            <p className="text-white">Take care of the child you own because the supply is limited to 150 NFTs.</p>
                         </div>
                     </Col>
                     <Col xl={12} xs={24}>
@@ -387,7 +387,7 @@ export const LandingView = () => {
                         <Col span={18} style={{alignItems: 'center', display: 'flex'}}>
                             <div>
                                 <h5 className="text-blue">Supply of the collection</h5>
-                                <p className="text-white">Only 300 COTDs will be available.</p>
+                                <p className="text-white">Only 150 Children will be available.</p>
                             </div>
                         </Col>
                     </Row>
@@ -462,14 +462,14 @@ export const LandingView = () => {
                                 <div>When are the auctions open?</div>
                                 <div className='faq-icon'>{activeFaqIndex == 1 ? <MinusOutlined /> : <PlusOutlined />}</div>
                             </div>
-                            <div className={activeFaqIndex == 1 ? 'active-faq-content' : 'faq-content'}>The auction is open every Friday at 1 PM PST on our Auction page.</div>
+                            <div className={activeFaqIndex == 1 ? 'active-faq-content' : 'faq-content'}>The auctions are open once a week at 1 pm PST. The auction will last for 48h at the starting bid of 1 SOL.</div>
                         </div>
                         <div className={activeFaqIndex == 2 ? 'faq active-faq' : 'faq'}>
                             <div className='faq-header' onClick={() => handleFaq(2)}>
                                 <div>Is there a limit?</div>
                                 <div className='faq-icon'>{activeFaqIndex == 2 ? <MinusOutlined /> : <PlusOutlined />}</div>
                             </div>
-                            <div className={activeFaqIndex == 2 ? 'active-faq-content' : 'faq-content'}>The supply of the collection is limited to 300 COTD. No limit is applied to own multiple COTD.</div>
+                            <div className={activeFaqIndex == 2 ? 'active-faq-content' : 'faq-content'}>The supply of the last generation will be limited to 150 Children.</div>
                         </div>
                         <div className={activeFaqIndex == 3 ? 'faq active-faq' : 'faq'}>
                             <div className='faq-header' onClick={() => handleFaq(3)}>
