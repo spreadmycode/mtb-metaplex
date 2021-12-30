@@ -269,7 +269,7 @@ export const LandingView = () => {
                             <h3 className="text-blue">150 unique Children</h3>
                             <h4 className="text-white">which need a family.</h4>
                             <br />
-                            <p className="text-white">The children are part of two factions with a unique story and a mission to accomplish ~ only 150 will exist on the last generation. 1/1 by @nakiwarai43.</p>
+                            <p className="text-white">The children are part of two factions with a unique story and a mission to accomplish ~ only 150 will exist on the second generation. 1/1 by @nakiwarai43.</p>
                             <br />
                             <p className="text-white">Each artwork is hand-drawn manually. Our purpose is to give something unique and original and tell a story behind each child created.</p>
                             <br />
@@ -469,7 +469,7 @@ export const LandingView = () => {
                                 <div>Is there a limit?</div>
                                 <div className='faq-icon'>{activeFaqIndex == 2 ? <MinusOutlined /> : <PlusOutlined />}</div>
                             </div>
-                            <div className={activeFaqIndex == 2 ? 'active-faq-content' : 'faq-content'}>The supply of the last generation will be limited to 150 Children.</div>
+                            <div className={activeFaqIndex == 2 ? 'active-faq-content' : 'faq-content'}>The supply of the second generation will be limited to 150 Children.</div>
                         </div>
                         <div className={activeFaqIndex == 3 ? 'faq active-faq' : 'faq'}>
                             <div className='faq-header' onClick={() => handleFaq(3)}>
