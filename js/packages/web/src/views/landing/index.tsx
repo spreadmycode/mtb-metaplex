@@ -266,7 +266,7 @@ export const LandingView = () => {
                 <Row ref={aboutRef} style={width > 768 ? {width: '70%', margin: "80px auto"} : {width: '90%', margin: "30px auto"}} id="about">
                     <Col xl={12} xs={24} style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                         <div style={{width: '100%'}}>
-                            <h3 className="text-blue">150 unique Children from three different planets</h3>
+                            <h3 className="text-blue">150 unique Children</h3>
                             <h4 className="text-white">which need a family.</h4>
                             <br />
                             <p className="text-white">The children are part of two factions with a unique story and a mission to accomplish ~ only 150 will exist on the last generation. 1/1 by @nakiwarai43.</p>
