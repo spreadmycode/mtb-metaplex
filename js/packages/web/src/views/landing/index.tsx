@@ -266,7 +266,7 @@ export const LandingView = () => {
                 <Row ref={aboutRef} style={width > 768 ? {width: '70%', margin: "80px auto"} : {width: '90%', margin: "30px auto"}} id="about">
                     <Col xl={12} xs={24} style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                         <div style={{width: '100%'}}>
-                            <h3 className="text-blue">300 unique Child's from three different planets</h3>
+                            <h3 className="text-blue">300 unique Children from three different planets</h3>
                             <h4 className="text-white">which need a family.</h4>
                             <br />
                             <p className="text-white">The children are part of two factions with a unique story and a mission to accomplish ~ only 300 will exist on the last generation. 1/1 by @nakiwarai43.</p>
@@ -584,7 +584,7 @@ export const LandingView = () => {
                     </Col>
                     <Col span={24} style={{marginTop: '20px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                         <div style={{display: 'flex'}}>
-                            <a href="https://cotdnft.holaplex.com/#/" target="_blank">
+                            <a href="https://childofthedice-nfts.holaplex.com/" target="_blank">
                                 <div>
                                     <img src={'/images/holaplex.png'} width={120} />
                                     <p className="text-white text-center">Holaplex</p>
@@ -596,7 +596,7 @@ export const LandingView = () => {
                                     <p className="text-white text-center">MagicEden</p>
                                 </div>
                             </a>
-                            <a href="https://exchange.art/collections/Child%20Of%20The%20Dice%20Gen2" target="_blank">
+                            <a href="https://exchange.art/collections/CHILD%20OF%20THE%20DICE%20GEN2" target="_blank">
                                 <div>
                                     <img src={'/images/exchange.png'} width={120} />
                                     <p className="text-white text-center">Exchange</p>
